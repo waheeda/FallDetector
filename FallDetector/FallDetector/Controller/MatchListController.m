@@ -9,24 +9,174 @@
 #import "MatchListController.h"
 #import "MatchResponse.h"
 #import "Service.h"
-
+#import "MatchListView.h"
+typedef enum {
+    orientationAxisX,
+    orientationAxisY,
+    orientationAxisZ
+} orientationAxis;
 @interface MatchListController ()
 
 @end
+orientationAxis refAXIS;
 
 @implementation MatchListController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [super loadServices:@[@(ServiceTypeMatch) , @(ServiceTypeUser)]];
-    [self getMatchList];
+    
     if(WCSession.isSupported){
         WCSession* session = WCSession.defaultSession;
         session.delegate = self;
         [session activateSession];
         
     }
+    
+     [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"dummy text"]];
+    _createSetupOrientation = YES;
+    _totalAngles=0;
+    _count=0;
+    _array=[[NSMutableArray alloc] init];
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    self.motionManager.accelerometerUpdateInterval =0.01;  //0.015
+    
+    if ([self.motionManager isAccelerometerAvailable])// & [self.motionManager isAccelerometerActive])
+    {
+        NSLog(@"Accelerometer is active and available");
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
+         
+         {
+             [queue setMaxConcurrentOperationCount:1];
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                 _totalAcceleration =sqrt((accelerometerData.acceleration.x*accelerometerData.acceleration.x)+
+                                          (accelerometerData.acceleration.y*accelerometerData.acceleration.y)+
+                                          (accelerometerData.acceleration.z*accelerometerData.acceleration.z));
+                
+             });
+             
+              [_array addObject:[NSNumber numberWithDouble:_totalAcceleration]];
+             
+             if(_count==100){
+                 
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     [[(MatchListView*)self.view fallDetectionLabel] setText:@"dssdfdsfdsf"];
+                 });
+                 
+                 if(_createSetupOrientation){
+                     [self createInitialSetup:accelerometerData];
+                 }
+                 
+                 double max = [[_array valueForKeyPath:@"@max.doubleValue"] doubleValue];
+                 double min =[[_array valueForKeyPath:@"@min.doubleValue"] doubleValue];
+                 int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
+                 int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
+                 _count=0;
+                 if((max-min)>=1.5 && maxIndex>minIndex){
+                     NSLog(@"Max:%f, Min:%f",max,min); //fall occured by acceleration
+                     _fallDetected=true;
+                 }
+                 //Z pointing downwards
+                 
+                 
+                 
+                 
+                 
+                 //_array=[NSMutableArray new];
+                 if(_fallDetected){
+                     //check downwards pointing angle
+                    /* double absouluteX = ABS( accelerometerData.acceleration.x);
+                     double absouluteY = ABS( accelerometerData.acceleration.y);
+                     double absouluteZ = ABS( accelerometerData.acceleration.z);*/
+                     //if(absouluteX>absouluteY && absouluteX>absouluteZ){
+                         double mesauredAngle = acos(accelerometerData.acceleration.y/_totalAcceleration);
+                         double normalizedAngle = mesauredAngle - initialAngle;
+                         NSLog(@"Measured Angle: %f",mesauredAngle);
+                        if(!(normalizedAngle>-0.5235987756 && normalizedAngle<0.5235987756)){
+                            //orientation not upright
+                            _positionNotUprightCount++;
+                           // NSLog(@"Fall occured in x");
+                            
+                           /* dispatch_async(dispatch_get_main_queue(), ^{
+                                [[(MatchListView*)self.view fallDetectionLabel] setText:[NSString stringWithFormat:@"Fall occured in x with angle:%f",mesauredAngle] ];
+                            });
+                            _fallDetected=false;*/
+                        }
+                     seconds++;
+                     
+                     if(seconds==5){
+                         if(_positionNotUprightCount>2)
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 [[(MatchListView*)self.view fallDetectionLabel] setText:[NSString stringWithFormat:@"Fall occured in x with angle:%f",mesauredAngle] ];
+                             });
+                         _fallDetected=false;
+                         seconds=0;
+                         _positionNotUprightCount=0;
+                     
+                     }
+                         
+                     
+                     //}
+                     
+                    /* else if(absouluteY>absouluteX && absouluteY>absouluteZ){
+                         //Y pointing downwards
+                         double mesauredAngle = acos(accelerometerData.acceleration.y/_totalAcceleration);
+                         double normalizedAngle = mesauredAngle - initialAngle;
+                         NSLog(@"Measured Angle: %f",mesauredAngle);
+                         if(!(normalizedAngle>-0.5235987756 && normalizedAngle<0.5235987756)){
+                             //orientation not upright
+                              NSLog(@"Fall occured in y");
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 [[(MatchListView*)self.view fallDetectionLabel] setText:@"Fall occured in y"];
+                             });
+                             _fallDetected=false;
+                             
+                         }
+                     }
+                     else{
+                         double mesauredAngle = acos(accelerometerData.acceleration.z/_totalAcceleration);
+                         double normalizedAngle = mesauredAngle - initialAngle;
+                         NSLog(@"Measured Angle: %f",mesauredAngle);
+                         if(!(normalizedAngle>-0.5235987756 && normalizedAngle<0.5235987756)){
+                             //orientation not upright
+                              NSLog(@"Fall occured in z");
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 [[(MatchListView*)self.view fallDetectionLabel] setText:@"Fall occured in z"];
+                             });
+                             _fallDetected=false;
+                         }
+                     
+                     }*/
+                         //Z pointing downwards
+                         
+                 }
+                 
+                 [_array removeAllObjects];
+                 
+                 
+                 return;
+             }
+             
+             _count++;
+             
+//             NSLog(@"Total Acceleration is:%f\nX = %f, Y = %f, Z = %f",
+//                   totalAcceleration,
+//                   accelerometerData.acceleration.x,
+//                   accelerometerData.acceleration.y,
+//                   accelerometerData.acceleration.z);
+//             
+             /*dispatch_async(dispatch_get_main_queue(), ^{
+                 self.xAxis.text = [NSString stringWithFormat:@"%.2f",accelerometerData.acceleration.x];
+                 self.yAxis.text = [NSString stringWithFormat:@"%.2f",accelerometerData.acceleration.y];
+                 self.zAxis.text = [NSString stringWithFormat:@"%.2f",accelerometerData.acceleration.z];
+             });*/
+         }];
+    }
+    else
+        NSLog(@"not active");
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,99 +184,55 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)getMatchList{
-    [service.matchService getMatches:^(id response) {
-//        NSArray *list = [(MatchResponse*)response getList];
-//        NSDictionary* messageToSend = list.firstObject;
-        [self sendMessageToWatch:response];
-    } andfailure:^(NSError *error) {
-        
-    }];
-}
-
--(void)sendMessageToWatch:(NSDictionary*)messageToSend{
-    // NSDictionary* messageToSend = @{@"request":[NSString stringWithFormat:@"Message %d from the Phone",self.counter] ,@"counter":[NSString stringWithFormat:@"%d",self.counter]};
+-(void)createInitialSetup:(CMAccelerometerData *)accelerometerData{
+    double absouluteX = ABS( accelerometerData.acceleration.x);
+    double absouluteY = ABS( accelerometerData.acceleration.y);
+    double absouluteZ = ABS( accelerometerData.acceleration.z);
     
-    if(WCSession.isSupported){
-        
-        WCSession* session = WCSession.defaultSession;
-        session.delegate = self;
-        [session activateSession];
-        
-        /*
-         Discussion
-         In your WatchKit extension, the value of this property is YES when a matching session is active on the user’s iPhone and the device is within range so that communication may occur. On iOS, the value is YES when the paired Apple Watch is in range and the associated Watch app is running in the foreground. In all other cases, the value is NO.
-         
-         The counterpart must be reachable in order for you to send messages using the sendMessage:replyHandler:errorHandler: and sendMessageData:replyHandler:errorHandler: methods. Sending messages to a counterpart that is not reachable results in an error.
-         
-         The session must be configured and activated before accessing this property.
-         */
-        if(session.reachable)
-        {
-            
-            
-            
-            /*
-             Discussion
-             Use this message to send a dictionary of data to the counterpart as soon as possible. Messages are queued serially and delivered in the order in which you sent them. Delivery of the messages happens asynchronously, so this method returns immediately.
-             
-             If you specify a reply handler block, your handler block is executed asynchronously on a background thread. The block is executed serially with respect to other incoming delegate messages.
-             
-             Calling this method from your WatchKit extension while it is active and running wakes up the corresponding iOS app in the background and makes it reachable. Calling this method from your iOS app does not wake up the corresponding WatchKit extension. If you call this method and the counterpart is unreachable (or becomes unreachable before the message is delivered), the errorHandler block is executed with an appropriate error. The errorHandler block may also be called if the message parameter contains non property list data types.
-             */
-            
-            
-            [session sendMessage:messageToSend replyHandler: ^(NSDictionary<NSString *,id> * __nonnull replyMessage)
-             {
-                 
-                 dispatch_async(dispatch_get_main_queue(), ^{
-                     NSLog(@".....replyHandler called --- %@",replyMessage);
-                     
-                     NSDictionary* message = replyMessage;
-                     
-                     NSString* response = message[@"response"];
-                     
-//                     if(response)
-//                         [self.replyLabel setText:response];
-//                     else
-//                         [self.replyLabel setText:@"nil"];
-//                     
-                     
-                     
-                     
-                 });
-                 
-                 
-                 
-                 
-             }
-             
-                    errorHandler:^(NSError * __nonnull error) {
-                        
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            NSLog(@"%@",error.localizedDescription);
-                            //[self.replyLabel setText:error.localizedDescription];
-                        });
-                        
-                    }
-             
-             
-             ];
+    
+        if(absouluteX>absouluteY && absouluteX>absouluteZ){
+            initialAngle = acos(accelerometerData.acceleration.x/_totalAcceleration);
+            if(isnan(initialAngle)){
+                return;
+            }
+            _totalAngles=_totalAngles+initialAngle;
+            NSLog(@"X axis downwards");
         }
-        else
-        {
-            NSLog( @"Session Not reachable");
+        else if(absouluteY>absouluteX && absouluteY>absouluteZ){
+            //Y pointing downwards
+            initialAngle = acos(accelerometerData.acceleration.y/_totalAcceleration);
+            if(isnan(initialAngle)){
+                return;
+            }
+            _totalAngles=_totalAngles+initialAngle;
+            NSLog(@"Y axis downwards");
+        }
+        else{
+            initialAngle = acos(accelerometerData.acceleration.z/_totalAcceleration);
+            if(isnan(initialAngle)){
+                return;
+            }
+            _totalAngles=_totalAngles+initialAngle;
+            NSLog(@"Z axis downwards");
         }
         
-    }
-    else
-    {
-         NSLog( @"Session Not supported");
-    }
-    
+        _anglesCount++;
+        NSLog(@"Intial Angle: %f",initialAngle);
+        if(_anglesCount==10)
+        {
+            _createSetupOrientation=NO;
+            _avgOrientation = _totalAngles/10;
+            //[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithDouble:_avgOrientation]  forKey:@"avgOrientation"];
+            NSLog(@"Avg orientation set");
+            NSLog(@"Avg angle: %f",_avgOrientation);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Avg orientation set with value: %f",_avgOrientation]];
+            });
+        }
     
 
 }
+
 
 
 /*

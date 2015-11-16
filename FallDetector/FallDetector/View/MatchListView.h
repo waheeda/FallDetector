@@ -10,5 +10,7 @@
 
 @interface MatchListView : BaseView <UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *fallDetectionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *avgOrientation;
 
 @end
