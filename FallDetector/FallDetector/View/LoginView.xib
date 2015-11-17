@@ -93,6 +93,9 @@
                     <state key="normal" title="SIgn In">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="onSignInClick:" destination="wLB-Ri-bWN" eventType="touchUpInside" id="Vnz-44-V6R"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWB-hb-1E1">
                     <rect key="frame" x="85" y="407" width="150" height="30"/>

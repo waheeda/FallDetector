@@ -8,6 +8,7 @@
 
 #import "LoginView.h"
 #import "LoginController.h"
+#import "MatchListController.h"
 
 @interface LoginView()
 
@@ -44,6 +45,10 @@
     }];
 }
 
+- (IBAction)onSignInClick:(id)sender {
+    MatchListController *controller = [[MatchListController alloc] init];
+    [[self.controller navigationController] pushViewController:controller animated:YES];
+}
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
