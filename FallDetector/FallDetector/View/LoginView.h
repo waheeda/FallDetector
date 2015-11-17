@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BaseView.h"
 
-@interface LoginView : BaseView
+@interface LoginView : BaseView <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *logoYConstraint;
 - (void)setData:(NSArray*)data;
 - (IBAction)openRegistrationController:(id)sender;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *yCOnstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *emailCentreConstraint;
 @end

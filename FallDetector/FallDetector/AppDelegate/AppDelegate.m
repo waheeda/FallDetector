@@ -17,8 +17,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    MatchListController *c = [[MatchListController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];
+    /*MatchListController *c = [[MatchListController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];*/
+    LoginController *c = [[LoginController alloc] init];
+     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];
     self.window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];

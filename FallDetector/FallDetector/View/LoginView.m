@@ -32,6 +32,28 @@
 
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
+
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField;{
+    self.emailCentreConstraint.constant=-110;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self layoutIfNeeded];
+    }];
+}
+
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    self.emailCentreConstraint.constant=-20;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self layoutIfNeeded];
+    }];
+}
+
+
 - (IBAction)openRegistrationController:(id)sender {
 
     [self.controller openRegistrationController];

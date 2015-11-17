@@ -24,6 +24,8 @@ orientationAxis refAXIS;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //This is a test
+    //This is another test
     
     if(WCSession.isSupported){
         WCSession* session = WCSession.defaultSession;
