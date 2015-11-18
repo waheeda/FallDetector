@@ -22,8 +22,16 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden=true;
-
+    self.navigationController.navigationBarHidden=false;
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:249/255.0f green:146/255.0f blue:10/255.0f alpha:1.0f]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+   // self.title=@"Sign In";
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:249/255.0f green:146/255.0f blue:10/255.0f alpha:1.0f],
+                                                                      NSFontAttributeName:[UIFont
+                                                                                           fontWithName:@"Helvetica" size:18]}];
     
 
 }

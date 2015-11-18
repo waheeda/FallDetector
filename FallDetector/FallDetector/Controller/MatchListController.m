@@ -76,7 +76,7 @@ orientationAxis refAXIS;
                  int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
                  int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
                  _count=0;
-                 if((max-min)>=1.5 && maxIndex>minIndex){
+                 if((max-min)>=2.5 && maxIndex>minIndex){
                      NSLog(@"Max:%f, Min:%f",max,min); //fall occured by acceleration
                      _fallDetected=true;
                  }

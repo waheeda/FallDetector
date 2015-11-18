@@ -10,7 +10,7 @@
 #import "LoginController.h"
 #import "RegistrationController.h"
 #import "MatchListController.h"
-#import "IntroController.h"
+#import "InfoController.h"
 
 @implementation AppDelegate
 
@@ -22,7 +22,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];*/
     /*LoginController *c = [[LoginController alloc] init];
      UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];*/
-    IntroController *c = [[IntroController alloc] init];
+    InfoController *c = [[InfoController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];
     self.window.rootViewController = navigationController;
     

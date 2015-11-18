@@ -108,9 +108,12 @@
 		A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7791BEB60D3007E7A93 /* MatchService.m */; };
 		A277C77E1BEB61AD007E7A93 /* MatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C77D1BEB61AD007E7A93 /* MatchResponse.m */; };
 		A277C7811BEB61E7007E7A93 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7801BEB61E7007E7A93 /* Match.m */; };
-		A286CC8F1BFB661D0092FE63 /* IntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC8E1BFB661D0092FE63 /* IntroView.m */; };
-		A286CC931BFB663A0092FE63 /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC921BFB663A0092FE63 /* IntroController.m */; };
-		A286CC951BFB66490092FE63 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A286CC941BFB66490092FE63 /* IntroView.xib */; };
+		A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC8E1BFB661D0092FE63 /* InfoView.m */; };
+		A286CC931BFB663A0092FE63 /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC921BFB663A0092FE63 /* InfoController.m */; };
+		A286CC951BFB66490092FE63 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A286CC941BFB66490092FE63 /* InfoView.xib */; };
+		A2A523FA1BFC459300EB9C49 /* IntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523F91BFC459300EB9C49 /* IntroView.m */; };
+		A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523FC1BFC45A900EB9C49 /* IntroController.m */; };
+		A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A523FE1BFC45C800EB9C49 /* IntroView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -317,11 +320,16 @@
 		A277C77D1BEB61AD007E7A93 /* MatchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResponse.m; sourceTree = "<group>"; };
 		A277C77F1BEB61E7007E7A93 /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		A277C7801BEB61E7007E7A93 /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
-		A286CC8D1BFB661D0092FE63 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
-		A286CC8E1BFB661D0092FE63 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
-		A286CC911BFB663A0092FE63 /* IntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroController.h; sourceTree = "<group>"; };
-		A286CC921BFB663A0092FE63 /* IntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroController.m; sourceTree = "<group>"; };
-		A286CC941BFB66490092FE63 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroView.xib; sourceTree = "<group>"; };
+		A286CC8D1BFB661D0092FE63 /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
+		A286CC8E1BFB661D0092FE63 /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
+		A286CC911BFB663A0092FE63 /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
+		A286CC921BFB663A0092FE63 /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
+		A286CC941BFB66490092FE63 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		A2A523F81BFC459300EB9C49 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
+		A2A523F91BFC459300EB9C49 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
+		A2A523FB1BFC45A900EB9C49 /* IntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroController.h; sourceTree = "<group>"; };
+		A2A523FC1BFC45A900EB9C49 /* IntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroController.m; sourceTree = "<group>"; };
+		A2A523FE1BFC45C800EB9C49 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,7 +610,8 @@
 		42F60C1018ED3ED100F2A00F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A286CC901BFB66260092FE63 /* Intro */,
+				A2A523F71BFC457200EB9C49 /* Intro */,
+				A286CC901BFB66260092FE63 /* Info */,
 				A277C7731BEB5ED2007E7A93 /* MatchList */,
 				0B7209141A0AA66700162F8D /* Registration */,
 				42F60C1F18ED3F4900F2A00F /* Login */,
@@ -627,7 +636,8 @@
 		42F60C1218ED3ED100F2A00F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A286CC8C1BFB65550092FE63 /* Intro */,
+				A2A523F61BFC446200EB9C49 /* Intro */,
+				A286CC8C1BFB65550092FE63 /* Info */,
 				A286CC8B1BFAEE590092FE63 /* Pool */,
 				A277C7701BEB5EAC007E7A93 /* MatchList */,
 				0B7209181A0AA74C00162F8D /* Registration */,
@@ -871,21 +881,40 @@
 			name = Pool;
 			sourceTree = "<group>";
 		};
-		A286CC8C1BFB65550092FE63 /* Intro */ = {
+		A286CC8C1BFB65550092FE63 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				A286CC8D1BFB661D0092FE63 /* IntroView.h */,
-				A286CC8E1BFB661D0092FE63 /* IntroView.m */,
-				A286CC941BFB66490092FE63 /* IntroView.xib */,
+				A286CC8D1BFB661D0092FE63 /* InfoView.h */,
+				A286CC8E1BFB661D0092FE63 /* InfoView.m */,
+				A286CC941BFB66490092FE63 /* InfoView.xib */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		A286CC901BFB66260092FE63 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				A286CC911BFB663A0092FE63 /* InfoController.h */,
+				A286CC921BFB663A0092FE63 /* InfoController.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		A2A523F61BFC446200EB9C49 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				A2A523F81BFC459300EB9C49 /* IntroView.h */,
+				A2A523F91BFC459300EB9C49 /* IntroView.m */,
+				A2A523FE1BFC45C800EB9C49 /* IntroView.xib */,
 			);
 			name = Intro;
 			sourceTree = "<group>";
 		};
-		A286CC901BFB66260092FE63 /* Intro */ = {
+		A2A523F71BFC457200EB9C49 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				A286CC911BFB663A0092FE63 /* IntroController.h */,
-				A286CC921BFB663A0092FE63 /* IntroController.m */,
+				A2A523FB1BFC45A900EB9C49 /* IntroController.h */,
+				A2A523FC1BFC45A900EB9C49 /* IntroController.m */,
 			);
 			name = Intro;
 			sourceTree = "<group>";
@@ -1020,7 +1049,8 @@
 				42F60BF018ED3DE600F2A00F /* Images.xcassets in Resources */,
 				0B72091A1A0AA76200162F8D /* RegistrationView.xib in Resources */,
 				42F60BE218ED3DE600F2A00F /* InfoPlist.strings in Resources */,
-				A286CC951BFB66490092FE63 /* IntroView.xib in Resources */,
+				A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */,
+				A286CC951BFB66490092FE63 /* InfoView.xib in Resources */,
 				42F60C2518ED40FE00F2A00F /* LoginView.xib in Resources */,
 				A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */,
 			);
@@ -1064,6 +1094,7 @@
 				0B7209241A0AAE3F00162F8D /* UsersResponse.m in Sources */,
 				42F60C2218ED3F6100F2A00F /* LoginView.m in Sources */,
 				42F60C1E18ED3F4500F2A00F /* LoginController.m in Sources */,
+				A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */,
 				0B7209351A0AB8C600162F8D /* StringResponse.m in Sources */,
 				4EE29BFE1BECB1D2008EB1FC /* AFImageDownloader.m in Sources */,
 				A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */,
@@ -1075,6 +1106,7 @@
 				42035D8018EE7C2B00237D90 /* HttpRequestManager.m in Sources */,
 				42F60C3818ED669000F2A00F /* AuthService.m in Sources */,
 				42F60C0F18ED3E6100F2A00F /* AppDelegate.m in Sources */,
+				A2A523FA1BFC459300EB9C49 /* IntroView.m in Sources */,
 				0B7209131A0AA34700162F8D /* Country.m in Sources */,
 				42F60C1818ED3F0300F2A00F /* BaseController.m in Sources */,
 				42F60BE418ED3DE600F2A00F /* main.m in Sources */,
@@ -1095,9 +1127,9 @@
 				0B7209071A0AA1D400162F8D /* BaseEntity.m in Sources */,
 				4EE29BFD1BECB1D2008EB1FC /* AFAutoPurgingImageCache.m in Sources */,
 				0B72090C1A0AA24900162F8D /* BaseResponse.m in Sources */,
-				A286CC8F1BFB661D0092FE63 /* IntroView.m in Sources */,
+				A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */,
 				4E2CAD4B1B1C20BA007143D8 /* DateUtils.m in Sources */,
-				A286CC931BFB663A0092FE63 /* IntroController.m in Sources */,
+				A286CC931BFB663A0092FE63 /* InfoController.m in Sources */,
 				A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */,
 				4EE29C001BECB1D2008EB1FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				0B72092C1A0AB46100162F8D /* Button.m in Sources */,

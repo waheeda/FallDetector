@@ -2,12 +2,12 @@
 //  IntroView.m
 //  FallDetector
 //
-//  Created by Muhammad Hamiz Ahmed on 11/17/15.
+//  Created by Muhammad Hamiz Ahmed on 11/18/15.
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
 #import "IntroView.h"
-#import "LoginController.h"
+#import "IntroController.h"
 @implementation IntroView
 
 /*
@@ -17,9 +17,32 @@
     // Drawing code
 }
 */
-- (IBAction)onNextButtonClick:(id)sender {
-    LoginController *controller =[[LoginController alloc] init];
-    [[self.controller navigationController] pushViewController:controller animated:YES];
+
+-(void)awakeFromNib{
+    [self setFallCeptionLabelAttributes];
+    
 }
+- (IBAction)onCreateAccountButtonClick:(id)sender {
+    
+}
+- (IBAction)signInButtonClick:(id)sender {
+    [(IntroController*)self.controller showLoginController];
+}
+
+-(void)setFallCeptionLabelAttributes{
+    NSString *text = @"Sign in to FALLCEPTION";
+    NSMutableAttributedString *attributedText =
+    [[NSMutableAttributedString alloc] initWithString:text
+                                           attributes:nil];
+    UIColor *redColor = [UIColor colorWithRed:249/255.0f green:146/255.0f blue:10/255.0f alpha:1.0f];
+    NSRange redTextRange = [text rangeOfString:@"CEPTION"];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:redColor,
+                                    NSFontAttributeName:[UIFont 
+                                                         fontWithName:@"Helvetica-Bold" size:25]}
+                            range:redTextRange];
+    [self.fallCeptionLabel setAttributedText:attributedText];
+    
+}
+
 
 @end

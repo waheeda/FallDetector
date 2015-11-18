@@ -2,18 +2,17 @@
 //  IntroController.m
 //  FallDetector
 //
-//  Created by Muhammad Hamiz Ahmed on 11/18/15.
+//  Created by Muhammad Hamiz Ahmed on 11/17/15.
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
-#import "IntroController.h"
-#import "LoginController.h"
+#import "InfoController.h"
 
-@interface IntroController ()
+@interface InfoController ()
 
 @end
 
-@implementation IntroController
+@implementation InfoController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,24 +20,20 @@
     
 }
 
--(void)showLoginController{
-    LoginController *loginController = [[LoginController alloc] init];
-    [self.navigationController pushViewController:loginController animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-     self.navigationController.navigationBarHidden=true;
-}
-
 -(void)viewDidAppear:(BOOL)animated{
-   
+    self.navigationController.navigationBarHidden=true;
+
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden=true;
+}
 /*
 #pragma mark - Navigation
 
