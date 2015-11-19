@@ -6,21 +6,24 @@
 //  Copyright (c) 2014 mohsin. All rights reserved.
 //
 
-#import "RegistrationController.h"
-#import "RegistrationView.h"
+#import "CreateAccountController.h"
+#import "CreateAccountView.h"
 #import "Service.h"
 
-@interface RegistrationController ()
-@property (nonatomic, weak) RegistrationController *weakSelf;
+@interface CreateAccountController ()
+@property (nonatomic, weak) CreateAccountController *weakSelf;
 @end
 
-@implementation RegistrationController
+@implementation CreateAccountController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _weakSelf = self;
+    self.navigationController.navigationBarHidden=false;
+    [self setupNavBar];
+    self.title=@"Create Account";
     [super loadServices:@[@(ServiceTypeAuth) , @(ServiceTypeUser)]];
-    [self getUser];
+   // [self getUser];
 }
 
 

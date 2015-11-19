@@ -59,11 +59,7 @@
 }
 
 
-- (IBAction)openRegistrationController:(id)sender {
 
-    [self.controller openRegistrationController];
-    
-}
 
 
 @end

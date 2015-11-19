@@ -11,9 +11,9 @@
 		0B7209071A0AA1D400162F8D /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209061A0AA1D400162F8D /* BaseEntity.m */; };
 		0B72090C1A0AA24900162F8D /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B72090B1A0AA24900162F8D /* BaseResponse.m */; };
 		0B7209131A0AA34700162F8D /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209121A0AA34700162F8D /* Country.m */; };
-		0B7209171A0AA68400162F8D /* RegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209161A0AA68400162F8D /* RegistrationController.m */; };
-		0B72091A1A0AA76200162F8D /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7209191A0AA76200162F8D /* RegistrationView.xib */; };
-		0B72091D1A0AA77900162F8D /* RegistrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B72091C1A0AA77900162F8D /* RegistrationView.m */; };
+		0B7209171A0AA68400162F8D /* CreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209161A0AA68400162F8D /* CreateAccountController.m */; };
+		0B72091A1A0AA76200162F8D /* CreateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7209191A0AA76200162F8D /* CreateAccountView.xib */; };
+		0B72091D1A0AA77900162F8D /* CreateAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B72091C1A0AA77900162F8D /* CreateAccountView.m */; };
 		0B7209211A0AAACD00162F8D /* CheckInService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209201A0AAACD00162F8D /* CheckInService.m */; };
 		0B7209241A0AAE3F00162F8D /* UsersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209231A0AAE3F00162F8D /* UsersResponse.m */; };
 		0B72092C1A0AB46100162F8D /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7209271A0AB46100162F8D /* Button.m */; };
@@ -173,11 +173,11 @@
 		0B72090B1A0AA24900162F8D /* BaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponse.m; sourceTree = "<group>"; };
 		0B7209111A0AA34700162F8D /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		0B7209121A0AA34700162F8D /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		0B7209151A0AA68400162F8D /* RegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationController.h; sourceTree = "<group>"; };
-		0B7209161A0AA68400162F8D /* RegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationController.m; sourceTree = "<group>"; };
-		0B7209191A0AA76200162F8D /* RegistrationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
-		0B72091B1A0AA77900162F8D /* RegistrationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationView.h; sourceTree = "<group>"; };
-		0B72091C1A0AA77900162F8D /* RegistrationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationView.m; sourceTree = "<group>"; };
+		0B7209151A0AA68400162F8D /* CreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountController.h; sourceTree = "<group>"; };
+		0B7209161A0AA68400162F8D /* CreateAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountController.m; sourceTree = "<group>"; };
+		0B7209191A0AA76200162F8D /* CreateAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountView.xib; sourceTree = "<group>"; };
+		0B72091B1A0AA77900162F8D /* CreateAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountView.h; sourceTree = "<group>"; };
+		0B72091C1A0AA77900162F8D /* CreateAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountView.m; sourceTree = "<group>"; };
 		0B72091F1A0AAACD00162F8D /* CheckInService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInService.h; sourceTree = "<group>"; };
 		0B7209201A0AAACD00162F8D /* CheckInService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInService.m; sourceTree = "<group>"; };
 		0B7209221A0AAE3F00162F8D /* UsersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersResponse.h; sourceTree = "<group>"; };
@@ -412,23 +412,23 @@
 			path = ServiceResponse;
 			sourceTree = "<group>";
 		};
-		0B7209141A0AA66700162F8D /* Registration */ = {
+		0B7209141A0AA66700162F8D /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				0B7209151A0AA68400162F8D /* RegistrationController.h */,
-				0B7209161A0AA68400162F8D /* RegistrationController.m */,
+				0B7209151A0AA68400162F8D /* CreateAccountController.h */,
+				0B7209161A0AA68400162F8D /* CreateAccountController.m */,
 			);
-			name = Registration;
+			name = CreateAccount;
 			sourceTree = "<group>";
 		};
-		0B7209181A0AA74C00162F8D /* Registration */ = {
+		0B7209181A0AA74C00162F8D /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				0B7209191A0AA76200162F8D /* RegistrationView.xib */,
-				0B72091B1A0AA77900162F8D /* RegistrationView.h */,
-				0B72091C1A0AA77900162F8D /* RegistrationView.m */,
+				0B72091B1A0AA77900162F8D /* CreateAccountView.h */,
+				0B72091C1A0AA77900162F8D /* CreateAccountView.m */,
+				0B7209191A0AA76200162F8D /* CreateAccountView.xib */,
 			);
-			name = Registration;
+			name = CreateAccount;
 			sourceTree = "<group>";
 		};
 		0B72091E1A0AAAB500162F8D /* CheckIn */ = {
@@ -613,7 +613,7 @@
 				A2A523F71BFC457200EB9C49 /* Intro */,
 				A286CC901BFB66260092FE63 /* Info */,
 				A277C7731BEB5ED2007E7A93 /* MatchList */,
-				0B7209141A0AA66700162F8D /* Registration */,
+				0B7209141A0AA66700162F8D /* CreateAccount */,
 				42F60C1F18ED3F4900F2A00F /* Login */,
 				42F60C1318ED3EDB00F2A00F /* Base */,
 			);
@@ -640,7 +640,7 @@
 				A286CC8C1BFB65550092FE63 /* Info */,
 				A286CC8B1BFAEE590092FE63 /* Pool */,
 				A277C7701BEB5EAC007E7A93 /* MatchList */,
-				0B7209181A0AA74C00162F8D /* Registration */,
+				0B7209181A0AA74C00162F8D /* CreateAccount */,
 				42F60C2318ED3F6F00F2A00F /* Login */,
 				42F60C1518ED3EEC00F2A00F /* Base */,
 				4E20D3901BB162AD00229C7D /* Launch Screen.storyboard */,
@@ -1047,7 +1047,7 @@
 				4E20D3911BB162AD00229C7D /* Launch Screen.storyboard in Resources */,
 				42A74C1518ED9317002F24EE /* Service.plist in Resources */,
 				42F60BF018ED3DE600F2A00F /* Images.xcassets in Resources */,
-				0B72091A1A0AA76200162F8D /* RegistrationView.xib in Resources */,
+				0B72091A1A0AA76200162F8D /* CreateAccountView.xib in Resources */,
 				42F60BE218ED3DE600F2A00F /* InfoPlist.strings in Resources */,
 				A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */,
 				A286CC951BFB66490092FE63 /* InfoView.xib in Resources */,
@@ -1098,7 +1098,7 @@
 				0B7209351A0AB8C600162F8D /* StringResponse.m in Sources */,
 				4EE29BFE1BECB1D2008EB1FC /* AFImageDownloader.m in Sources */,
 				A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */,
-				0B72091D1A0AA77900162F8D /* RegistrationView.m in Sources */,
+				0B72091D1A0AA77900162F8D /* CreateAccountView.m in Sources */,
 				4EE29C011BECB1D2008EB1FC /* UIButton+AFNetworking.m in Sources */,
 				4EE29BFC1BECB1D2008EB1FC /* AFURLSessionManager.m in Sources */,
 				0B72092E1A0AB46100162F8D /* TextField.m in Sources */,
@@ -1140,7 +1140,7 @@
 				4EE29BFF1BECB1D2008EB1FC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4E1831621B3D3D4600B8015B /* HttpRequestOperationManager.m in Sources */,
 				42A74C1318ED8981002F24EE /* User.m in Sources */,
-				0B7209171A0AA68400162F8D /* RegistrationController.m in Sources */,
+				0B7209171A0AA68400162F8D /* CreateAccountController.m in Sources */,
 				4EE29BF71BECB1D2008EB1FC /* AFHTTPSessionManager.m in Sources */,
 				4EE29C041BECB1D2008EB1FC /* UIRefreshControl+AFNetworking.m in Sources */,
 				42F60C3918ED669000F2A00F /* Service.m in Sources */,

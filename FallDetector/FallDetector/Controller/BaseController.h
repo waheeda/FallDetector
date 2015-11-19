@@ -14,6 +14,7 @@
 }
 
 -(void)loadServices:(NSArray*)services;
+-(void)setupNavBar;
 -(void)showLoader;
 -(void)showLoader:(NSString*)message;
 -(void)hideLoader;

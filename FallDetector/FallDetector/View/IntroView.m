@@ -17,14 +17,15 @@
     // Drawing code
 }
 */
+- (IBAction)CreateAccountButtonClick:(id)sender {
+    [(IntroController*)self.controller openCreateAccountController];
+}
 
 -(void)awakeFromNib{
     [self setFallCeptionLabelAttributes];
     
 }
-- (IBAction)onCreateAccountButtonClick:(id)sender {
-    
-}
+
 - (IBAction)signInButtonClick:(id)sender {
     [(IntroController*)self.controller showLoginController];
 }

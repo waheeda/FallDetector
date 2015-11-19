@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginController.h"
-#import "RegistrationController.h"
+#import "CreateAccountController.h"
 #import "MatchListController.h"
 #import "InfoController.h"
 

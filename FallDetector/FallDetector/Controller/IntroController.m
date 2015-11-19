@@ -8,7 +8,7 @@
 
 #import "IntroController.h"
 #import "LoginController.h"
-
+#import "CreateAccountController.h"
 @interface IntroController ()
 
 @end
@@ -31,8 +31,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)openCreateAccountController{
+    CreateAccountController *createAccountController = [[CreateAccountController alloc] init];
+    [super pushViewController:createAccountController];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
-     self.navigationController.navigationBarHidden=true;
+    self.navigationController.navigationBarHidden=true;
 }
 
 -(void)viewDidAppear:(BOOL)animated{

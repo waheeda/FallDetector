@@ -25,6 +25,15 @@
     [(BaseView *)self.view  viewDidLoad];
 }
 
+-(void)setupNavBar{
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:101/255.0f green:101/255.0f blue:101/255.0f alpha:1.0f]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController.navigationBar.backItem setTitle:@""];
+}
+
+
 -(void) viewWillAppear:(BOOL)animated {
 
     [super viewWillAppear:animated];
@@ -62,7 +71,6 @@
 }
 
 -(UIBarButtonItem *) createBackButton:(id)target selector:(SEL)selector  {
-    
     UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 48.0f, 12.0f)];
     [backButton setImage:[UIImage imageNamed:@"backButton"]  forState:UIControlStateNormal];
     [backButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];

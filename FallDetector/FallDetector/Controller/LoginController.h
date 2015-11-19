@@ -11,6 +11,4 @@
 
 @interface LoginController : BaseController
 
-- (void)openRegistrationController;
-
 @end

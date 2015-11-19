@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 mohsin. All rights reserved.
 //
 
-#import "RegistrationView.h"
+#import "CreateAccountView.h"
 
-@implementation RegistrationView
+@implementation CreateAccountView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -17,10 +17,6 @@
     // Drawing code
 }
 */
-
--(void)set:(User*)user{
-    self.label.text = user.name;
-}
 
 
 -(IBAction)onSubmit:(id)sender{
