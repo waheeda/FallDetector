@@ -61,6 +61,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(UIBarButtonItem *) createBackButton:(id)target selector:(SEL)selector  {
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 48.0f, 12.0f)];
+    [backButton setImage:[UIImage imageNamed:@"backButton"]  forState:UIControlStateNormal];
+    [backButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    return  [[UIBarButtonItem alloc] initWithCustomView:backButton];
+}
 
 -(void)loadServices:(NSArray*)services{
     if(service == nil)

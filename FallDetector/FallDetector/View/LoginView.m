@@ -52,7 +52,7 @@
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    self.emailCentreConstraint.constant=-20;
+    self.emailCentreConstraint.constant=-15;
     [UIView animateWithDuration:0.3 animations:^{
         [self layoutIfNeeded];
     }];
