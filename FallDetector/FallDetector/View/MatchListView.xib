@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,27 +14,45 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooa-Id-q53">
-                    <rect key="frame" x="166" y="323" width="42" height="21"/>
+                    <rect key="frame" x="167" y="373" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-Fy-nrN">
-                    <rect key="frame" x="166" y="273" width="42" height="21"/>
+                    <rect key="frame" x="166" y="333" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Oc-C0z" customClass="KAProgressLabel">
+                    <rect key="frame" x="75" y="88" width="225" height="225"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="q5Q-bO-FYe"/>
+                        <constraint firstAttribute="width" secondItem="2aA-Oc-C0z" secondAttribute="height" multiplier="1:1" id="xOP-2b-yp2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="q5Q-bO-FYe"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstItem="u4l-Fy-nrN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="3OX-W8-eaC"/>
+                <constraint firstItem="u4l-Fy-nrN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="3OX-W8-eaC"/>
                 <constraint firstItem="Ooa-Id-q53" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EaU-RJ-HTD"/>
                 <constraint firstItem="u4l-Fy-nrN" firstAttribute="centerX" secondItem="Ooa-Id-q53" secondAttribute="centerX" id="FpT-4m-719"/>
-                <constraint firstItem="Ooa-Id-q53" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S3L-Tg-tEW"/>
+                <constraint firstItem="Ooa-Id-q53" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="50" id="S3L-Tg-tEW"/>
                 <constraint firstItem="u4l-Fy-nrN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tzk-WW-25h"/>
+                <constraint firstItem="2aA-Oc-C0z" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="XHR-8D-BRW"/>
                 <constraint firstItem="Ooa-Id-q53" firstAttribute="top" secondItem="u4l-Fy-nrN" secondAttribute="bottom" constant="46" id="dUT-Kf-6XG"/>
                 <constraint firstItem="u4l-Fy-nrN" firstAttribute="leading" secondItem="Ooa-Id-q53" secondAttribute="leading" id="eX5-VT-ol8"/>
+                <constraint firstItem="2aA-Oc-C0z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hTw-Ne-Csl"/>
+                <constraint firstItem="u4l-Fy-nrN" firstAttribute="top" secondItem="2aA-Oc-C0z" secondAttribute="bottom" constant="20" id="jL9-OH-Xjy"/>
                 <constraint firstItem="u4l-Fy-nrN" firstAttribute="centerY" secondItem="Ooa-Id-q53" secondAttribute="centerY" id="nNr-Ne-xa2"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -47,8 +67,9 @@
             <connections>
                 <outlet property="avgOrientation" destination="u4l-Fy-nrN" id="vrF-Mj-LLL"/>
                 <outlet property="fallDetectionLabel" destination="Ooa-Id-q53" id="Ktx-Td-m3K"/>
+                <outlet property="pLabel" destination="2aA-Oc-C0z" id="t5H-un-flX"/>
             </connections>
-            <point key="canvasLocation" x="339.5" y="382.5"/>
+            <point key="canvasLocation" x="383.5" y="353.5"/>
         </view>
     </objects>
 </document>

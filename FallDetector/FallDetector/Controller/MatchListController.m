@@ -76,8 +76,10 @@ orientationAxis refAXIS;
                  int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
                  int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
                  _count=0;
-                 if((max-min)>=2.5 && maxIndex>minIndex){
-                     NSLog(@"Max:%f, Min:%f",max,min); //fall occured by acceleration
+                 if((max-min)>=5 && maxIndex>minIndex){
+                     NSLog(@"Max:%f, Min:%f",max,min);
+                     [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Max-Min:%f",max-min]];
+                     //fall occured by acceleration
                      _fallDetected=true;
                  }
                  //Z pointing downwards
@@ -236,6 +238,10 @@ orientationAxis refAXIS;
 }
 
 
+
+-(void)createProgressBar{
+    
+}
 
 /*
 #pragma mark - Navigation

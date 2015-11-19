@@ -11,5 +11,7 @@
 @interface Color : NSObject
 
 +(UIColor*)backgroundColor;
-
++(UIColor*)orangeThemeColor;
++(UIColor*)greyThemeColor;
++(UIColor*)greyBackgroundColor;
 @end

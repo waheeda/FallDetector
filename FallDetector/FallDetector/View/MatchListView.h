@@ -7,10 +7,10 @@
 //
 
 #import "BaseView.h"
-
-@interface MatchListView : BaseView <UITableViewDelegate>
+#import "KAProgressLabel.h"
+@interface MatchListView : BaseView
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *fallDetectionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *avgOrientation;
-
+@property (weak,nonatomic) IBOutlet KAProgressLabel * pLabel;
 @end

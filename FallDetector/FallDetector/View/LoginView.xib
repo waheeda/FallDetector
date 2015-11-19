@@ -53,9 +53,9 @@
                         <mask key="constraints">
                             <exclude reference="6xh-kZ-NpD"/>
                             <exclude reference="kSS-gX-Xo1"/>
-                            <exclude reference="hXV-Wv-lub"/>
                             <exclude reference="1tE-xy-n4K"/>
                             <exclude reference="hEy-Y1-Kj0"/>
+                            <exclude reference="hXV-Wv-lub"/>
                         </mask>
                     </variation>
                 </view>
@@ -99,9 +99,9 @@
                         <mask key="constraints">
                             <exclude reference="Etb-xT-LvM"/>
                             <exclude reference="r5J-rv-76c"/>
+                            <exclude reference="0LS-EW-E7a"/>
                             <exclude reference="rUc-aT-vyw"/>
                             <exclude reference="tQ4-l9-r2b"/>
-                            <exclude reference="0LS-EW-E7a"/>
                         </mask>
                     </variation>
                 </view>

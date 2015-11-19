@@ -102,6 +102,8 @@
 		4EEFD8351BEB58D80032FE82 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFD8341BEB58D80032FE82 /* GlanceController.m */; };
 		4EEFD8371BEB58D80032FE82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEFD8361BEB58D80032FE82 /* Assets.xcassets */; };
 		4EEFD83B1BEB58D80032FE82 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4EEFD8171BEB58D80032FE82 /* WatchApp.app */; };
+		A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A204B4821BFDF582001F11D6 /* KAProgressLabel.m */; };
+		A204B4861BFDF582001F11D6 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A204B4841BFDF582001F11D6 /* TPPropertyAnimation.m */; };
 		A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C76E1BEB5E84007E7A93 /* MatchListView.m */; };
 		A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A277C7711BEB5EC3007E7A93 /* MatchListView.xib */; };
 		A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7751BEB5EE7007E7A93 /* MatchListController.m */; };
@@ -309,6 +311,10 @@
 		4EEFD8341BEB58D80032FE82 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		4EEFD8361BEB58D80032FE82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EEFD8381BEB58D80032FE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A204B4811BFDF582001F11D6 /* KAProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAProgressLabel.h; path = KAProgressLabel/KAProgressLabel.h; sourceTree = "<group>"; };
+		A204B4821BFDF582001F11D6 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAProgressLabel.m; path = KAProgressLabel/KAProgressLabel.m; sourceTree = "<group>"; };
+		A204B4831BFDF582001F11D6 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPPropertyAnimation.h; path = KAProgressLabel/TPPropertyAnimation.h; sourceTree = "<group>"; };
+		A204B4841BFDF582001F11D6 /* TPPropertyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPPropertyAnimation.m; path = KAProgressLabel/TPPropertyAnimation.m; sourceTree = "<group>"; };
 		A277C76D1BEB5E84007E7A93 /* MatchListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchListView.h; sourceTree = "<group>"; };
 		A277C76E1BEB5E84007E7A93 /* MatchListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchListView.m; sourceTree = "<group>"; };
 		A277C7711BEB5EC3007E7A93 /* MatchListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchListView.xib; sourceTree = "<group>"; };
@@ -571,6 +577,7 @@
 		42F60BDE18ED3DE600F2A00F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A204B4801BFDF56B001F11D6 /* KASupportLabel */,
 				42F60BEF18ED3DE600F2A00F /* Images.xcassets */,
 				42F60BDF18ED3DE600F2A00F /* FallDetector-Info.plist */,
 				42F60BE018ED3DE600F2A00F /* InfoPlist.strings */,
@@ -844,6 +851,17 @@
 				4EEFD8291BEB58D80032FE82 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A204B4801BFDF56B001F11D6 /* KASupportLabel */ = {
+			isa = PBXGroup;
+			children = (
+				A204B4811BFDF582001F11D6 /* KAProgressLabel.h */,
+				A204B4821BFDF582001F11D6 /* KAProgressLabel.m */,
+				A204B4831BFDF582001F11D6 /* TPPropertyAnimation.h */,
+				A204B4841BFDF582001F11D6 /* TPPropertyAnimation.m */,
+			);
+			name = KASupportLabel;
 			sourceTree = "<group>";
 		};
 		A277C7701BEB5EAC007E7A93 /* MatchList */ = {
@@ -1136,6 +1154,7 @@
 				42F60C1B18ED3F2500F2A00F /* BaseView.m in Sources */,
 				4EE29C2A1BECE4B2008EB1FC /* URLSessionDataTask.m in Sources */,
 				42A74C0418ED69B3002F24EE /* Color.m in Sources */,
+				A204B4861BFDF582001F11D6 /* TPPropertyAnimation.m in Sources */,
 				4EE29C021BECB1D2008EB1FC /* UIImageView+AFNetworking.m in Sources */,
 				4EE29BFF1BECB1D2008EB1FC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4E1831621B3D3D4600B8015B /* HttpRequestOperationManager.m in Sources */,
@@ -1143,6 +1162,7 @@
 				0B7209171A0AA68400162F8D /* CreateAccountController.m in Sources */,
 				4EE29BF71BECB1D2008EB1FC /* AFHTTPSessionManager.m in Sources */,
 				4EE29C041BECB1D2008EB1FC /* UIRefreshControl+AFNetworking.m in Sources */,
+				A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */,
 				42F60C3918ED669000F2A00F /* Service.m in Sources */,
 				4EE29BFA1BECB1D2008EB1FC /* AFURLRequestSerialization.m in Sources */,
 				4EE29C051BECB1D2008EB1FC /* UIWebView+AFNetworking.m in Sources */,
