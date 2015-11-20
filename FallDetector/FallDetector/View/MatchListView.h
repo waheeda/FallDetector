@@ -8,9 +8,13 @@
 
 #import "BaseView.h"
 #import "KAProgressLabel.h"
-@interface MatchListView : BaseView
+@interface MatchListView : BaseView{
+    NSTimer *_timer;
+    int _startTime;
+}
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *fallDetectionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *avgOrientation;
 @property (weak,nonatomic) IBOutlet KAProgressLabel * pLabel;
+@property (strong, nonatomic) IBOutlet UIButton *okButton;
 @end

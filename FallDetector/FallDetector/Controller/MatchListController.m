@@ -34,6 +34,8 @@ orientationAxis refAXIS;
         
     }
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
      [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"dummy text"]];
     _createSetupOrientation = YES;
     _totalAngles=0;
@@ -76,7 +78,7 @@ orientationAxis refAXIS;
                  int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
                  int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
                  _count=0;
-                 if((max-min)>=5 && maxIndex>minIndex){
+                 if((max-min)>=7 && maxIndex>minIndex){
                      NSLog(@"Max:%f, Min:%f",max,min);
                      [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Max-Min:%f",max-min]];
                      //fall occured by acceleration
@@ -187,6 +189,9 @@ orientationAxis refAXIS;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 -(void)createInitialSetup:(CMAccelerometerData *)accelerometerData{
     double absouluteX = ABS( accelerometerData.acceleration.x);
