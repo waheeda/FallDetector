@@ -11,4 +11,5 @@
 @interface IntroController : BaseController
 -(void)showLoginController;
 -(void)openCreateAccountController;
+-(void)showMonitoringController;
 @end

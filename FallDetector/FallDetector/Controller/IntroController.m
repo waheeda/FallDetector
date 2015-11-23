@@ -9,6 +9,7 @@
 #import "IntroController.h"
 #import "LoginController.h"
 #import "CreateAccountController.h"
+#import "MonitoringController.h"
 @interface IntroController ()
 
 @end
@@ -24,6 +25,12 @@
 -(void)showLoginController{
     LoginController *loginController = [[LoginController alloc] init];
     [self.navigationController pushViewController:loginController animated:YES];
+}
+
+-(void)showMonitoringController{
+    MonitoringController *monitoringController = [[MonitoringController alloc] init];
+    [self.navigationController pushViewController:monitoringController animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

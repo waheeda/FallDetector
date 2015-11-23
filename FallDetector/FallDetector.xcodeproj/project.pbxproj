@@ -113,6 +113,9 @@
 		A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC8E1BFB661D0092FE63 /* InfoView.m */; };
 		A286CC931BFB663A0092FE63 /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC921BFB663A0092FE63 /* InfoController.m */; };
 		A286CC951BFB66490092FE63 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A286CC941BFB66490092FE63 /* InfoView.xib */; };
+		A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68401C02E65A0070F695 /* MonitoringView.m */; };
+		A29B68431C02E6930070F695 /* MonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29B68421C02E6930070F695 /* MonitoringView.xib */; };
+		A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68461C02E6BE0070F695 /* MonitoringController.m */; };
 		A2A523FA1BFC459300EB9C49 /* IntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523F91BFC459300EB9C49 /* IntroView.m */; };
 		A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523FC1BFC45A900EB9C49 /* IntroController.m */; };
 		A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A523FE1BFC45C800EB9C49 /* IntroView.xib */; };
@@ -331,6 +334,11 @@
 		A286CC911BFB663A0092FE63 /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
 		A286CC921BFB663A0092FE63 /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		A286CC941BFB66490092FE63 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		A29B683F1C02E65A0070F695 /* MonitoringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringView.h; sourceTree = "<group>"; };
+		A29B68401C02E65A0070F695 /* MonitoringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringView.m; sourceTree = "<group>"; };
+		A29B68421C02E6930070F695 /* MonitoringView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringView.xib; sourceTree = "<group>"; };
+		A29B68451C02E6BE0070F695 /* MonitoringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringController.h; sourceTree = "<group>"; };
+		A29B68461C02E6BE0070F695 /* MonitoringController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringController.m; sourceTree = "<group>"; };
 		A2A523F81BFC459300EB9C49 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
 		A2A523F91BFC459300EB9C49 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
 		A2A523FB1BFC45A900EB9C49 /* IntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroController.h; sourceTree = "<group>"; };
@@ -617,6 +625,7 @@
 		42F60C1018ED3ED100F2A00F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A29B68441C02E6A00070F695 /* Monitoring */,
 				A2A523F71BFC457200EB9C49 /* Intro */,
 				A286CC901BFB66260092FE63 /* Info */,
 				A277C7731BEB5ED2007E7A93 /* MatchList */,
@@ -643,6 +652,7 @@
 		42F60C1218ED3ED100F2A00F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A29B683E1C02E62E0070F695 /* Monitoring */,
 				A2A523F61BFC446200EB9C49 /* Intro */,
 				A286CC8C1BFB65550092FE63 /* Info */,
 				A286CC8B1BFAEE590092FE63 /* Pool */,
@@ -918,6 +928,25 @@
 			name = Info;
 			sourceTree = "<group>";
 		};
+		A29B683E1C02E62E0070F695 /* Monitoring */ = {
+			isa = PBXGroup;
+			children = (
+				A29B683F1C02E65A0070F695 /* MonitoringView.h */,
+				A29B68401C02E65A0070F695 /* MonitoringView.m */,
+				A29B68421C02E6930070F695 /* MonitoringView.xib */,
+			);
+			name = Monitoring;
+			sourceTree = "<group>";
+		};
+		A29B68441C02E6A00070F695 /* Monitoring */ = {
+			isa = PBXGroup;
+			children = (
+				A29B68451C02E6BE0070F695 /* MonitoringController.h */,
+				A29B68461C02E6BE0070F695 /* MonitoringController.m */,
+			);
+			name = Monitoring;
+			sourceTree = "<group>";
+		};
 		A2A523F61BFC446200EB9C49 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -1068,6 +1097,7 @@
 				0B72091A1A0AA76200162F8D /* CreateAccountView.xib in Resources */,
 				42F60BE218ED3DE600F2A00F /* InfoPlist.strings in Resources */,
 				A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */,
+				A29B68431C02E6930070F695 /* MonitoringView.xib in Resources */,
 				A286CC951BFB66490092FE63 /* InfoView.xib in Resources */,
 				42F60C2518ED40FE00F2A00F /* LoginView.xib in Resources */,
 				A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */,
@@ -1137,6 +1167,7 @@
 				A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */,
 				42A74C0C18ED86CB002F24EE /* BaseService.m in Sources */,
 				0B72092D1A0AB46100162F8D /* Label.m in Sources */,
+				A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */,
 				42F60C7918ED688700F2A00F /* ParserUtils.m in Sources */,
 				0B7209211A0AAACD00162F8D /* CheckInService.m in Sources */,
 				0B72093A1A0AB9AD00162F8D /* Alert.m in Sources */,
@@ -1150,6 +1181,7 @@
 				A286CC931BFB663A0092FE63 /* InfoController.m in Sources */,
 				A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */,
 				4EE29C001BECB1D2008EB1FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */,
 				0B72092C1A0AB46100162F8D /* Button.m in Sources */,
 				42F60C1B18ED3F2500F2A00F /* BaseView.m in Sources */,
 				4EE29C2A1BECE4B2008EB1FC /* URLSessionDataTask.m in Sources */,
