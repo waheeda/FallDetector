@@ -17,8 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden=false;
-    [self setupImageNavBAr];
-    
+    //[self setupImageNavBAr];
+    [self setupNavBar];
+    self.title = @"Montoring";
     // Do any additional setup after loading the view.
 }
 
