@@ -30,22 +30,12 @@
     BOOL returnValue = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                 didFinishLaunchingWithOptions:launchOptions];
    
-   
-    
-//    NSError* configureError;
-//    [[GGLContext sharedInstance] configureWithError: &configureError];
-//    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-    
- //   [GIDSignIn sharedInstance].uiDelegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];
     self.window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];
-    
-    
-    //[[GIDSignIn sharedInstance] setScopes:[NSArray arrayWithObject:@"https://www.googleapis.com/auth/plus.login"]];
-    // [GIDSignIn sharedInstance].delegate = self;
+
     
     return returnValue;
 }

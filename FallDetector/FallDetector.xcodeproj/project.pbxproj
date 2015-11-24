@@ -104,6 +104,7 @@
 		4EEFD83B1BEB58D80032FE82 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4EEFD8171BEB58D80032FE82 /* WatchApp.app */; };
 		A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A204B4821BFDF582001F11D6 /* KAProgressLabel.m */; };
 		A204B4861BFDF582001F11D6 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A204B4841BFDF582001F11D6 /* TPPropertyAnimation.m */; };
+		A2241AE81C048E39007DFC70 /* GoogleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2241AE71C048E39007DFC70 /* GoogleManager.m */; };
 		A24E85431C0325D100FD30DC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85421C0325D100FD30DC /* FBSDKCoreKit.framework */; };
 		A24E85451C0325DB00FD30DC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85441C0325DB00FD30DC /* FBSDKLoginKit.framework */; };
 		A24E85471C0325E200FD30DC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */; };
@@ -330,6 +331,8 @@
 		A204B4821BFDF582001F11D6 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAProgressLabel.m; path = KAProgressLabel/KAProgressLabel.m; sourceTree = "<group>"; };
 		A204B4831BFDF582001F11D6 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPPropertyAnimation.h; path = KAProgressLabel/TPPropertyAnimation.h; sourceTree = "<group>"; };
 		A204B4841BFDF582001F11D6 /* TPPropertyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPPropertyAnimation.m; path = KAProgressLabel/TPPropertyAnimation.m; sourceTree = "<group>"; };
+		A2241AE61C048E39007DFC70 /* GoogleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleManager.h; sourceTree = "<group>"; };
+		A2241AE71C048E39007DFC70 /* GoogleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleManager.m; sourceTree = "<group>"; };
 		A24E85421C0325D100FD30DC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A24E85441C0325DB00FD30DC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Facebook/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 			children = (
 				A24E85481C0337D500FD30DC /* FacebookManager.h */,
 				A24E85491C0337D500FD30DC /* FacebookManager.m */,
+				A2241AE61C048E39007DFC70 /* GoogleManager.h */,
+				A2241AE71C048E39007DFC70 /* GoogleManager.m */,
 				42035D7918EE7C2B00237D90 /* CoreDataManager.h */,
 				42035D7A18EE7C2B00237D90 /* CoreDataManager.m */,
 				42035D7B18EE7C2B00237D90 /* HttpRequestManager.h */,
@@ -1256,6 +1261,7 @@
 				4E1831621B3D3D4600B8015B /* HttpRequestOperationManager.m in Sources */,
 				42A74C1318ED8981002F24EE /* User.m in Sources */,
 				0B7209171A0AA68400162F8D /* CreateAccountController.m in Sources */,
+				A2241AE81C048E39007DFC70 /* GoogleManager.m in Sources */,
 				4EE29BF71BECB1D2008EB1FC /* AFHTTPSessionManager.m in Sources */,
 				4EE29C041BECB1D2008EB1FC /* UIRefreshControl+AFNetworking.m in Sources */,
 				A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */,
@@ -1446,6 +1452,7 @@
 					"SHOW_DEALLOC_LOG=1",
 				);
 				INFOPLIST_FILE = "FallDetector/FallDetector-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.FallDetector;
 				PRODUCT_NAME = FallDetector;
 				WRAPPER_EXTENSION = app;
@@ -1467,6 +1474,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FallDetector/FallDetector-Prefix.pch";
 				INFOPLIST_FILE = "FallDetector/FallDetector-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.FallDetector;
 				PRODUCT_NAME = FallDetector;
 				WRAPPER_EXTENSION = app;

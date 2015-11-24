@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
 #import "FacebookManager.h"
-@interface LoginController : BaseController
+#import "GoogleManager.h"
+@interface LoginController : BaseController <GoogleManagerDelegate>
 -(void)loginFromFacebook;
+-(void)loginFromGoogle;
 @end

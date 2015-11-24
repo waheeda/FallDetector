@@ -16,6 +16,7 @@
 #import "UserDefaults.h"
 #import "MonitoringController.h"
 
+
 @interface LoginController ()
 
 @property (nonatomic, weak) LoginController *weakSelf;
@@ -28,6 +29,7 @@
     self.navigationController.navigationBarHidden=false;
     [self setupNavBar];
     self.title=@"Sign In";
+    [[GoogleManager instance] setDelegate:self];
 }
 
 //changes
@@ -42,6 +44,25 @@
             [self onServiceResponseFailure:error];
         }
     }];
+}
+
+-(void)loginFromGoogle{
+    [self showLoaderOnUIView:self.view];
+    [GoogleManager signIn];
+}
+
+//Delegate Methods
+-(void)onGoogleSignIn{
+    [self hideLoader];
+    [self openMonitoringController];
+}
+
+-(void)presentGoogleViewController:(UIViewController*) controller{
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+-(void)dismissGoogleViewController:(UIViewController*) controller{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)openMonitoringController{

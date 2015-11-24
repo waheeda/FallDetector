@@ -21,7 +21,7 @@
 
 
 -(void)awakeFromNib{
-     [GIDSignIn sharedInstance].uiDelegate = self;
+    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -33,27 +33,11 @@
     return self;
 }
 
-- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
-   // [myActivityIndicator stopAnimating];
-}
-
-// Present a view that prompts the user to sign in with Google
-- (void)signIn:(GIDSignIn *)signIn
-presentViewController:(UIViewController *)viewController {
-    //[self presentViewController:viewController animated:YES completion:nil];
-}
-
-// Dismiss the "Sign in with Google" view
-- (void)signIn:(GIDSignIn *)signIn
-dismissViewController:(UIViewController *)viewController {
-    //[self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)onFBSignClick:(id)sender {
     [self.controller loginFromFacebook];
 }
 - (IBAction)onGoogleSignInClick:(id)sender {
-    [[GIDSignIn sharedInstance] signIn];
+    [self.controller loginFromGoogle];
 }
 
 -(void)setData:(NSArray*)data{

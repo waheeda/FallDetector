@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BaseView.h"
 #import "GoogleSignIn/GoogleSignIn.h"
+#import "GoogleManager.h"
 
-@interface LoginView : BaseView <UITextFieldDelegate,GIDSignInUIDelegate>
+@interface LoginView : BaseView <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *logoYConstraint;
 - (void)setData:(NSArray*)data;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *yCOnstraint;
