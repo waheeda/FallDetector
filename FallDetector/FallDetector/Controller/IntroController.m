@@ -28,8 +28,8 @@
 }
 
 -(void)showMonitoringController{
-    MonitoringController *monitoringController = [[MonitoringController alloc] init];
-    [self.navigationController pushViewController:monitoringController animated:YES];
+    MonitoringController *monitoringController = [MonitoringController new];
+    [super setRootViewController:monitoringController];
 
 }
 
@@ -46,6 +46,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden=true;
 }
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
    

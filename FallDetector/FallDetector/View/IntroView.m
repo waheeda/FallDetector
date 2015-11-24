@@ -27,8 +27,8 @@
 }
 
 - (IBAction)signInButtonClick:(id)sender {
-    //[(IntroController*)self.controller showLoginController];
-    [(IntroController*)self.controller showMonitoringController];
+    [(IntroController*)self.controller showLoginController];
+    //[(IntroController*)self.controller showMonitoringController];
 }
 
 -(void)setFallCeptionLabelAttributes{

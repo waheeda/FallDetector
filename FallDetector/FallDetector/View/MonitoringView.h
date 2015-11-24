@@ -9,5 +9,6 @@
 #import "BaseView.h"
 
 @interface MonitoringView : BaseView
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

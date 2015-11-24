@@ -7,7 +7,7 @@
 //
 
 #import "MonitoringView.h"
-
+#import "MonitoringController.h"
 @implementation MonitoringView
 
 /*
@@ -17,5 +17,9 @@
     // Drawing code
 }
 */
+- (IBAction)startMonitoringClick:(id)sender {
+    [(MonitoringController*)self.controller startMonitoring];
+}
+
 
 @end

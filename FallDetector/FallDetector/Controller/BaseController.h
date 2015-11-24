@@ -22,5 +22,8 @@
 -(void)popToViewController:(NSString *)viewController;
 -(void)pushViewController:(UIViewController *)controller;
 -(void)popViewController;
+-(void)showLoaderOnUIView:(UIView*) view;
+-(void) setRootViewController:(UIViewController *)controller;
 -(UIBarButtonItem *) createBackButton:(id)target selector:(SEL)selector ;
+-(UIBarButtonItem*)createLeftMenuButton;
 @end

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseView.h"
+#import "GoogleSignIn/GoogleSignIn.h"
 
-@interface LoginView : BaseView <UITextFieldDelegate>
+@interface LoginView : BaseView <UITextFieldDelegate,GIDSignInUIDelegate>
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *logoYConstraint;
 - (void)setData:(NSArray*)data;
-- (IBAction)openRegistrationController:(id)sender;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *yCOnstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *emailCentreConstraint;
+@property (strong, nonatomic) IBOutlet UIButton *googleSignIn;
+
 @end

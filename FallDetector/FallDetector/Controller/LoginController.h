@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
-
+#import "FacebookManager.h"
 @interface LoginController : BaseController
-
+-(void)loginFromFacebook;
 @end

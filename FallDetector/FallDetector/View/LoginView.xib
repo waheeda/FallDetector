@@ -29,6 +29,9 @@
                             <state key="normal" title="Sign in with Facebook">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="onFBSignClick:" destination="wLB-Ri-bWN" eventType="touchUpInside" id="uUm-Ug-bYw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
@@ -75,6 +78,9 @@
                             <state key="normal" title="Sign in with Google+">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="onGoogleSignInClick:" destination="wLB-Ri-bWN" eventType="touchUpInside" id="9v9-np-kgT"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
@@ -229,6 +235,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="emailCentreConstraint" destination="VMg-VR-Lil" id="fX1-PR-DOB"/>
+                <outlet property="googleSignIn" destination="dio-SO-kij" id="Xji-nI-Q2m"/>
             </connections>
             <point key="canvasLocation" x="119" y="259"/>
         </view>

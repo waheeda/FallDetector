@@ -52,6 +52,30 @@
     
 }
 
+-(void) setRootViewController:(UIViewController *)controller {
+    
+    [self.navigationController setViewControllers:@[controller] animated:YES];
+    
+}
+
+-(void)showLoaderOnUIView:(UIView*) view{
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+}
+
+-(UIBarButtonItem*)createLeftMenuButton {
+    UIButton *btn =  [[UIButton alloc] initWithFrame:CGRectMake(0.0,0.0, 23.0, 23.0)];
+    [btn setImage:[UIImage imageNamed:@"settingIcon.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onLeftMenuBtnTap) forControlEvents:
+     UIControlEventTouchUpInside];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+-(void)onLeftMenuBtnTap{
+    // [[[AppDelegate getInstance] getMenuContainer] toggleLeftSideMenuCompletion:^{
+    //}];
+}
+
 -(void) viewDidLayoutSubviews {
 
     [super viewDidLayoutSubviews];
