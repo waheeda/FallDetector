@@ -30,7 +30,7 @@
     self.title=@"Sign In";
 }
 
-
+//changes
 -(void)loginFromFacebook{
     [self showLoaderOnUIView:self.view];
     [FacebookManager loginWithViewController:self andCallback:^(id result, NSError *error) {
