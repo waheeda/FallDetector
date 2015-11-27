@@ -7,9 +7,11 @@
 //
 
 #import "InfoController.h"
+#import "IntroController.h"
+#import "MonitoringController.h"
 
+#import "MenuController.h"
 @interface InfoController ()
-
 @end
 
 @implementation InfoController
@@ -33,6 +35,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden=true;
+}
+
+-(void)openIntroController{
+    IntroController *controller =[[IntroController alloc] init];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 /*
 #pragma mark - Navigation

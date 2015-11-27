@@ -237,7 +237,7 @@
                 <outlet property="emailCentreConstraint" destination="VMg-VR-Lil" id="fX1-PR-DOB"/>
                 <outlet property="googleSignIn" destination="dio-SO-kij" id="YOn-zq-jF9"/>
             </connections>
-            <point key="canvasLocation" x="119" y="259"/>
+            <point key="canvasLocation" x="128" y="199"/>
         </view>
     </objects>
     <resources>

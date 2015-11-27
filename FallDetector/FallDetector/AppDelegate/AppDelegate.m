@@ -11,6 +11,8 @@
 #import "CreateAccountController.h"
 #import "MatchListController.h"
 #import "InfoController.h"
+#import "MonitoringController.h"
+#import "MenuController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @implementation AppDelegate
 
@@ -18,32 +20,54 @@
 {
     NSString *kClientID = @"936951329577-6r2kvgjhsmf6tbvmu7e36ah59uv4ccuc.apps.googleusercontent.com";
     [GIDSignIn sharedInstance].clientID = kClientID;
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    /*MatchListController *c = [[MatchListController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];*/
-    /*LoginController *c = [[LoginController alloc] init];
-     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];*/
-    InfoController *c = [[InfoController alloc] init];
-    
+    self.navigationController = [[UINavigationController alloc] init];
+    [self.window setRootViewController:self.navigationController];
+    [self showInfoController];
+    [self.window setRootViewController:self.navigationController];
+    [self.window makeKeyAndVisible];
     BOOL returnValue = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                 didFinishLaunchingWithOptions:launchOptions];
-   
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:c];
-    self.window.rootViewController = navigationController;
-    
-    [self.window makeKeyAndVisible];
-
-    
     return returnValue;
 }
 
 +(AppDelegate*)getInstance{
     return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
-							
+
+-(void)showInfoController{
+    if([self.navigationController.topViewController isKindOfClass:[InfoController class]])
+        return;
+    InfoController* infoController = [[InfoController alloc] init];
+    [self.navigationController setViewControllers:@[infoController] animated:YES];
+}
+
+
+-(void)showMonitoringController{
+    MonitoringController *monitoringController = [[MonitoringController alloc] init];
+    MenuController *menuController = [[MenuController alloc] init];
+    
+    self.homeNavigationController = [[UINavigationController alloc] initWithRootViewController:monitoringController];
+    [self setCenterController:self.homeNavigationController leftMenuViewController:menuController rightViewController:nil];
+}
+
+
+
+-(void)setCenterController:(id)centerViewController
+    leftMenuViewController:(id)leftMenuViewController
+       rightViewController:(id)rightViewController{
+    _sideMenuContainer = [MFSideMenuContainerViewController
+                          containerWithCenterViewController:centerViewController
+                          leftMenuViewController:leftMenuViewController
+                          rightMenuViewController:rightViewController];
+    
+    [self.navigationController setViewControllers:@[_sideMenuContainer]];
+}
+
+-(MFSideMenuContainerViewController*)getMenuContainer{
+    return _sideMenuContainer;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -86,24 +110,6 @@
         return [[GIDSignIn sharedInstance] handleURL:url
                                    sourceApplication:sourceApplication
                                           annotation:annotation];
-}
-
-- (void)signIn:(GIDSignIn *)signIn
-didDisconnectWithUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    // Perform any operations when the user disconnects from app here.
-    // ...
-}
-
-- (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    // Perform any operations on signed in user here.
-    NSString *userId = user.userID;                  // For client-side use only!
-    NSString *idToken = user.authentication.idToken; // Safe to send to the server
-    NSString *name = user.profile.name;
-    NSString *email = user.profile.email;
-    // ...
 }
 
 @end

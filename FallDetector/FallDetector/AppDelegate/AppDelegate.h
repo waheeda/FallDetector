@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
-@interface AppDelegate : UIResponder <UIApplicationDelegate,GIDSignInDelegate, GIDSignInUIDelegate>{
+#import "MFSideMenuContainerViewController.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    
+    MFSideMenuContainerViewController *_sideMenuContainer;
 }
-
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) UINavigationController *homeNavigationController;
 @property (strong, nonatomic) UIWindow *window;
 +(AppDelegate*)getInstance;
+-(void)showMonitoringController;
+-(MFSideMenuContainerViewController*)getMenuContainer;
 @end

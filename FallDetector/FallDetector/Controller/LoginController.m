@@ -15,7 +15,9 @@
 #import "CreateAccountController.h"
 #import "UserDefaults.h"
 #import "MonitoringController.h"
-
+#import "InfoController.h"
+#import "MenuController.h"
+#import "AppDelegate.h"
 
 @interface LoginController ()
 
@@ -38,7 +40,8 @@
     [FacebookManager loginWithViewController:self andCallback:^(id result, NSError *error) {
         [self hideLoader];
         if(!error){
-            [self openMonitoringController];
+            //[self openMonitoringController];
+            [self showMonitoringController];
         }
         else{
             [self onServiceResponseFailure:error];
@@ -54,7 +57,11 @@
 //Delegate Methods
 -(void)onGoogleSignIn{
     [self hideLoader];
-    [self openMonitoringController];
+    [self showMonitoringController];
+}
+
+-(void)showMonitoringController{
+    [[AppDelegate getInstance] showMonitoringController];
 }
 
 -(void)presentGoogleViewController:(UIViewController*) controller{
@@ -63,11 +70,6 @@
 
 -(void)dismissGoogleViewController:(UIViewController*) controller{
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)openMonitoringController{
-    MonitoringController *controller = [[MonitoringController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "LoginView.h"
 #import "LoginController.h"
 #import "MatchListController.h"
+#import "EmergencyContactsInitialController.h"
 
 @interface LoginView()
 
@@ -57,7 +58,8 @@
 }
 
 - (IBAction)onSignInClick:(id)sender {
-    MatchListController *controller = [[MatchListController alloc] init];
+  //  MatchListController *controller = [[MatchListController alloc] init];
+    EmergencyContactsInitialController *controller = [[EmergencyContactsInitialController alloc] init];
     [[self.controller navigationController] pushViewController:controller animated:YES];
 }
 
@@ -68,9 +70,5 @@
         [self layoutIfNeeded];
     }];
 }
-
-
-
-
 
 @end

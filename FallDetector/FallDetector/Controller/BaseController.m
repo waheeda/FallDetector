@@ -12,6 +12,8 @@
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
 #import "Alert.h"
+#import "MonitoringController.h"
+#import "LoginController.h"
 
 @interface BaseController ()
 
@@ -63,8 +65,8 @@
 }
 
 -(UIBarButtonItem*)createLeftMenuButton {
-    UIButton *btn =  [[UIButton alloc] initWithFrame:CGRectMake(0.0,0.0, 23.0, 23.0)];
-    [btn setImage:[UIImage imageNamed:@"settingIcon.png"] forState:UIControlStateNormal];
+    UIButton *btn =  [[UIButton alloc] initWithFrame:CGRectMake(0.0,0.0, 20.0, 15.0)];
+    [btn setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(onLeftMenuBtnTap) forControlEvents:
      UIControlEventTouchUpInside];
     
@@ -72,8 +74,8 @@
 }
 
 -(void)onLeftMenuBtnTap{
-    // [[[AppDelegate getInstance] getMenuContainer] toggleLeftSideMenuCompletion:^{
-    //}];
+    [[[AppDelegate getInstance] getMenuContainer] toggleLeftSideMenuCompletion:^{
+    }];
 }
 
 -(void) viewDidLayoutSubviews {

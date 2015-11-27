@@ -22,9 +22,6 @@
     //[self setupImageNavBAr];
     [self setupImageNavBAr];
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
-    //self.title = @"Montoring";
-    // Do any additional setup after loading the view.
-  //  [self fetchFBData];
 }
 
 -(void)fetchFBData{

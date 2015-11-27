@@ -110,15 +110,26 @@
 		A24E85471C0325E200FD30DC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */; };
 		A24E854A1C0337D500FD30DC /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E85491C0337D500FD30DC /* FacebookManager.m */; };
 		A24E854D1C033C4000FD30DC /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E854C1C033C4000FD30DC /* UserDefaults.m */; };
+		A26061D71C0725A000597B4B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26061D61C0725A000597B4B /* AddressBookUI.framework */; };
+		A26061E01C0729FD00597B4B /* MultiContactSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061DF1C0729FD00597B4B /* MultiContactSelector.m */; };
+		A26061E31C072DA800597B4B /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E21C072DA800597B4B /* SearchBar.m */; };
+		A26061E61C072F9000597B4B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E51C072F9000597B4B /* Utils.m */; };
 		A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C76E1BEB5E84007E7A93 /* MatchListView.m */; };
 		A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A277C7711BEB5EC3007E7A93 /* MatchListView.xib */; };
 		A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7751BEB5EE7007E7A93 /* MatchListController.m */; };
 		A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7791BEB60D3007E7A93 /* MatchService.m */; };
 		A277C77E1BEB61AD007E7A93 /* MatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C77D1BEB61AD007E7A93 /* MatchResponse.m */; };
 		A277C7811BEB61E7007E7A93 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7801BEB61E7007E7A93 /* Match.m */; };
+		A27D4D081C06D06D00EB3D18 /* EmergencyContactsInitialController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27D4D071C06D06D00EB3D18 /* EmergencyContactsInitialController.m */; };
+		A27D4D0C1C06D0A500EB3D18 /* EmergencyContactsInitialView.m in Sources */ = {isa = PBXBuildFile; fileRef = A27D4D0B1C06D0A500EB3D18 /* EmergencyContactsInitialView.m */; };
+		A27D4D0E1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27D4D0D1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib */; };
 		A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC8E1BFB661D0092FE63 /* InfoView.m */; };
 		A286CC931BFB663A0092FE63 /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A286CC921BFB663A0092FE63 /* InfoController.m */; };
 		A286CC951BFB66490092FE63 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A286CC941BFB66490092FE63 /* InfoView.xib */; };
+		A291B5811C086D1E00286114 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B5801C086D1E00286114 /* ContactsManager.m */; };
+		A291B5851C086E9500286114 /* ContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B5841C086E9500286114 /* ContactView.m */; };
+		A291B5871C086EAB00286114 /* ContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A291B5861C086EAB00286114 /* ContactView.xib */; };
+		A291B58B1C08709500286114 /* ContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B58A1C08709500286114 /* ContactController.m */; };
 		A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68401C02E65A0070F695 /* MonitoringView.m */; };
 		A29B68431C02E6930070F695 /* MonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29B68421C02E6930070F695 /* MonitoringView.xib */; };
 		A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68461C02E6BE0070F695 /* MonitoringController.m */; };
@@ -132,6 +143,14 @@
 		A2A523FA1BFC459300EB9C49 /* IntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523F91BFC459300EB9C49 /* IntroView.m */; };
 		A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A523FC1BFC45A900EB9C49 /* IntroController.m */; };
 		A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A523FE1BFC45C800EB9C49 /* IntroView.xib */; };
+		A2A6B9AB1C0581A5004CD460 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9A61C0581A5004CD460 /* MFSideMenuContainerViewController.m */; };
+		A2A6B9AC1C0581A5004CD460 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9A81C0581A5004CD460 /* MFSideMenuShadow.m */; };
+		A2A6B9AD1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9AA1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m */; };
+		A2A6B9B11C0586A4004CD460 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9B01C0586A4004CD460 /* MenuController.m */; };
+		A2A6B9B51C0586CE004CD460 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9B41C0586CE004CD460 /* MenuView.m */; };
+		A2A6B9B71C0586F3004CD460 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B9B61C0586F3004CD460 /* MenuView.xib */; };
+		A2A6B9BB1C0589BA004CD460 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9BA1C0589BA004CD460 /* MenuCell.m */; };
+		A2A6B9BD1C0589CC004CD460 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B9BC1C0589CC004CD460 /* MenuCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -340,6 +359,13 @@
 		A24E85491C0337D500FD30DC /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
 		A24E854B1C033C4000FD30DC /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		A24E854C1C033C4000FD30DC /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		A26061D61C0725A000597B4B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		A26061DE1C0729FD00597B4B /* MultiContactSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiContactSelector.h; sourceTree = "<group>"; };
+		A26061DF1C0729FD00597B4B /* MultiContactSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiContactSelector.m; sourceTree = "<group>"; };
+		A26061E11C072DA800597B4B /* SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
+		A26061E21C072DA800597B4B /* SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
+		A26061E41C072F9000597B4B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		A26061E51C072F9000597B4B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		A277C76D1BEB5E84007E7A93 /* MatchListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchListView.h; sourceTree = "<group>"; };
 		A277C76E1BEB5E84007E7A93 /* MatchListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchListView.m; sourceTree = "<group>"; };
 		A277C7711BEB5EC3007E7A93 /* MatchListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchListView.xib; sourceTree = "<group>"; };
@@ -351,11 +377,23 @@
 		A277C77D1BEB61AD007E7A93 /* MatchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResponse.m; sourceTree = "<group>"; };
 		A277C77F1BEB61E7007E7A93 /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		A277C7801BEB61E7007E7A93 /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
+		A27D4D061C06D06D00EB3D18 /* EmergencyContactsInitialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactsInitialController.h; sourceTree = "<group>"; };
+		A27D4D071C06D06D00EB3D18 /* EmergencyContactsInitialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactsInitialController.m; sourceTree = "<group>"; };
+		A27D4D0A1C06D0A500EB3D18 /* EmergencyContactsInitialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactsInitialView.h; sourceTree = "<group>"; };
+		A27D4D0B1C06D0A500EB3D18 /* EmergencyContactsInitialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactsInitialView.m; sourceTree = "<group>"; };
+		A27D4D0D1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyContactsInitialView.xib; sourceTree = "<group>"; };
 		A286CC8D1BFB661D0092FE63 /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
 		A286CC8E1BFB661D0092FE63 /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
 		A286CC911BFB663A0092FE63 /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
 		A286CC921BFB663A0092FE63 /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		A286CC941BFB66490092FE63 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		A291B57F1C086D1E00286114 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
+		A291B5801C086D1E00286114 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		A291B5831C086E9500286114 /* ContactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactView.h; sourceTree = "<group>"; };
+		A291B5841C086E9500286114 /* ContactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactView.m; sourceTree = "<group>"; };
+		A291B5861C086EAB00286114 /* ContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactView.xib; sourceTree = "<group>"; };
+		A291B5891C08709500286114 /* ContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactController.h; sourceTree = "<group>"; };
+		A291B58A1C08709500286114 /* ContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactController.m; sourceTree = "<group>"; };
 		A29B683F1C02E65A0070F695 /* MonitoringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringView.h; sourceTree = "<group>"; };
 		A29B68401C02E65A0070F695 /* MonitoringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringView.m; sourceTree = "<group>"; };
 		A29B68421C02E6930070F695 /* MonitoringView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringView.xib; sourceTree = "<group>"; };
@@ -371,6 +409,21 @@
 		A2A523FB1BFC45A900EB9C49 /* IntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroController.h; sourceTree = "<group>"; };
 		A2A523FC1BFC45A900EB9C49 /* IntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroController.m; sourceTree = "<group>"; };
 		A2A523FE1BFC45C800EB9C49 /* IntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroView.xib; sourceTree = "<group>"; };
+		A2A6B9A41C0581A5004CD460 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
+		A2A6B9A51C0581A5004CD460 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
+		A2A6B9A61C0581A5004CD460 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
+		A2A6B9A71C0581A5004CD460 /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuShadow.h; path = MFSideMenu/MFSideMenuShadow.h; sourceTree = "<group>"; };
+		A2A6B9A81C0581A5004CD460 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
+		A2A6B9A91C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
+		A2A6B9AA1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		A2A6B9AF1C0586A4004CD460 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		A2A6B9B01C0586A4004CD460 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		A2A6B9B31C0586CE004CD460 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		A2A6B9B41C0586CE004CD460 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		A2A6B9B61C0586F3004CD460 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		A2A6B9B91C0589BA004CD460 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		A2A6B9BA1C0589BA004CD460 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		A2A6B9BC1C0589CC004CD460 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,9 +431,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26061D71C0725A000597B4B /* AddressBookUI.framework in Frameworks */,
+				A29F2D601C0431B600ABB4C6 /* AddressBook.framework in Frameworks */,
 				A29F2D631C0431D300ABB4C6 /* SystemConfiguration.framework in Frameworks */,
 				A29F2D621C0431C300ABB4C6 /* StoreKit.framework in Frameworks */,
-				A29F2D601C0431B600ABB4C6 /* AddressBook.framework in Frameworks */,
 				A24E85471C0325E200FD30DC /* FBSDKShareKit.framework in Frameworks */,
 				42F60C7E18ED68FE00F2A00F /* libz.dylib in Frameworks */,
 				A24E85431C0325D100FD30DC /* FBSDKCoreKit.framework in Frameworks */,
@@ -491,6 +545,8 @@
 		0B7209251A0AB46100162F8D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				A26061E11C072DA800597B4B /* SearchBar.h */,
+				A26061E21C072DA800597B4B /* SearchBar.m */,
 				4E2CAD4C1B1C24EC007143D8 /* TableViewCell.h */,
 				4E2CAD4D1B1C24EC007143D8 /* TableViewCell.m */,
 				0B7209261A0AB46100162F8D /* Button.h */,
@@ -524,6 +580,8 @@
 		42035D7818EE7C2B00237D90 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A291B57F1C086D1E00286114 /* ContactsManager.h */,
+				A291B5801C086D1E00286114 /* ContactsManager.m */,
 				A24E85481C0337D500FD30DC /* FacebookManager.h */,
 				A24E85491C0337D500FD30DC /* FacebookManager.m */,
 				A2241AE61C048E39007DFC70 /* GoogleManager.h */,
@@ -589,6 +647,7 @@
 		42F60BD618ED3DE600F2A00F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A26061D61C0725A000597B4B /* AddressBookUI.framework */,
 				A29F2D611C0431C300ABB4C6 /* StoreKit.framework */,
 				A29F2D5F1C0431B600ABB4C6 /* AddressBook.framework */,
 				42F60C7F18ED690D00F2A00F /* SystemConfiguration.framework */,
@@ -612,6 +671,7 @@
 				42A74C1018ED8981002F24EE /* Entity */,
 				42F60C7318ED688700F2A00F /* Utils */,
 				42F60C7018ED66F200F2A00F /* Constants */,
+				A2A6B9B81C05898B004CD460 /* Controls */,
 				42F60C1018ED3ED100F2A00F /* Controller */,
 				42035D7818EE7C2B00237D90 /* Manager */,
 				42F60C1118ED3ED100F2A00F /* Service */,
@@ -666,6 +726,9 @@
 		42F60C1018ED3ED100F2A00F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A291B5881C08708200286114 /* Contact */,
+				A27D4D051C06D01E00EB3D18 /* EmergencyContactsInitial */,
+				A2A6B9AE1C05865E004CD460 /* Menu */,
 				A29B68441C02E6A00070F695 /* Monitoring */,
 				A2A523F71BFC457200EB9C49 /* Intro */,
 				A286CC901BFB66260092FE63 /* Info */,
@@ -693,6 +756,9 @@
 		42F60C1218ED3ED100F2A00F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A291B5821C086E6D00286114 /* Contact */,
+				A27D4D091C06D07E00EB3D18 /* EmergencyContactsInitial */,
+				A2A6B9B21C0586A9004CD460 /* Menu */,
 				A29B683E1C02E62E0070F695 /* Monitoring */,
 				A2A523F61BFC446200EB9C49 /* Intro */,
 				A286CC8C1BFB65550092FE63 /* Info */,
@@ -765,6 +831,8 @@
 		42F60C7318ED688700F2A00F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A26061E41C072F9000597B4B /* Utils.h */,
+				A26061E51C072F9000597B4B /* Utils.m */,
 				A24E854B1C033C4000FD30DC /* UserDefaults.h */,
 				A24E854C1C033C4000FD30DC /* UserDefaults.m */,
 				4E2CAD491B1C20BA007143D8 /* DateUtils.h */,
@@ -799,6 +867,7 @@
 		4E6B5BFC1B3C21FF00499511 /* ExternalLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				A2A6B9A31C05815E004CD460 /* MFSideMenu */,
 				A29F2D5A1C04313600ABB4C6 /* Google */,
 				A24E85411C03256900FD30DC /* Facebook */,
 				4EE29BD31BECB1D2008EB1FC /* AFNetworking-3.0.0-beta.1 */,
@@ -929,6 +998,25 @@
 			name = Facebook;
 			sourceTree = "<group>";
 		};
+		A26061D91C07271600597B4B /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6B9B91C0589BA004CD460 /* MenuCell.h */,
+				A2A6B9BA1C0589BA004CD460 /* MenuCell.m */,
+				A2A6B9BC1C0589CC004CD460 /* MenuCell.xib */,
+			);
+			name = MenuCell;
+			sourceTree = "<group>";
+		};
+		A26061DA1C07275A00597B4B /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				A26061DE1C0729FD00597B4B /* MultiContactSelector.h */,
+				A26061DF1C0729FD00597B4B /* MultiContactSelector.m */,
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
 		A277C7701BEB5EAC007E7A93 /* MatchList */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,6 +1045,25 @@
 			name = Match;
 			sourceTree = "<group>";
 		};
+		A27D4D051C06D01E00EB3D18 /* EmergencyContactsInitial */ = {
+			isa = PBXGroup;
+			children = (
+				A27D4D061C06D06D00EB3D18 /* EmergencyContactsInitialController.h */,
+				A27D4D071C06D06D00EB3D18 /* EmergencyContactsInitialController.m */,
+			);
+			name = EmergencyContactsInitial;
+			sourceTree = "<group>";
+		};
+		A27D4D091C06D07E00EB3D18 /* EmergencyContactsInitial */ = {
+			isa = PBXGroup;
+			children = (
+				A27D4D0A1C06D0A500EB3D18 /* EmergencyContactsInitialView.h */,
+				A27D4D0B1C06D0A500EB3D18 /* EmergencyContactsInitialView.m */,
+				A27D4D0D1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib */,
+			);
+			name = EmergencyContactsInitial;
+			sourceTree = "<group>";
+		};
 		A286CC8B1BFAEE590092FE63 /* Pool */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +1088,25 @@
 				A286CC921BFB663A0092FE63 /* InfoController.m */,
 			);
 			name = Info;
+			sourceTree = "<group>";
+		};
+		A291B5821C086E6D00286114 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A291B5831C086E9500286114 /* ContactView.h */,
+				A291B5841C086E9500286114 /* ContactView.m */,
+				A291B5861C086EAB00286114 /* ContactView.xib */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		A291B5881C08708200286114 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A291B5891C08709500286114 /* ContactController.h */,
+				A291B58A1C08709500286114 /* ContactController.m */,
+			);
+			name = Contact;
 			sourceTree = "<group>";
 		};
 		A29B683E1C02E62E0070F695 /* Monitoring */ = {
@@ -1028,6 +1154,48 @@
 				A2A523FC1BFC45A900EB9C49 /* IntroController.m */,
 			);
 			name = Intro;
+			sourceTree = "<group>";
+		};
+		A2A6B9A31C05815E004CD460 /* MFSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6B9A41C0581A5004CD460 /* MFSideMenu.h */,
+				A2A6B9A51C0581A5004CD460 /* MFSideMenuContainerViewController.h */,
+				A2A6B9A61C0581A5004CD460 /* MFSideMenuContainerViewController.m */,
+				A2A6B9A71C0581A5004CD460 /* MFSideMenuShadow.h */,
+				A2A6B9A81C0581A5004CD460 /* MFSideMenuShadow.m */,
+				A2A6B9A91C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.h */,
+				A2A6B9AA1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m */,
+			);
+			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		A2A6B9AE1C05865E004CD460 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6B9AF1C0586A4004CD460 /* MenuController.h */,
+				A2A6B9B01C0586A4004CD460 /* MenuController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		A2A6B9B21C0586A9004CD460 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6B9B31C0586CE004CD460 /* MenuView.h */,
+				A2A6B9B41C0586CE004CD460 /* MenuView.m */,
+				A2A6B9B61C0586F3004CD460 /* MenuView.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		A2A6B9B81C05898B004CD460 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A26061DA1C07275A00597B4B /* AddressBook */,
+				A26061D91C07271600597B4B /* MenuCell */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1157,8 +1325,12 @@
 			files = (
 				A29F2D671C04338B00ABB4C6 /* GoogleService-Info.plist in Resources */,
 				4E20D3911BB162AD00229C7D /* Launch Screen.storyboard in Resources */,
+				A2A6B9BD1C0589CC004CD460 /* MenuCell.xib in Resources */,
 				42A74C1518ED9317002F24EE /* Service.plist in Resources */,
+				A27D4D0E1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib in Resources */,
+				A2A6B9B71C0586F3004CD460 /* MenuView.xib in Resources */,
 				A29F2D5D1C04315A00ABB4C6 /* GoogleSignIn.bundle in Resources */,
+				A291B5871C086EAB00286114 /* ContactView.xib in Resources */,
 				42F60BF018ED3DE600F2A00F /* Images.xcassets in Resources */,
 				0B72091A1A0AA76200162F8D /* CreateAccountView.xib in Resources */,
 				42F60BE218ED3DE600F2A00F /* InfoPlist.strings in Resources */,
@@ -1205,15 +1377,19 @@
 			files = (
 				42035D8118EE7C2B00237D90 /* LocationManager.m in Sources */,
 				4EE29BF91BECB1D2008EB1FC /* AFSecurityPolicy.m in Sources */,
+				A2A6B9AC1C0581A5004CD460 /* MFSideMenuShadow.m in Sources */,
 				0B15827A19B05DF9004F0D8F /* CoreDataModel.xcdatamodeld in Sources */,
+				A27D4D0C1C06D0A500EB3D18 /* EmergencyContactsInitialView.m in Sources */,
 				0B7209241A0AAE3F00162F8D /* UsersResponse.m in Sources */,
 				42F60C2218ED3F6100F2A00F /* LoginView.m in Sources */,
+				A2A6B9BB1C0589BA004CD460 /* MenuCell.m in Sources */,
 				42F60C1E18ED3F4500F2A00F /* LoginController.m in Sources */,
 				A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */,
 				0B7209351A0AB8C600162F8D /* StringResponse.m in Sources */,
 				4EE29BFE1BECB1D2008EB1FC /* AFImageDownloader.m in Sources */,
 				A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */,
 				0B72091D1A0AA77900162F8D /* CreateAccountView.m in Sources */,
+				A2A6B9AD1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				4EE29C011BECB1D2008EB1FC /* UIButton+AFNetworking.m in Sources */,
 				4EE29BFC1BECB1D2008EB1FC /* AFURLSessionManager.m in Sources */,
 				0B72092E1A0AB46100162F8D /* TextField.m in Sources */,
@@ -1221,6 +1397,7 @@
 				42035D8018EE7C2B00237D90 /* HttpRequestManager.m in Sources */,
 				42F60C3818ED669000F2A00F /* AuthService.m in Sources */,
 				42F60C0F18ED3E6100F2A00F /* AppDelegate.m in Sources */,
+				A2A6B9B11C0586A4004CD460 /* MenuController.m in Sources */,
 				A2A523FA1BFC459300EB9C49 /* IntroView.m in Sources */,
 				0B7209131A0AA34700162F8D /* Country.m in Sources */,
 				42F60C1818ED3F0300F2A00F /* BaseController.m in Sources */,
@@ -1231,6 +1408,7 @@
 				4EE29C031BECB1D2008EB1FC /* UIProgressView+AFNetworking.m in Sources */,
 				42A74C0718ED868D002F24EE /* UserService.m in Sources */,
 				A277C7811BEB61E7007E7A93 /* Match.m in Sources */,
+				A291B5851C086E9500286114 /* ContactView.m in Sources */,
 				A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */,
 				42A74C0C18ED86CB002F24EE /* BaseService.m in Sources */,
 				0B72092D1A0AB46100162F8D /* Label.m in Sources */,
@@ -1246,12 +1424,17 @@
 				0B72090C1A0AA24900162F8D /* BaseResponse.m in Sources */,
 				A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */,
 				4E2CAD4B1B1C20BA007143D8 /* DateUtils.m in Sources */,
+				A2A6B9AB1C0581A5004CD460 /* MFSideMenuContainerViewController.m in Sources */,
+				A291B58B1C08709500286114 /* ContactController.m in Sources */,
+				A26061E61C072F9000597B4B /* Utils.m in Sources */,
 				A286CC931BFB663A0092FE63 /* InfoController.m in Sources */,
 				A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */,
 				4EE29C001BECB1D2008EB1FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */,
+				A291B5811C086D1E00286114 /* ContactsManager.m in Sources */,
 				0B72092C1A0AB46100162F8D /* Button.m in Sources */,
 				42F60C1B18ED3F2500F2A00F /* BaseView.m in Sources */,
+				A2A6B9B51C0586CE004CD460 /* MenuView.m in Sources */,
 				A24E854D1C033C4000FD30DC /* UserDefaults.m in Sources */,
 				4EE29C2A1BECE4B2008EB1FC /* URLSessionDataTask.m in Sources */,
 				42A74C0418ED69B3002F24EE /* Color.m in Sources */,
@@ -1260,11 +1443,14 @@
 				4EE29BFF1BECB1D2008EB1FC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4E1831621B3D3D4600B8015B /* HttpRequestOperationManager.m in Sources */,
 				42A74C1318ED8981002F24EE /* User.m in Sources */,
+				A26061E01C0729FD00597B4B /* MultiContactSelector.m in Sources */,
 				0B7209171A0AA68400162F8D /* CreateAccountController.m in Sources */,
 				A2241AE81C048E39007DFC70 /* GoogleManager.m in Sources */,
 				4EE29BF71BECB1D2008EB1FC /* AFHTTPSessionManager.m in Sources */,
+				A27D4D081C06D06D00EB3D18 /* EmergencyContactsInitialController.m in Sources */,
 				4EE29C041BECB1D2008EB1FC /* UIRefreshControl+AFNetworking.m in Sources */,
 				A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */,
+				A26061E31C072DA800597B4B /* SearchBar.m in Sources */,
 				42F60C3918ED669000F2A00F /* Service.m in Sources */,
 				4EE29BFA1BECB1D2008EB1FC /* AFURLRequestSerialization.m in Sources */,
 				4EE29C051BECB1D2008EB1FC /* UIWebView+AFNetworking.m in Sources */,

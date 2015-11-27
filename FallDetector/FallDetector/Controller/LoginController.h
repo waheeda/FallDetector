@@ -10,7 +10,10 @@
 #import "BaseController.h"
 #import "FacebookManager.h"
 #import "GoogleManager.h"
+#import "MFSideMenuContainerViewController.h"
 @interface LoginController : BaseController <GoogleManagerDelegate>
 -(void)loginFromFacebook;
 -(void)loginFromGoogle;
+@property (strong, nonatomic) UINavigationController *homeNavigationController;
+@property (strong, nonatomic) MFSideMenuContainerViewController *sideMenuContainer;
 @end

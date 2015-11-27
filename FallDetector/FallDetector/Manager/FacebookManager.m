@@ -10,6 +10,7 @@
 #import "FacebookManager.h"
 #import "Constant.h"
 #import "Alert.h"
+#import "UserDefaults.h"
 
 
 @interface FacebookManager () 
@@ -32,15 +33,6 @@
 
 #pragma mark - Internal Methods
 
-
--(UIButton *) getLoginButton {
-
-        FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-        loginButton.readPermissions = @[@"public_profile"];
-        loginButton.delegate = self;
-        return loginButton;
-}
-
 +(BOOL) isLoggedIn {
 
     return ([FBSDKAccessToken currentAccessToken] != nil );
@@ -51,11 +43,11 @@
     return [[FBSDKAccessToken currentAccessToken] tokenString];
 }
 
-/*+(NSString *) getProfilePicURL {
++(NSString *) getProfilePicURL {
 
-   // NSString *profilePicURL=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&width=300&height=300", [UserDefaults getFacebookUserID]];
-    //return profilePicURL;
-}*/
+    NSString *profilePicURL=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&width=300&height=300", [UserDefaults getFacebookUserID]];
+    return profilePicURL;
+}
 // For custom login button
 
 +(void)logoutFromFacebook{
@@ -99,11 +91,11 @@
     }];
 }
 //
-//+ (void)clearAccessToken
-//{
-//    [FBSDKAccessToken setCurrentAccessToken:nil];
-//    [FBSDKProfile setCurrentProfile:nil];
-//}
++ (void)clearAccessToken
+{
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [FBSDKProfile setCurrentProfile:nil];
+}
 //
 //
 //#pragma mark - Fetch Methods
@@ -111,27 +103,27 @@
 + (void)fetchUserInfo:(FBMCallback)callback
 {
     [FacebookManager fetchFBFromQuery:@"me" parameters:nil withCallback:^(id result, NSError *error) {
-        //[FacebookManager saveUserInfo:result];
+        [FacebookManager saveUserInfo:result];
         callback(result, error);
         
     }];
 }
 //
-//+(void)saveUserInfo:(id) result{
-//    NSString *fullName;
-//    NSString *lastName;
-//    NSString *fbName=[result valueForKey:@"name"];
-//    NSArray *nameArray = [fbName componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//    NSString *firstName =[nameArray objectAtIndex:0];
-//    if(nameArray.count>1){
-//        lastName =[nameArray objectAtIndex:1];
-//        fullName = [firstName stringByAppendingFormat:@" %@.",[lastName substringWithRange:NSMakeRange(0, 1)]];
-//    }
-//    else
-//        fullName = firstName;
-//    //[UserDefaults setFacebookUserID:[result valueForKey:@"id"]];
-//   // [UserDefaults setFBFullName:fullName];
-//}
++(void)saveUserInfo:(id) result{
+    NSString *fullName;
+    NSString *lastName;
+    NSString *fbName=[result valueForKey:@"name"];
+    NSArray *nameArray = [fbName componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *firstName =[nameArray objectAtIndex:0];
+    if(nameArray.count>1){
+        lastName =[nameArray objectAtIndex:1];
+        fullName = [firstName stringByAppendingFormat:@" %@.",[lastName substringWithRange:NSMakeRange(0, 1)]];
+    }
+    else
+        fullName = firstName;
+    [UserDefaults setFacebookUserID:[result valueForKey:@"id"]];
+    [UserDefaults setFBFullName:fullName];
+}
 //
 //+ (void)fetchFriendListFrom:(NSInteger)offset to:(NSInteger)limit withCallback:(FBMCallback)callback
 //{

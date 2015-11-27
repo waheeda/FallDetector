@@ -21,16 +21,14 @@ typedef void (^FBMCallback)(id result, NSError *error);
 @end
 
 
-@interface FacebookManager : NSObject <FBSDKLoginButtonDelegate>
+@interface FacebookManager : NSObject
 
 @property(nonatomic, weak) id<FacebookManagerDelegate> loginDelegate;
 
 + (FacebookManager *)instance;
--(UIButton *) getLoginButton;
 +(void)logoutFromFacebook;
 + (void)loginWithViewController:(UIViewController*)controller andCallback:(FBMCallback)callback;
 + (void)fetchUserInfo:(FBMCallback)callback;
-+ (void)fetchFriendListFrom:(NSInteger)offset to:(NSInteger)limit withCallback:(FBMCallback)callback;
 + (void)clearAccessToken;
 + (BOOL) isLoggedIn ;
 +(NSString *) getProfilePicURL;

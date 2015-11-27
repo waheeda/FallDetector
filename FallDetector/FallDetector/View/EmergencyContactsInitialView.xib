@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmergencyContactsInitialView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHC-7A-Usv">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gI-zH-E4O">
+                            <rect key="frame" x="16" y="82" width="86" height="24"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-kh-PQ7">
+                            <rect key="frame" x="107" y="82" width="102" height="24"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seems like this is your first time here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-ea-XVq">
+                            <rect key="frame" x="16" y="111" width="254" height="22"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify your emergency contacts to continue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-bg-e7I">
+                            <rect key="frame" x="16" y="183" width="254" height="41"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addContact" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-LG-JkZ">
+                            <rect key="frame" x="122" y="277" width="76" height="74"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7bf-LG-JkZ" secondAttribute="height" multiplier="87:85" id="Xek-Si-Bef"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Emergency Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aKl-mY-FEO">
+                            <rect key="frame" x="63" y="369" width="194" height="23"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-MC-S9H">
+                            <rect key="frame" x="122" y="277" width="76" height="74"/>
+                            <animations/>
+                            <connections>
+                                <action selector="onAddCOntactCLick:" destination="iN0-l3-epB" eventType="touchUpInside" id="8KP-yZ-g9l"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RmZ-u3-exh">
+                            <rect key="frame" x="8" y="456" width="144" height="96"/>
+                            <animations/>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="qIe-bg-e7I" firstAttribute="top" secondItem="5b8-ea-XVq" secondAttribute="bottom" constant="50" id="1ec-pn-Wa0"/>
+                        <constraint firstItem="rk6-kh-PQ7" firstAttribute="bottom" secondItem="6gI-zH-E4O" secondAttribute="bottom" id="3JE-Dx-72C"/>
+                        <constraint firstItem="xSf-MC-S9H" firstAttribute="centerY" secondItem="7bf-LG-JkZ" secondAttribute="centerY" id="5rW-Ji-TH5"/>
+                        <constraint firstItem="aKl-mY-FEO" firstAttribute="centerX" secondItem="GHC-7A-Usv" secondAttribute="centerX" id="6Zo-Jj-xwf"/>
+                        <constraint firstItem="6gI-zH-E4O" firstAttribute="top" secondItem="GHC-7A-Usv" secondAttribute="top" constant="82" id="7nG-mE-n1B"/>
+                        <constraint firstItem="5b8-ea-XVq" firstAttribute="top" secondItem="rk6-kh-PQ7" secondAttribute="bottom" constant="5" id="AZ3-QY-FJu"/>
+                        <constraint firstItem="rk6-kh-PQ7" firstAttribute="top" secondItem="6gI-zH-E4O" secondAttribute="top" id="Bei-SL-uto"/>
+                        <constraint firstItem="aKl-mY-FEO" firstAttribute="centerY" secondItem="GHC-7A-Usv" secondAttribute="centerY" id="DR7-Ty-wiM"/>
+                        <constraint firstItem="rk6-kh-PQ7" firstAttribute="leading" secondItem="6gI-zH-E4O" secondAttribute="trailing" constant="5" id="Fci-ER-4lp"/>
+                        <constraint firstAttribute="trailing" secondItem="aKl-mY-FEO" secondAttribute="trailing" constant="63" id="Fpf-HL-kCE"/>
+                        <constraint firstItem="aKl-mY-FEO" firstAttribute="top" secondItem="7bf-LG-JkZ" secondAttribute="bottom" constant="18" id="Hjj-Kq-hXk"/>
+                        <constraint firstItem="7bf-LG-JkZ" firstAttribute="centerX" secondItem="GHC-7A-Usv" secondAttribute="centerX" id="Hkt-6M-bLe"/>
+                        <constraint firstItem="6gI-zH-E4O" firstAttribute="leading" secondItem="GHC-7A-Usv" secondAttribute="leading" constant="16" id="NRc-ua-YMK"/>
+                        <constraint firstItem="xSf-MC-S9H" firstAttribute="centerX" secondItem="7bf-LG-JkZ" secondAttribute="centerX" id="O2z-xe-BEi"/>
+                        <constraint firstItem="7bf-LG-JkZ" firstAttribute="height" secondItem="GHC-7A-Usv" secondAttribute="height" multiplier="0.13" id="Rli-Rx-GnY"/>
+                        <constraint firstAttribute="trailing" secondItem="5b8-ea-XVq" secondAttribute="trailing" constant="50" id="UmZ-0W-1Mn"/>
+                        <constraint firstItem="aKl-mY-FEO" firstAttribute="leading" secondItem="GHC-7A-Usv" secondAttribute="leading" constant="63" id="WsV-v5-02s"/>
+                        <constraint firstItem="rk6-kh-PQ7" firstAttribute="centerY" secondItem="6gI-zH-E4O" secondAttribute="centerY" id="dd7-km-67d"/>
+                        <constraint firstItem="5b8-ea-XVq" firstAttribute="leading" secondItem="GHC-7A-Usv" secondAttribute="leading" constant="16" id="eb5-m0-L25"/>
+                        <constraint firstAttribute="trailing" secondItem="qIe-bg-e7I" secondAttribute="trailing" constant="50" id="haW-vL-nti"/>
+                        <constraint firstItem="RmZ-u3-exh" firstAttribute="leading" secondItem="GHC-7A-Usv" secondAttribute="leading" constant="8" id="iRo-Mm-QxS"/>
+                        <constraint firstItem="xSf-MC-S9H" firstAttribute="height" secondItem="7bf-LG-JkZ" secondAttribute="height" id="ilk-aC-jez"/>
+                        <constraint firstItem="7bf-LG-JkZ" firstAttribute="centerY" secondItem="GHC-7A-Usv" secondAttribute="centerY" constant="30" id="lDd-kB-tP3"/>
+                        <constraint firstItem="xSf-MC-S9H" firstAttribute="width" secondItem="7bf-LG-JkZ" secondAttribute="width" id="mDz-XY-LSZ"/>
+                        <constraint firstItem="qIe-bg-e7I" firstAttribute="leading" secondItem="GHC-7A-Usv" secondAttribute="leading" constant="16" id="mzW-Ea-A2k"/>
+                        <constraint firstAttribute="bottom" secondItem="RmZ-u3-exh" secondAttribute="bottom" constant="16" id="pkm-Rq-oNn"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Bei-SL-uto"/>
+                            <exclude reference="dd7-km-67d"/>
+                            <exclude reference="DR7-Ty-wiM"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GHC-7A-Usv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="72O-uA-xm2"/>
+                <constraint firstAttribute="trailing" secondItem="GHC-7A-Usv" secondAttribute="trailing" id="A4u-pj-jbw"/>
+                <constraint firstItem="GHC-7A-Usv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sbI-bA-z6T"/>
+                <constraint firstAttribute="bottom" secondItem="GHC-7A-Usv" secondAttribute="bottom" id="tC1-7M-Viv"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="emergencyContactsButton" destination="xSf-MC-S9H" id="Ish-zn-EkT"/>
+            </connections>
+            <point key="canvasLocation" x="305.5" y="275.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="addContact" width="261" height="255"/>
+        <image name="logo" width="144" height="96"/>
+    </resources>
+</document>

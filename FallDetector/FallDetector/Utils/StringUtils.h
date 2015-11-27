@@ -17,5 +17,5 @@
 +(BOOL)validateEmail:(NSString*)candidate;
 
 +(NSString *) getStringFromInt:(int) integer;
-
++ (NSString *) stringByTrimmingWhiteSpaces : (NSString *) string;
 @end

@@ -30,7 +30,6 @@
 -(void)showMonitoringController{
     MonitoringController *monitoringController = [MonitoringController new];
     [super setRootViewController:monitoringController];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +44,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden=true;
-}
-
-
-
--(void)viewDidAppear:(BOOL)animated{
-   
 }
 
 /*

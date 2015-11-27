@@ -37,4 +37,8 @@
     return [NSString stringWithFormat:@"%d", integer];
 }
 
++ (NSString *) stringByTrimmingWhiteSpaces : (NSString *) string {
+    return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 @end

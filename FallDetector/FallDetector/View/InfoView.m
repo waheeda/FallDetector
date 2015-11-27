@@ -9,6 +9,7 @@
 #import "InfoView.h"
 #import "LoginController.h"
 #import "IntroController.h"
+#import "InfoController.h"
 @implementation InfoView
 
 /*
@@ -19,8 +20,7 @@
 }
 */
 - (IBAction)onNextButtonClick:(id)sender {
-    IntroController *controller =[[IntroController alloc] init];
-    [[self.controller navigationController] pushViewController:controller animated:YES];
+    [(InfoController*)self.controller openIntroController];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "BaseController.h"
-
+#import "MFSideMenuContainerViewController.h"
 @interface InfoController : BaseController
-
+-(void)openIntroController;
 @end
