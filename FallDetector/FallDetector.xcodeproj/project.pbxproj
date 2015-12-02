@@ -628,13 +628,13 @@
 		42F60BCB18ED3DE600F2A00F = {
 			isa = PBXGroup;
 			children = (
-				A29F2D661C04338B00ABB4C6 /* GoogleService-Info.plist */,
 				42F60BDD18ED3DE600F2A00F /* FallDetector */,
 				42F60BFC18ED3DE600F2A00F /* FallDetectorTests */,
+				42F60BD618ED3DE600F2A00F /* Frameworks */,
+				A29F2D661C04338B00ABB4C6 /* GoogleService-Info.plist */,
+				42F60BD518ED3DE600F2A00F /* Products */,
 				4EEFD8181BEB58D80032FE82 /* WatchApp */,
 				4EEFD8271BEB58D80032FE82 /* WatchApp Extension */,
-				42F60BD618ED3DE600F2A00F /* Frameworks */,
-				42F60BD518ED3DE600F2A00F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -669,21 +669,21 @@
 		42F60BDD18ED3DE600F2A00F /* FallDetector */ = {
 			isa = PBXGroup;
 			children = (
-				4E6B5BFC1B3C21FF00499511 /* ExternalLibraries */,
+				42F60C0C18ED3E6100F2A00F /* AppDelegate */,
 				4E32DC991B32932100B897D7 /* Categories */,
 				0B7209251A0AB46100162F8D /* Component */,
-				0B7209091A0AA22000162F8D /* ServiceResponse */,
-				42A74C1018ED8981002F24EE /* Entity */,
-				42F60C7318ED688700F2A00F /* Utils */,
 				42F60C7018ED66F200F2A00F /* Constants */,
-				A2A6B9B81C05898B004CD460 /* Controls */,
 				42F60C1018ED3ED100F2A00F /* Controller */,
+				A2A6B9B81C05898B004CD460 /* Controls */,
+				42A74C1018ED8981002F24EE /* Entity */,
+				4E6B5BFC1B3C21FF00499511 /* ExternalLibraries */,
 				42035D7818EE7C2B00237D90 /* Manager */,
-				42F60C1118ED3ED100F2A00F /* Service */,
 				0B15824319B05DF9004F0D8F /* Resources */,
-				42F60C1218ED3ED100F2A00F /* View */,
-				42F60C0C18ED3E6100F2A00F /* AppDelegate */,
+				42F60C1118ED3ED100F2A00F /* Service */,
+				0B7209091A0AA22000162F8D /* ServiceResponse */,
 				42F60BDE18ED3DE600F2A00F /* Supporting Files */,
+				42F60C7318ED688700F2A00F /* Utils */,
+				42F60C1218ED3ED100F2A00F /* View */,
 			);
 			path = FallDetector;
 			sourceTree = "<group>";
@@ -748,12 +748,12 @@
 		42F60C1118ED3ED100F2A00F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A277C7771BEB60A9007E7A93 /* Match */,
-				0B72091E1A0AAAB500162F8D /* CheckIn */,
-				42035D6A18EE72E100237D90 /* User */,
 				42035D6918EE72DB00237D90 /* Auth */,
 				42A74C0818ED86CB002F24EE /* Base */,
+				0B72091E1A0AAAB500162F8D /* CheckIn */,
 				42F60C3418ED669000F2A00F /* Factory */,
+				A277C7771BEB60A9007E7A93 /* Match */,
+				42035D6A18EE72E100237D90 /* User */,
 			);
 			path = Service;
 			sourceTree = "<group>";

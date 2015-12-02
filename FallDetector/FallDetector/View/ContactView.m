@@ -2,94 +2,133 @@
 //  ContactView.m
 //  FallDetector
 //
-//  Created by Muhammad Hamiz Ahmed on 11/27/15.
+//  Created by Faisal Saleh on 11/27/15.
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
 #import "ContactView.h"
+#import "ContactController.h"
 
 @implementation ContactView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 -(void)setContacts:(NSMutableArray*)array{
-    if(!_contacts){
-        _contacts=[NSMutableArray new];
-        _contacts=array;
+    if(!_sortedContacts){
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"Name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+        _sortedContacts = [array sortedArrayUsingDescriptors:@[sort]];
     }
-//    NSString *filterString = @"Hissan Baba";
-    self.cellSelected = [NSMutableArray array];
-//    NSString* filter = @"%K CONTAINS[cd] %@";
-//    self.filtered = [_contacts filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:filter,@"Name", filterString]];
-    self.filtered = _contacts;
+    self.selectedContacts = [NSMutableArray array];
+    _filteredContacts = [NSMutableArray arrayWithArray:_sortedContacts];
 }
 
 
--(UITableViewCell *) createContactCell:(NSString *) identifier{
+-(ContactCell *) createContactCell:(NSString *) identifier{
     
-    UITableViewCell *cell =  [[ContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    ContactCell *cell =  [[ContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //[(ContactCell *)cell setDelegate:self];
-    _contactCell = (ContactCell *)cell;
-   // [_profileCell setProfileData:_user];
+    _contactCell = cell;
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.filtered count];
+    return [_filteredContacts count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"ContactCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ContactCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-//                                      reuseIdentifier:CellIdentifier];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        cell.textLabel.font = [UIFont systemFontOfSize:14];
-        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell =[self createContactCell:CellIdentifier];
     }
-//    NSDictionary *selectedContact = [_filtered objectAtIndex:indexPath.row];
-//    if ([self.cellSelected containsObject:selectedContact]){
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    } else{
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//        
-//    }
-//    
-   // [cell.textLabel setText:[[self.filtered objectAtIndex:indexPath.row] objectForKey:@"Name"]];
-    [(ContactCell*)cell setNameLabelText:[[self.filtered objectAtIndex:indexPath.row] objectForKey:@"Name"]];
+    NSDictionary *selectedContact = [_filteredContacts objectAtIndex:indexPath.row];
+    NSDictionary *insertedContact = [self isContactAlreadySelected:selectedContact];
+    if (insertedContact){
+        [cell showSelected];
+    } else{
+        [cell showUnselected];
+    }
+    
+    [cell setNameLabelText:[[_filteredContacts objectAtIndex:indexPath.row] objectForKey:@"Name"]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.table deselectRowAtIndexPath:indexPath animated:YES];
-    //if you want only one cell to be selected use a local NSIndexPath property instead of array. and use the code below
-    //self.selectedIndexPath = indexPath;
-    
-    //the below code will allow multiple selection
-    NSDictionary *selectedContact = [_filtered objectAtIndex:indexPath.row];
-    if ([self.cellSelected containsObject:selectedContact]){
-        [self.cellSelected removeObject:selectedContact];
+    NSDictionary *selectedContact = [_filteredContacts objectAtIndex:indexPath.row];
+    NSDictionary *insertedContact = [self isContactAlreadySelected:selectedContact];
+    if (insertedContact){
+        [self.selectedContacts removeObject:insertedContact];
     } else {
-        [self.cellSelected addObject:selectedContact];
+        [self showNumberSelectorIfNecessary:selectedContact];
     }
     [tableView reloadData];
+}
+
+- (NSDictionary *)isContactAlreadySelected:(NSDictionary *)contact{
+    NSArray *numbers = [contact objectForKey:@"Phone"];
+    for(NSDictionary *current in self.selectedContacts){
+        NSString *currentNumber = [current objectForKey:@"SelectedNumber"];
+        for(NSString *number in numbers){
+            if([number isEqualToString:currentNumber]){
+                return current;
+            }
+        }
+    }
+    return nil;
+}
+
+- (void) showNumberSelectorIfNecessary:(NSDictionary *)contact{
+    NSString *name = [contact objectForKey:@"Name"];
+    NSArray *numbers = [contact objectForKey:@"Phone"];
+    if([numbers count] > 1){
+        [self showNumberSelector:contact];
+    } else {
+        NSDictionary *newContact = @{@"Name":name,
+                                     @"SelectedNumber":[numbers firstObject]};
+        [self.selectedContacts addObject:newContact];
+    }
+}
+
+-(void) showNumberSelector:(NSDictionary *)contact{
+    NSString *name = [contact objectForKey:@"Name"];
+    NSArray *numbers = [contact objectForKey:@"Phone"];
+    
+    NSString *message = [NSString stringWithFormat:@"%@ contains multiple phone numbers. Please select one to use.", name];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    for(NSString *number in numbers){
+        UIAlertAction *action = [UIAlertAction actionWithTitle:number style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            NSDictionary *newContact = @{@"Name":name,
+                                         @"SelectedNumber":action.title};
+            [self.selectedContacts addObject:newContact];
+            [_table reloadData];
+        }];
+        [alert addAction:action];
+    }
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:action];
+    
+    [(ContactController *)self.controller.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if([searchText length] < 1){
+        _filteredContacts = _sortedContacts;
+        [_table reloadData];
+        return;
+    }
+    NSString* filter = @"%K CONTAINS[cd] %@";
+    _filteredContacts = [_sortedContacts filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:filter, @"Name", searchText]];
+    [_table reloadData];
 }
 
 @end

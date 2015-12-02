@@ -8,12 +8,13 @@
 
 #import "BaseView.h"
 #import "ContactCell.h"
-@interface ContactView : BaseView <UITableViewDataSource, UITableViewDelegate>{
-    NSMutableArray *_contacts;
+@interface ContactView : BaseView <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>{
+    NSArray *_sortedContacts;
+    NSArray *_filteredContacts;
     ContactCell   *_contactCell;
 }
-@property (nonatomic, strong) NSArray *filtered;
 @property (nonatomic, strong) IBOutlet UITableView* table;
-@property (nonatomic, strong) NSMutableArray *cellSelected;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSMutableArray *selectedContacts;
 -(void)setContacts:(NSMutableArray*)array;
 @end

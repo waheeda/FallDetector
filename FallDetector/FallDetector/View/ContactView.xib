@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -15,6 +15,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <animations/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="WuG-a0-R2I"/>
+                    </connections>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-hw-SuA">
                     <rect key="frame" x="0.0" y="44" width="600" height="556"/>
@@ -44,6 +47,7 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="searchBar" destination="cf8-Na-aWU" id="dFF-f9-g3q"/>
                 <outlet property="table" destination="3AV-hw-SuA" id="fM6-gW-9hQ"/>
             </connections>
         </view>

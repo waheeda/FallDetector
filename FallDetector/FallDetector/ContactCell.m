@@ -36,6 +36,16 @@
     [self.contactCircleView.layer setMasksToBounds:YES];
 }
 
+-(void) showSelected{
+    UIImage *selected = [UIImage imageNamed:@"selected"];
+    [self.checkBox setImage:selected];
+}
+
+-(void) showUnselected{
+    UIImage *unselected = [UIImage imageNamed:@"unselected"];
+    [self.checkBox setImage:unselected];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

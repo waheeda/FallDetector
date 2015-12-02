@@ -10,6 +10,9 @@
 
 @interface ContactCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIView *contactCircleView;
+@property (strong, nonatomic) IBOutlet UIImageView *checkBox;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 -(void)setNameLabelText:(NSString*)name;
+-(void) showSelected;
+-(void) showUnselected;
 @end
