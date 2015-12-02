@@ -11,8 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-Na-aWU">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <animations/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-hw-SuA">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -25,10 +30,19 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3AV-hw-SuA" secondAttribute="trailing" id="6tN-xC-QNi"/>
+                <constraint firstAttribute="trailing" secondItem="cf8-Na-aWU" secondAttribute="trailing" id="A8J-hQ-Ps7"/>
                 <constraint firstItem="3AV-hw-SuA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Egn-Pr-8Yc"/>
+                <constraint firstItem="3AV-hw-SuA" firstAttribute="top" secondItem="cf8-Na-aWU" secondAttribute="bottom" id="NYq-1t-hED"/>
+                <constraint firstItem="cf8-Na-aWU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RKj-jh-aaq"/>
                 <constraint firstItem="3AV-hw-SuA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RfP-13-v2U"/>
+                <constraint firstItem="cf8-Na-aWU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gnQ-V4-pYb"/>
                 <constraint firstAttribute="bottom" secondItem="3AV-hw-SuA" secondAttribute="bottom" id="gpa-uz-Dng"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="RfP-13-v2U"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="table" destination="3AV-hw-SuA" id="fM6-gW-9hQ"/>
             </connections>

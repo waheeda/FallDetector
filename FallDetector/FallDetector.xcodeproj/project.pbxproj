@@ -114,6 +114,8 @@
 		A26061E01C0729FD00597B4B /* MultiContactSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061DF1C0729FD00597B4B /* MultiContactSelector.m */; };
 		A26061E31C072DA800597B4B /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E21C072DA800597B4B /* SearchBar.m */; };
 		A26061E61C072F9000597B4B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E51C072F9000597B4B /* Utils.m */; };
+		A2639F901C0DC98D00DBB875 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2639F8F1C0DC98D00DBB875 /* ContactCell.m */; };
+		A2639F921C0DC9A500DBB875 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2639F911C0DC9A500DBB875 /* ContactCell.xib */; };
 		A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C76E1BEB5E84007E7A93 /* MatchListView.m */; };
 		A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A277C7711BEB5EC3007E7A93 /* MatchListView.xib */; };
 		A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7751BEB5EE7007E7A93 /* MatchListController.m */; };
@@ -366,6 +368,9 @@
 		A26061E21C072DA800597B4B /* SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
 		A26061E41C072F9000597B4B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		A26061E51C072F9000597B4B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		A2639F8E1C0DC98D00DBB875 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
+		A2639F8F1C0DC98D00DBB875 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
+		A2639F911C0DC9A500DBB875 /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		A277C76D1BEB5E84007E7A93 /* MatchListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchListView.h; sourceTree = "<group>"; };
 		A277C76E1BEB5E84007E7A93 /* MatchListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchListView.m; sourceTree = "<group>"; };
 		A277C7711BEB5EC3007E7A93 /* MatchListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchListView.xib; sourceTree = "<group>"; };
@@ -1017,6 +1022,16 @@
 			name = AddressBook;
 			sourceTree = "<group>";
 		};
+		A2639F8D1C0DC95100DBB875 /* ContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2639F8E1C0DC98D00DBB875 /* ContactCell.h */,
+				A2639F8F1C0DC98D00DBB875 /* ContactCell.m */,
+				A2639F911C0DC9A500DBB875 /* ContactCell.xib */,
+			);
+			name = ContactCell;
+			sourceTree = "<group>";
+		};
 		A277C7701BEB5EAC007E7A93 /* MatchList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1192,6 +1207,7 @@
 		A2A6B9B81C05898B004CD460 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				A2639F8D1C0DC95100DBB875 /* ContactCell */,
 				A26061DA1C07275A00597B4B /* AddressBook */,
 				A26061D91C07271600597B4B /* MenuCell */,
 			);
@@ -1324,6 +1340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29F2D671C04338B00ABB4C6 /* GoogleService-Info.plist in Resources */,
+				A2639F921C0DC9A500DBB875 /* ContactCell.xib in Resources */,
 				4E20D3911BB162AD00229C7D /* Launch Screen.storyboard in Resources */,
 				A2A6B9BD1C0589CC004CD460 /* MenuCell.xib in Resources */,
 				42A74C1518ED9317002F24EE /* Service.plist in Resources */,
@@ -1390,6 +1407,7 @@
 				A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */,
 				0B72091D1A0AA77900162F8D /* CreateAccountView.m in Sources */,
 				A2A6B9AD1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				A2639F901C0DC98D00DBB875 /* ContactCell.m in Sources */,
 				4EE29C011BECB1D2008EB1FC /* UIButton+AFNetworking.m in Sources */,
 				4EE29BFC1BECB1D2008EB1FC /* AFURLSessionManager.m in Sources */,
 				0B72092E1A0AB46100162F8D /* TextField.m in Sources */,

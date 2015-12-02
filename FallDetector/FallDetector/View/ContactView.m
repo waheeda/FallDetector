@@ -31,6 +31,21 @@
 }
 
 
+-(UITableViewCell *) createContactCell:(NSString *) identifier{
+    
+    UITableViewCell *cell =  [[ContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //[(ContactCell *)cell setDelegate:self];
+    _contactCell = (ContactCell *)cell;
+   // [_profileCell setProfileData:_user];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.filtered count];
 }
@@ -41,21 +56,23 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.font = [UIFont systemFontOfSize:14];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+//                                      reuseIdentifier:CellIdentifier];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.textLabel.font = [UIFont systemFontOfSize:14];
         //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell =[self createContactCell:CellIdentifier];
     }
-    NSDictionary *selectedContact = [_filtered objectAtIndex:indexPath.row];
-    if ([self.cellSelected containsObject:selectedContact]){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        
-    }
-    
-    [cell.textLabel setText:[[self.filtered objectAtIndex:indexPath.row] objectForKey:@"Name"]];
+//    NSDictionary *selectedContact = [_filtered objectAtIndex:indexPath.row];
+//    if ([self.cellSelected containsObject:selectedContact]){
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } else{
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//        
+//    }
+//    
+   // [cell.textLabel setText:[[self.filtered objectAtIndex:indexPath.row] objectForKey:@"Name"]];
+    [(ContactCell*)cell setNameLabelText:[[self.filtered objectAtIndex:indexPath.row] objectForKey:@"Name"]];
     
     return cell;
 }

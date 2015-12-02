@@ -7,9 +7,10 @@
 //
 
 #import "BaseView.h"
-
+#import "ContactCell.h"
 @interface ContactView : BaseView <UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *_contacts;
+    ContactCell   *_contactCell;
 }
 @property (nonatomic, strong) NSArray *filtered;
 @property (nonatomic, strong) IBOutlet UITableView* table;

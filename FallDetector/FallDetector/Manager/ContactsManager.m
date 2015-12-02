@@ -65,6 +65,7 @@
 - (void)listPeopleInAddressBook:(ABAddressBookRef)addressBook
 {
     
+    
     NSArray *allPeople = CFBridgingRelease(ABAddressBookCopyArrayOfAllPeople(addressBook));
     NSInteger numberOfPeople = [allPeople count];
     
@@ -74,14 +75,17 @@
         NSString *firstName = CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
         NSString *lastName  = CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
         NSString *phoneNumber;
+        NSMutableArray *allPhoneNumbers = [NSMutableArray new];
         NSDictionary *contactObject;
         NSLog(@"Name:%@ %@", firstName, lastName);
         
         
         
         ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
-        for (CFIndex i = 0; i < 1; i++) {
+        CFIndex numberCount = ABMultiValueGetCount(phoneNumbers);
+        for (CFIndex i = 0; i < numberCount ; i++) {
             phoneNumber = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneNumbers, i));
+            [allPhoneNumbers addObject:phoneNumber];
             NSLog(@"  phone:%@", phoneNumber);
         }
         
@@ -91,18 +95,18 @@
         
         if(firstName && lastName){
             contactObject = @{@"Name":[NSString stringWithFormat:@"%@ %@",firstName,lastName],
-                              @"Phone":phoneNumber};
+                              @"Phone":allPhoneNumbers};
             
         }
         
         else if(firstName){
             contactObject = @{@"Name":[NSString stringWithFormat:@"%@",firstName],
-                              @"Phone":phoneNumber};
+                              @"Phone":allPhoneNumbers};
         }
         
         else{
             contactObject = @{@"Name":[NSString stringWithFormat:@"%@",lastName],
-                              @"Phone":phoneNumber};
+                              @"Phone":allPhoneNumbers};
         }
         
         [self.contactNames addObject:contactObject];
