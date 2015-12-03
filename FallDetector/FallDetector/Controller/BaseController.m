@@ -73,6 +73,10 @@
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
+
+
+
+
 -(void)onLeftMenuBtnTap{
     [[[AppDelegate getInstance] getMenuContainer] toggleLeftSideMenuCompletion:^{
     }];

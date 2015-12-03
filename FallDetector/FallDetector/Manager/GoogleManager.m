@@ -7,7 +7,7 @@
 //
 
 #import "GoogleManager.h"
-
+#import "UserDefaults.h"
 @implementation GoogleManager
 
 
@@ -47,7 +47,8 @@ didSignInForUser:(GIDGoogleUser *)user
         return;
     }
     NSLog(@"Signed In");
-    NSLog(@"Name:%@ ",[user.profile name]);
+    NSLog(@"Email:%@ ",[user.profile email]);
+    [UserDefaults saveEmailInUserDefaults:[user.profile email]];
     [self.delegate onGoogleSignIn];
 }
 

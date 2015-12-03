@@ -22,5 +22,8 @@
 +(NSString *)getFacebookUserID;
 +(NSString*)getFBFullName;
 +(void) setIsOnboardingCompleted:(BOOL) isCompleted;
-+(BOOL) isOnboardingCompleted;
++(void)setEmergencyContacts:(NSMutableArray*)contacts;
++(NSArray*)getEmergencyContacts;
++(void)saveEmailInUserDefaults:(NSString*)email;
++(BOOL)isLoggedIn;
 @end

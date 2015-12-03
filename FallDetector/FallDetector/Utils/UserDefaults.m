@@ -33,6 +33,10 @@
     
 }
 
++(void)setEmergencyContacts:(NSMutableArray*)contacts{
+    [USER_DEFAULTS setObject:contacts forKey:@"EmergencyContacts"];
+    [USER_DEFAULTS synchronize];
+}
 
 +(void)removePlaceMark{
     if ([USER_DEFAULTS objectForKey:KEY_USERDEFAULTS_PLACEMARK]){
@@ -40,6 +44,7 @@
         [USER_DEFAULTS synchronize];
     }
 }
+
 
 +(void)setPlaceMark:(CLPlacemark*)placeMark{
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:placeMark];
@@ -55,6 +60,14 @@
     
 }
 
++(void)saveEmailInUserDefaults:(NSString*)email{
+    [USER_DEFAULTS setObject:email forKey:@"userEmail"];
+    [USER_DEFAULTS synchronize];
+}
+
++(NSArray*)getEmergencyContacts{
+    return [USER_DEFAULTS objectForKey:@"EmergencyContacts"];
+}
 
 +(void)setFacebookUserID:(NSString *)userID{
 
@@ -63,7 +76,9 @@
 }
 
 +(void)clearUserDefaults{
-    [UserDefaults setFacebookUserID:nil];
+    [USER_DEFAULTS removeObjectForKey:@"EmergencyContacts"];
+    [USER_DEFAULTS removeObjectForKey:@"userEmail"];
+    [USER_DEFAULTS synchronize];
 }
 
 +(void)setFBFullName:(NSString *)name{
@@ -80,6 +95,12 @@
 
 }
 
++(BOOL)isLoggedIn{
+    if([USER_DEFAULTS objectForKey:@"userEmail"])
+        return true;
+    return false;
+}
+
 +(NSString*)getFBFullName{
     if([USER_DEFAULTS objectForKey:KEY_USERDEFAULTS_FB_FULL_NAME]) {
         return [USER_DEFAULTS objectForKey:KEY_USERDEFAULTS_FB_FULL_NAME];
@@ -90,11 +111,6 @@
 +(void) setIsOnboardingCompleted:(BOOL) isCompleted {
 
     [USER_DEFAULTS setBool:isCompleted forKey:KEY_USERDEFAULTS_IS_ONBOARDING_COMPLETED];
-}
-
-+(BOOL) isOnboardingCompleted {
-
-    return [USER_DEFAULTS boolForKey:KEY_USERDEFAULTS_IS_ONBOARDING_COMPLETED];
 }
 
 

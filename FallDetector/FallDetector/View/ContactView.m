@@ -8,6 +8,8 @@
 
 #import "ContactView.h"
 #import "ContactController.h"
+#import "UserDefaults.h"
+#import "Alert.h"
 
 @implementation ContactView
 
@@ -60,6 +62,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.searchBar resignFirstResponder];
     [self.table deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *selectedContact = [_filteredContacts objectAtIndex:indexPath.row];
     NSDictionary *insertedContact = [self isContactAlreadySelected:selectedContact];
@@ -68,6 +71,7 @@
     } else {
         [self showNumberSelectorIfNecessary:selectedContact];
     }
+    
     [tableView reloadData];
 }
 
@@ -87,11 +91,27 @@
 - (void) showNumberSelectorIfNecessary:(NSDictionary *)contact{
     NSString *name = [contact objectForKey:@"Name"];
     NSArray *numbers = [contact objectForKey:@"Phone"];
+    NSString *email = [contact objectForKey:@"Email"];
+    
+    if([email isEqualToString:@""]){
+        [Alert show:@"Warning" andMessage:@"The selected contact doesn't have any email specified"];
+    }
+    
     if([numbers count] > 1){
         [self showNumberSelector:contact];
-    } else {
-        NSDictionary *newContact = @{@"Name":name,
-                                     @"SelectedNumber":[numbers firstObject]};
+    }
+    else {
+        NSDictionary *newContact;
+        if(![email isEqualToString:@""]){
+            newContact = @{@"Name":name,
+                                     @"SelectedNumber":[numbers firstObject],
+                                     @"Email":email};
+        }
+        else{
+            newContact = @{@"Name":name,
+                                         @"SelectedNumber":[numbers firstObject],
+                                         @"Email":@""};
+        }
         [self.selectedContacts addObject:newContact];
     }
 }
@@ -118,6 +138,14 @@
     [alert addAction:action];
     
     [(ContactController *)self.controller.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{

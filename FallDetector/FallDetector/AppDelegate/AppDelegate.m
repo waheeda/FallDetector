@@ -13,6 +13,7 @@
 #import "InfoController.h"
 #import "MonitoringController.h"
 #import "MenuController.h"
+#import "UserDefaults.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @implementation AppDelegate
 
@@ -23,7 +24,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.navigationController = [[UINavigationController alloc] init];
     [self.window setRootViewController:self.navigationController];
-    [self showInfoController];
+    
+    if([UserDefaults isLoggedIn]) {
+        [self showMonitoringController];
+    }
+    else{
+        [self showInfoController];
+    }
     [self.window setRootViewController:self.navigationController];
     [self.window makeKeyAndVisible];
     BOOL returnValue = [[FBSDKApplicationDelegate sharedInstance] application:application

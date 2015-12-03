@@ -75,39 +75,71 @@
         NSString *firstName = CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
         NSString *lastName  = CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
         NSString *phoneNumber;
+        NSString *email;
         NSMutableArray *allPhoneNumbers = [NSMutableArray new];
+        NSMutableArray *allEmails = [NSMutableArray new];
         NSDictionary *contactObject;
         NSLog(@"Name:%@ %@", firstName, lastName);
         
         
         
         ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
         CFIndex numberCount = ABMultiValueGetCount(phoneNumbers);
+        CFIndex emailCount = ABMultiValueGetCount(emails);
         for (CFIndex i = 0; i < numberCount ; i++) {
             phoneNumber = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneNumbers, i));
             [allPhoneNumbers addObject:phoneNumber];
             NSLog(@"  phone:%@", phoneNumber);
+            NSLog(@"  email:%@", email);
         }
         
-        if (!phoneNumber) 
+        for (CFIndex i = 0; i < emailCount ; i++) {
+            email = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emails, i));
+            [allEmails addObject:email];
+        }
+        
+        if ([allPhoneNumbers count]<1)
+            continue;
+        if(firstName && lastName){
+            if([allEmails count]>0){
+                contactObject = @{@"Name":[NSString stringWithFormat:@"%@ %@",firstName,lastName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":[allEmails firstObject]};
+            }
+            else{
+                contactObject = @{@"Name":[NSString stringWithFormat:@"%@ %@",firstName,lastName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":@""};
+            }
+        }
+        else if(firstName){
+            if([allEmails count]>0){
+                contactObject = @{@"Name":[NSString stringWithFormat:@"%@",firstName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":[allEmails firstObject]};
+            }
+            else{
+                contactObject = @{@"Name":[NSString stringWithFormat:@"%@",firstName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":@""};
+            }
+        }
+        else if(lastName){
+            if([allEmails count]>0){
+                contactObject = @{@"Name":[NSString stringWithFormat:@"%@",lastName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":[allEmails firstObject]};
+            }
+            else{
+            contactObject = @{@"Name":[NSString stringWithFormat:@"%@",lastName],
+                              @"Phone":allPhoneNumbers,
+                              @"Email":@""};
+            }
+        }
+        else
             continue;
         
-        
-        if(firstName && lastName){
-            contactObject = @{@"Name":[NSString stringWithFormat:@"%@ %@",firstName,lastName],
-                              @"Phone":allPhoneNumbers};
-            
-        }
-        
-        else if(firstName){
-            contactObject = @{@"Name":[NSString stringWithFormat:@"%@",firstName],
-                              @"Phone":allPhoneNumbers};
-        }
-        
-        else{
-            contactObject = @{@"Name":[NSString stringWithFormat:@"%@",lastName],
-                              @"Phone":allPhoneNumbers};
-        }
         
         [self.contactNames addObject:contactObject];
         CFRelease(phoneNumbers);

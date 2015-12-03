@@ -550,6 +550,7 @@
 		0B7209251A0AB46100162F8D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				42F60C7018ED66F200F2A00F /* Constants */,
 				A26061E11C072DA800597B4B /* SearchBar.h */,
 				A26061E21C072DA800597B4B /* SearchBar.m */,
 				4E2CAD4C1B1C24EC007143D8 /* TableViewCell.h */,
@@ -672,7 +673,6 @@
 				42F60C0C18ED3E6100F2A00F /* AppDelegate */,
 				4E32DC991B32932100B897D7 /* Categories */,
 				0B7209251A0AB46100162F8D /* Component */,
-				42F60C7018ED66F200F2A00F /* Constants */,
 				42F60C1018ED3ED100F2A00F /* Controller */,
 				A2A6B9B81C05898B004CD460 /* Controls */,
 				42A74C1018ED8981002F24EE /* Entity */,
@@ -830,7 +830,8 @@
 				42F60C7118ED66F200F2A00F /* Constant.h */,
 				42F60C7218ED66F200F2A00F /* Enum.h */,
 			);
-			path = Constants;
+			name = Constants;
+			path = ../Constants;
 			sourceTree = "<group>";
 		};
 		42F60C7318ED688700F2A00F /* Utils */ = {
