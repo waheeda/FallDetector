@@ -66,7 +66,12 @@
             return;
         }
         
-        callback(result, nil);
+        [self fetchUserInfo:^(id result, NSError *error) {
+            if(!error){
+                [UserDefaults saveEmailInUserDefaults:[result valueForKey:@"email"]];
+                callback(result,nil);
+            }
+        }];
     }];
 }
 
@@ -102,10 +107,9 @@
 //
 + (void)fetchUserInfo:(FBMCallback)callback
 {
-    [FacebookManager fetchFBFromQuery:@"me" parameters:nil withCallback:^(id result, NSError *error) {
+    [FacebookManager fetchFBFromQuery:@"me" parameters:@{@"fields" : @"email,name"} withCallback:^(id result, NSError *error) {
         [FacebookManager saveUserInfo:result];
         callback(result, error);
-        
     }];
 }
 //

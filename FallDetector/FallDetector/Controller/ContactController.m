@@ -49,7 +49,6 @@
 
 -(void)onDoneBtnTap{
     [self saveSelectedContactsInUserDefaults];
-    //NSArray *contacts = [UserDefaults getEmergencyContacts];
     [self openMonitoringController];
     
 }
