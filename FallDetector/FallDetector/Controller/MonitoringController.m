@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden=false;
     //[self setupImageNavBAr];
     [self setupImageNavBAr];
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
@@ -29,6 +28,10 @@
     [FacebookManager fetchUserInfo:^(id result, NSError *error) {
       NSLog(@"%@",[result valueForKey:@"name"]);
     }];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:false];
 }
 
 -(void)setupImageNavBAr{

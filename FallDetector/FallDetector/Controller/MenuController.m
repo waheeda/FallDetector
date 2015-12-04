@@ -9,6 +9,7 @@
 #import "MenuController.h"
 #import "AppDelegate.h"
 #import "MonitoringController.h"
+#import "AboutController.h"
 @interface MenuController ()
 
 @end
@@ -41,9 +42,29 @@
     
 }
 
+
+-(void)openAboutController{
+    
+    UINavigationController *navigationController = [[AppDelegate getInstance] getMenuContainer].centerViewController;
+    
+    if([navigationController.topViewController isKindOfClass:[AboutController class]]){
+        [[[AppDelegate getInstance] getMenuContainer] setMenuState:MFSideMenuStateClosed];
+        return;
+    }
+    AboutController *aboutController = [[AboutController alloc] init];
+    [self pushController:aboutController];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)pushController:(id)viewController{
+    UINavigationController *navigationController = [[AppDelegate getInstance] getMenuContainer].centerViewController;
+    [navigationController pushViewController:viewController animated:NO];
+    [[[AppDelegate getInstance] getMenuContainer] setMenuState:MFSideMenuStateClosed];
 }
 
 /*

@@ -14,7 +14,6 @@
 
 -(void)awakeFromNib{
     _menuArray=@[@{@"name":@"Home", @"selector":@"openHomeController"},
-                 @{@"name":@"Profile", @"selector":@"openProfileController"},
                  @{@"name":@"Emergency Contacts", @"selector":@"openEmergencyContactsController"},
                  @{@"name":@"About", @"selector":@"openAboutController"}];
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
@@ -32,8 +31,6 @@
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
     NSString *identifier = @"Menu-Cell";
     
     MenuCell *menuCell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -41,7 +38,7 @@
         menuCell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [menuCell set:[_menuArray objectAtIndex:indexPath.row]];
-     [(MenuController*)self.controller didSelectMenu:[_menuArray objectAtIndex:indexPath.row]];
+   //  [(MenuController*)self.controller didSelectMenu:[_menuArray objectAtIndex:indexPath.row]];
     return menuCell;
     
 }
