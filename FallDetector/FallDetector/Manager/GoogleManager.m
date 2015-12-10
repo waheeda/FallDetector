@@ -48,8 +48,8 @@ didSignInForUser:(GIDGoogleUser *)user
     }
     NSLog(@"Signed In");
     NSLog(@"Email:%@ ",[user.profile email]);
-    [UserDefaults saveEmailInUserDefaults:[user.profile email]];
-    [self.delegate onGoogleSignIn];
+    //[UserDefaults saveEmailInUserDefaults:[user.profile email]];
+    [self.delegate onGoogleSignInWithEmail:[user.profile email]];
 }
 
 //GID SignInDelegate Methods

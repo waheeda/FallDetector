@@ -68,7 +68,7 @@
                           leftMenuViewController:leftMenuViewController
                           rightMenuViewController:rightViewController];
     
-    [self.navigationController setViewControllers:@[_sideMenuContainer]];
+    [self.navigationController setViewControllers:@[_sideMenuContainer] animated:YES];
 }
 
 -(MFSideMenuContainerViewController*)getMenuContainer{

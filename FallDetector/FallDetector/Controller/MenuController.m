@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MonitoringController.h"
 #import "AboutController.h"
+#import "EmergencyContactsDisplayController.h"
 @interface MenuController ()
 
 @end
@@ -54,6 +55,23 @@
     AboutController *aboutController = [[AboutController alloc] init];
     [self pushController:aboutController];
     
+}
+
+-(void)openEmergencyContactsDisplayController{
+    
+    UINavigationController *navigationController = [[AppDelegate getInstance] getMenuContainer].centerViewController;
+    
+    if([navigationController.topViewController isKindOfClass:[EmergencyContactsDisplayController class]]){
+        [[[AppDelegate getInstance] getMenuContainer] setMenuState:MFSideMenuStateClosed];
+        return;
+    }
+    EmergencyContactsDisplayController *emergencyController = [[EmergencyContactsDisplayController alloc] init];
+    [self pushController:emergencyController];
+    
+}
+
+-(void)logout{
+    [super showLogoutAlert];
 }
 
 - (void)didReceiveMemoryWarning {

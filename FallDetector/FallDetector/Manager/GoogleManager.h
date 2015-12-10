@@ -11,7 +11,7 @@
 @protocol GoogleManagerDelegate <NSObject >
 -(void) presentGoogleViewController:(UIViewController*) controller;
 -(void) dismissGoogleViewController:(UIViewController*) controller;
--(void) onGoogleSignIn;
+-(void) onGoogleSignInWithEmail:(NSString*)email;
 @end
 @interface GoogleManager : NSObject <GIDSignInDelegate, GIDSignInUIDelegate>
 @property(nonatomic, weak) id<GoogleManagerDelegate> delegate;

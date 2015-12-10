@@ -11,7 +11,9 @@
 #import "FacebookManager.h"
 #import "GoogleManager.h"
 #import "MFSideMenuContainerViewController.h"
-@interface LoginController : BaseController <GoogleManagerDelegate>
+@interface LoginController : BaseController <GoogleManagerDelegate>{
+    NSMutableArray *_fetchedContacts;
+}
 -(void)loginFromFacebook;
 -(void)loginFromGoogle;
 @property (strong, nonatomic) UINavigationController *homeNavigationController;

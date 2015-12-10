@@ -11,8 +11,8 @@
 
 @interface User : BaseEntity
 
-@property(nonatomic,retain) NSString *name;
-@property(nonatomic) int userId;
-
-
+@property(nonatomic,retain) NSString *email;
+@property(nonatomic,retain) NSString *password;
+@property(nonatomic,retain) NSString *source;
+-(void)set:(NSDictionary*)input;
 @end

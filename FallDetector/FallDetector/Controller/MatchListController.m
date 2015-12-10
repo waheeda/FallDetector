@@ -193,60 +193,60 @@ orientationAxis refAXIS;
 
 
 
--(void)createInitialSetup:(CMAccelerometerData *)accelerometerData{
-    double absouluteX = ABS( accelerometerData.acceleration.x);
-    double absouluteY = ABS( accelerometerData.acceleration.y);
-    double absouluteZ = ABS( accelerometerData.acceleration.z);
-    
-    
-        if(absouluteX>absouluteY && absouluteX>absouluteZ){
-            initialAngle = acos(accelerometerData.acceleration.x/_totalAcceleration);
-            if(isnan(initialAngle)){
-                return;
-            }
-            _totalAngles=_totalAngles+initialAngle;
-            NSLog(@"X axis downwards");
-        }
-        else if(absouluteY>absouluteX && absouluteY>absouluteZ){
-            //Y pointing downwards
-            initialAngle = acos(accelerometerData.acceleration.y/_totalAcceleration);
-            if(isnan(initialAngle)){
-                return;
-            }
-            _totalAngles=_totalAngles+initialAngle;
-            NSLog(@"Y axis downwards");
-        }
-        else{
-            initialAngle = acos(accelerometerData.acceleration.z/_totalAcceleration);
-            if(isnan(initialAngle)){
-                return;
-            }
-            _totalAngles=_totalAngles+initialAngle;
-            NSLog(@"Z axis downwards");
-        }
-        
-        _anglesCount++;
-        NSLog(@"Intial Angle: %f",initialAngle);
-        if(_anglesCount==10)
-        {
-            _createSetupOrientation=NO;
-            _avgOrientation = _totalAngles/10;
-            //[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithDouble:_avgOrientation]  forKey:@"avgOrientation"];
-            NSLog(@"Avg orientation set");
-            NSLog(@"Avg angle: %f",_avgOrientation);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Avg orientation set with value: %f",_avgOrientation]];
-            });
-        }
-    
-
-}
-
-
-
--(void)createProgressBar{
-    
-}
+//-(void)createInitialSetup:(CMAccelerometerData *)accelerometerData{
+//    double absouluteX = ABS( accelerometerData.acceleration.x);
+//    double absouluteY = ABS( accelerometerData.acceleration.y);
+//    double absouluteZ = ABS( accelerometerData.acceleration.z);
+//    
+//    
+//        if(absouluteX>absouluteY && absouluteX>absouluteZ){
+//            initialAngle = acos(accelerometerData.acceleration.x/_totalAcceleration);
+//            if(isnan(initialAngle)){
+//                return;
+//            }
+//            _totalAngles=_totalAngles+initialAngle;
+//            NSLog(@"X axis downwards");
+//        }
+//        else if(absouluteY>absouluteX && absouluteY>absouluteZ){
+//            //Y pointing downwards
+//            initialAngle = acos(accelerometerData.acceleration.y/_totalAcceleration);
+//            if(isnan(initialAngle)){
+//                return;
+//            }
+//            _totalAngles=_totalAngles+initialAngle;
+//            NSLog(@"Y axis downwards");
+//        }
+//        else{
+//            initialAngle = acos(accelerometerData.acceleration.z/_totalAcceleration);
+//            if(isnan(initialAngle)){
+//                return;
+//            }
+//            _totalAngles=_totalAngles+initialAngle;
+//            NSLog(@"Z axis downwards");
+//        }
+//        
+//        _anglesCount++;
+//        NSLog(@"Intial Angle: %f",initialAngle);
+//        if(_anglesCount==10)
+//        {
+//            _createSetupOrientation=NO;
+//            _avgOrientation = _totalAngles/10;
+//            //[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithDouble:_avgOrientation]  forKey:@"avgOrientation"];
+//            NSLog(@"Avg orientation set");
+//            NSLog(@"Avg angle: %f",_avgOrientation);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Avg orientation set with value: %f",_avgOrientation]];
+//            });
+//        }
+//    
+//
+//}
+//
+//
+//
+//-(void)createProgressBar{
+//    
+//}
 
 /*
 #pragma mark - Navigation

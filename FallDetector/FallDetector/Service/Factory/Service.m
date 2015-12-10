@@ -32,11 +32,11 @@
 }
 
 
--(void)loadMatchService{
-    if(self.matchService != nil)
+-(void)loadContactService{
+    if(self.contact != nil)
         return;
     
-    self.matchService = [[MatchService alloc] init];
+    self.contact= [[ContactService alloc] init];
 }
 
 #pragma mark setup

@@ -14,7 +14,7 @@
     if (self = [super init]) {
         http = [HttpRequestManager new];
         http.accessToken = ACCESS_TOKEN;
-        [http setHttpHeader:@{@"Content-Type": @"application/json"}];
+        //[http setHttpHeader:@{@"Content-Type": @"application/json"}];
         core = [CoreDataManager new];
     }
     return self;

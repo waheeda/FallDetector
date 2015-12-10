@@ -68,7 +68,7 @@
         
         [self fetchUserInfo:^(id result, NSError *error) {
             if(!error){
-                [UserDefaults saveEmailInUserDefaults:[result valueForKey:@"email"]];
+               // [UserDefaults saveEmailInUserDefaults:[result valueForKey:@"email"]];
                 callback(result,nil);
             }
         }];

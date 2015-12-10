@@ -23,7 +23,7 @@
 +(NSString*)getFBFullName;
 +(void) setIsOnboardingCompleted:(BOOL) isCompleted;
 +(void)setEmergencyContacts:(NSMutableArray*)contacts;
-+(NSArray*)getEmergencyContacts;
++(NSMutableArray*)getEmergencyContacts;
 +(void)saveEmailInUserDefaults:(NSString*)email;
 +(BOOL)isLoggedIn;
 @end

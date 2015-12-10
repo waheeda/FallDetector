@@ -15,6 +15,7 @@
 }
 @property (nonatomic, strong) IBOutlet UITableView* table;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UILabel *selectedContactsLabel;
 @property (nonatomic, strong) NSMutableArray *selectedContacts;
 -(void)setContacts:(NSMutableArray*)array;
 @end

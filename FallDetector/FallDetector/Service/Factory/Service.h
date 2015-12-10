@@ -11,12 +11,13 @@
 #import "UserService.h"
 #import "CheckInService.h"
 #import "MatchService.h"
+#import "ContactService.h"
 
 typedef enum {
     ServiceTypeAuth        = 0,
     ServiceTypeUser        = 1,
     CheckInTypeService     = 2,
-    ServiceTypeMatch        = 3
+    ServiceTypeContacts    = 3
 }ServiceType;
 
 
@@ -28,7 +29,7 @@ typedef enum {
 @property(nonatomic,retain) AuthService *auth;
 @property(nonatomic,retain) UserService *user;
 @property(nonatomic,retain) CheckInService *checkIn;
-@property(nonatomic,retain) MatchService *matchService;
+@property(nonatomic,retain) ContactService *contact;
 
 
 - (void)load:(NSArray*)services;

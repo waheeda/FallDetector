@@ -11,9 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" placeholder="Search Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-Na-aWU">
-                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-Na-aWU">
+                    <rect key="frame" x="0.0" y="64" width="600" height="55"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="NPO-V2-uqB"/>
+                    </constraints>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
                         <string>Title</string>
@@ -24,7 +27,7 @@
                     </connections>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-hw-SuA">
-                    <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                    <rect key="frame" x="0.0" y="119" width="600" height="450"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -32,26 +35,59 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="P7D-Df-XGZ"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXt-BC-tsy">
+                    <rect key="frame" x="0.0" y="569" width="600" height="1"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ebv-oJ-7nk"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Contacts: 0 of 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzo-TM-ANR">
+                    <rect key="frame" x="0.0" y="570" width="600" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ccN-0g-MYz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3AV-hw-SuA" secondAttribute="trailing" id="6tN-xC-QNi"/>
+                <constraint firstItem="Dzo-TM-ANR" firstAttribute="top" secondItem="GXt-BC-tsy" secondAttribute="bottom" id="8Ep-26-oym"/>
                 <constraint firstAttribute="trailing" secondItem="cf8-Na-aWU" secondAttribute="trailing" id="A8J-hQ-Ps7"/>
+                <constraint firstItem="Dzo-TM-ANR" firstAttribute="top" secondItem="3AV-hw-SuA" secondAttribute="bottom" id="CYS-ed-FW8"/>
                 <constraint firstItem="3AV-hw-SuA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Egn-Pr-8Yc"/>
                 <constraint firstItem="3AV-hw-SuA" firstAttribute="top" secondItem="cf8-Na-aWU" secondAttribute="bottom" id="NYq-1t-hED"/>
+                <constraint firstItem="3AV-hw-SuA" firstAttribute="top" secondItem="GXt-BC-tsy" secondAttribute="bottom" id="PFC-sl-TsM"/>
                 <constraint firstItem="cf8-Na-aWU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="RKj-jh-aaq"/>
                 <constraint firstItem="3AV-hw-SuA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RfP-13-v2U"/>
+                <constraint firstAttribute="trailing" secondItem="Dzo-TM-ANR" secondAttribute="trailing" id="Vhx-gH-G68"/>
+                <constraint firstAttribute="trailing" secondItem="GXt-BC-tsy" secondAttribute="trailing" id="XiQ-KW-eZg"/>
+                <constraint firstItem="GXt-BC-tsy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cQE-qm-cMd"/>
+                <constraint firstItem="Dzo-TM-ANR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="fi6-lc-hKk"/>
                 <constraint firstItem="cf8-Na-aWU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gnQ-V4-pYb"/>
+                <constraint firstItem="GXt-BC-tsy" firstAttribute="top" secondItem="3AV-hw-SuA" secondAttribute="bottom" id="gnd-3y-4jU"/>
                 <constraint firstAttribute="bottom" secondItem="3AV-hw-SuA" secondAttribute="bottom" id="gpa-uz-Dng"/>
+                <constraint firstItem="Dzo-TM-ANR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l2z-eZ-ndC"/>
+                <constraint firstAttribute="bottom" secondItem="Dzo-TM-ANR" secondAttribute="bottom" id="oW1-2i-qGy"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="PFC-sl-TsM"/>
                     <exclude reference="RfP-13-v2U"/>
+                    <exclude reference="gpa-uz-Dng"/>
+                    <exclude reference="CYS-ed-FW8"/>
+                    <exclude reference="fi6-lc-hKk"/>
                 </mask>
             </variation>
             <connections>
                 <outlet property="searchBar" destination="cf8-Na-aWU" id="dFF-f9-g3q"/>
+                <outlet property="selectedContactsLabel" destination="Dzo-TM-ANR" id="Neh-cd-IZg"/>
                 <outlet property="table" destination="3AV-hw-SuA" id="fM6-gW-9hQ"/>
             </connections>
         </view>

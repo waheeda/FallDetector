@@ -9,6 +9,6 @@
 	<key>2</key>
 	<string>loadCheckInService</string>
 	<key>3</key>
-	<string>loadMatchService</string>
+	<string>loadContactService</string>
 </dict>
 </plist>

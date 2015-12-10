@@ -18,8 +18,10 @@
 #import "InfoController.h"
 #import "MenuController.h"
 #import "AppDelegate.h"
-
-@interface LoginController ()
+#import "ContactsResponse.h"
+#import "Contact.h"
+#import "EmergencyContactsInitialController.h"
+@interface LoginController () 
 
 @property (nonatomic, weak) LoginController *weakSelf;
 @end
@@ -32,6 +34,48 @@
     [self setupNavBar];
     self.title=@"Sign In";
     [[GoogleManager instance] setDelegate:self];
+    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeUser)]];
+}
+
+-(void)fetchContactsOfEmail:(NSString*)email{
+    NSDictionary *params =@{@"email":email};
+    [service.contact getContactsofEmail:params withSuccess:^(id response) {
+        [self getDictionaryFromEntity:[(ContactsResponse*)response getList]];
+        [UserDefaults setEmergencyContacts:_fetchedContacts];
+        [UserDefaults saveEmailInUserDefaults:email];
+        [self showMonitoringController];
+    } andfailure:^(NSError *error) {
+        [self onServiceResponseFailure:error];
+    }];
+}
+
+-(void)getDictionaryFromEntity:(NSArray*)contacts{
+    _fetchedContacts = [NSMutableArray new];
+    for(Contact *singleContact in contacts){
+        [_fetchedContacts addObject:[singleContact getDictionary]];
+    }
+}
+
+-(void)performLoginOperationWithEmail:(NSString*)email andSource:(NSString*)source{
+    [service.user userExistInDBofEmail:email withSuccess:^(id response) {
+        NSString *status = [response objectForKey:@"value"];
+        if([status isEqualToString:@"true"]){
+            [self fetchContactsOfEmail:email];
+        }
+        else{
+            //insert in to db
+            NSLog(@"details need to be inserted");
+            User *user = [self createUserEntitywithEmail:email Password:@"" andSource:source];
+            [service.user insertUser:user withSuccess:^(id response) {
+                [self showEmergencyContactsInitialController];
+            } andfailure:^(NSError *error) {
+                NSLog(@"error:%@",error.localizedDescription);
+            }];
+            
+        }
+    } andfailure:^(NSError *error) {
+        [self onServiceResponseFailure:error];
+    }];
 }
 
 //changes
@@ -40,13 +84,25 @@
     [FacebookManager loginWithViewController:self andCallback:^(id result, NSError *error) {
         [self hideLoader];
         if(!error){
-            //[self openMonitoringController];
-            [self showMonitoringController];
+            [self performLoginOperationWithEmail:[result valueForKey:@"email"] andSource:@"Facebook"];
         }
         else{
             [self onServiceResponseFailure:error];
         }
     }];
+}
+
+-(void)insertUserDetailsWithSource:(NSString*)source{
+    
+}
+
+-(User*)createUserEntitywithEmail:(NSString*)email Password:(NSString*)pass andSource:(NSString*)source{
+    User *user = [User new];
+    NSDictionary *userDictionary = @{@"email":email,
+                                     @"pwd":pass,
+                                     @"source":source};
+    [user set:userDictionary];
+    return user;
 }
 
 -(void)loginFromGoogle{
@@ -55,13 +111,20 @@
 }
 
 //Delegate Methods
--(void)onGoogleSignIn{
-    [self hideLoader];
-    [self showMonitoringController];
+-(void)onGoogleSignInWithEmail:(NSString *)email{
+   [self performLoginOperationWithEmail:email andSource:@"Google"];
+    //[self showEmergencyContactsInitialController];
 }
 
 -(void)showMonitoringController{
+    [self hideLoader];
     [[AppDelegate getInstance] showMonitoringController];
+}
+
+-(void)showEmergencyContactsInitialController{
+    [self hideLoader];
+    EmergencyContactsInitialController *controller = [EmergencyContactsInitialController new];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)presentGoogleViewController:(UIViewController*) controller{
@@ -71,5 +134,7 @@
 -(void)dismissGoogleViewController:(UIViewController*) controller{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end

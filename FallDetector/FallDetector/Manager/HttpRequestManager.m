@@ -15,6 +15,7 @@
 #import "BaseResponse.h"
 #import "Alert.h"
 #import "URLSessionDataTask.h"
+#import "AFURLRequestSerialization.h"
 
 @implementation HttpRequestManager
 
@@ -29,7 +30,8 @@
 #endif
 
         _manager= [[HttpRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:SERVICE_URL]];
-        _manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+        _manager.requestSerializer  = [AFHTTPRequestSerializer serializer];
+        
         _manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
         [_manager.operationQueue setMaxConcurrentOperationCount:1];
 

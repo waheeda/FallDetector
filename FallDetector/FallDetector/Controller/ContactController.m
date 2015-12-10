@@ -12,6 +12,7 @@
 #import "UserDefaults.h"
 #import "MonitoringController.h"
 #import "AppDelegate.h"
+#import "Alert.h"
 @interface ContactController ()
 
 @end
@@ -21,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [(ContactView*)self.view setContacts:[[ContactsManager sharedInstance] contactNames]];
-    
+    //[[ContactsManager sharedInstance] addContacts];
     [self.navigationController setNavigationBarHidden:NO];
-    [self setupImageNavBAr];
+    [self setupWhiteNavBAr];
     self.title=@"All Contacts";
     // Do any additional setup after loading the view.
 }
@@ -33,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setupImageNavBAr{
+-(void)setupWhiteNavBAr{
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]}];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f]];
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]];
@@ -48,6 +49,10 @@
 }
 
 -(void)onDoneBtnTap{
+    if([[(ContactView*)self.view selectedContacts] count]<2){
+        [Alert show:@"Alert" andMessage:@"Select atleast two contacts"];
+        return;
+    }
     [self saveSelectedContactsInUserDefaults];
     [self openMonitoringController];
     
@@ -61,14 +66,6 @@
 -(void)openMonitoringController{
     [[AppDelegate getInstance] showMonitoringController];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

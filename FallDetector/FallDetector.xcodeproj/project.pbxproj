@@ -107,7 +107,13 @@
 		A20AAF771C11632000E5E6E3 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A20AAF761C11632000E5E6E3 /* AboutView.m */; };
 		A20AAF791C11633100E5E6E3 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20AAF781C11633100E5E6E3 /* AboutView.xib */; };
 		A20AAF7D1C11638800E5E6E3 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20AAF7C1C11638800E5E6E3 /* AboutController.m */; };
+		A20AAF811C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A20AAF801C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m */; };
+		A20AAF831C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */; };
 		A2241AE81C048E39007DFC70 /* GoogleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2241AE71C048E39007DFC70 /* GoogleManager.m */; };
+		A246394A1C1554650090648B /* EmergencyContactsDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24639491C1554650090648B /* EmergencyContactsDisplayController.m */; };
+		A246394D1C1570A30090648B /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = A246394C1C1570A30090648B /* Contact.m */; };
+		A24639501C1573010090648B /* ContactsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A246394F1C1573010090648B /* ContactsResponse.m */; };
+		A24639541C15743F0090648B /* ContactService.m in Sources */ = {isa = PBXBuildFile; fileRef = A24639531C15743F0090648B /* ContactService.m */; };
 		A24E85431C0325D100FD30DC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85421C0325D100FD30DC /* FBSDKCoreKit.framework */; };
 		A24E85451C0325DB00FD30DC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85441C0325DB00FD30DC /* FBSDKLoginKit.framework */; };
 		A24E85471C0325E200FD30DC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */; };
@@ -360,8 +366,19 @@
 		A20AAF781C11633100E5E6E3 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		A20AAF7B1C11638800E5E6E3 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		A20AAF7C1C11638800E5E6E3 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		A20AAF7F1C11B6A100E5E6E3 /* EmergencyContactsDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactsDisplayView.h; sourceTree = "<group>"; };
+		A20AAF801C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactsDisplayView.m; sourceTree = "<group>"; };
+		A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyContactsDisplayView.xib; sourceTree = "<group>"; };
 		A2241AE61C048E39007DFC70 /* GoogleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleManager.h; sourceTree = "<group>"; };
 		A2241AE71C048E39007DFC70 /* GoogleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleManager.m; sourceTree = "<group>"; };
+		A24639481C1554650090648B /* EmergencyContactsDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactsDisplayController.h; sourceTree = "<group>"; };
+		A24639491C1554650090648B /* EmergencyContactsDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactsDisplayController.m; sourceTree = "<group>"; };
+		A246394B1C1570A30090648B /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		A246394C1C1570A30090648B /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		A246394E1C1573010090648B /* ContactsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsResponse.h; sourceTree = "<group>"; };
+		A246394F1C1573010090648B /* ContactsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsResponse.m; sourceTree = "<group>"; };
+		A24639521C15743F0090648B /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactService.h; sourceTree = "<group>"; };
+		A24639531C15743F0090648B /* ContactService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactService.m; sourceTree = "<group>"; };
 		A24E85421C0325D100FD30DC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A24E85441C0325DB00FD30DC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Facebook/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -523,6 +540,8 @@
 				0B7209341A0AB8C600162F8D /* StringResponse.m */,
 				A277C77C1BEB61AD007E7A93 /* MatchResponse.h */,
 				A277C77D1BEB61AD007E7A93 /* MatchResponse.m */,
+				A246394E1C1573010090648B /* ContactsResponse.h */,
+				A246394F1C1573010090648B /* ContactsResponse.m */,
 			);
 			path = ServiceResponse;
 			sourceTree = "<group>";
@@ -622,6 +641,8 @@
 		42A74C1018ED8981002F24EE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				A246394B1C1570A30090648B /* Contact.h */,
+				A246394C1C1570A30090648B /* Contact.m */,
 				0B7209051A0AA1D400162F8D /* BaseEntity.h */,
 				0B7209061A0AA1D400162F8D /* BaseEntity.m */,
 				42A74C1118ED8981002F24EE /* User.h */,
@@ -739,6 +760,7 @@
 		42F60C1018ED3ED100F2A00F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A24639471C1554420090648B /* EmergencyContactsDisplay */,
 				A20AAF7A1C11637600E5E6E3 /* About */,
 				A291B5881C08708200286114 /* Contact */,
 				A27D4D051C06D01E00EB3D18 /* EmergencyContactsInitial */,
@@ -757,6 +779,7 @@
 		42F60C1118ED3ED100F2A00F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A24639511C1573D10090648B /* Contact */,
 				42035D6918EE72DB00237D90 /* Auth */,
 				42A74C0818ED86CB002F24EE /* Base */,
 				0B72091E1A0AAAB500162F8D /* CheckIn */,
@@ -770,6 +793,7 @@
 		42F60C1218ED3ED100F2A00F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A20AAF7E1C11B67600E5E6E3 /* EmergencyContactsDisplay */,
 				A20AAF741C11630200E5E6E3 /* About */,
 				A291B5821C086E6D00286114 /* Contact */,
 				A27D4D091C06D07E00EB3D18 /* EmergencyContactsInitial */,
@@ -1021,6 +1045,34 @@
 				A20AAF7C1C11638800E5E6E3 /* AboutController.m */,
 			);
 			name = About;
+			sourceTree = "<group>";
+		};
+		A20AAF7E1C11B67600E5E6E3 /* EmergencyContactsDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				A20AAF7F1C11B6A100E5E6E3 /* EmergencyContactsDisplayView.h */,
+				A20AAF801C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m */,
+				A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */,
+			);
+			name = EmergencyContactsDisplay;
+			sourceTree = "<group>";
+		};
+		A24639471C1554420090648B /* EmergencyContactsDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				A24639481C1554650090648B /* EmergencyContactsDisplayController.h */,
+				A24639491C1554650090648B /* EmergencyContactsDisplayController.m */,
+			);
+			name = EmergencyContactsDisplay;
+			sourceTree = "<group>";
+		};
+		A24639511C1573D10090648B /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A24639521C15743F0090648B /* ContactService.h */,
+				A24639531C15743F0090648B /* ContactService.m */,
+			);
+			name = Contact;
 			sourceTree = "<group>";
 		};
 		A24E85411C03256900FD30DC /* Facebook */ = {
@@ -1373,6 +1425,7 @@
 				A2639F921C0DC9A500DBB875 /* ContactCell.xib in Resources */,
 				A20AAF791C11633100E5E6E3 /* AboutView.xib in Resources */,
 				4E20D3911BB162AD00229C7D /* Launch Screen.storyboard in Resources */,
+				A20AAF831C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib in Resources */,
 				A2A6B9BD1C0589CC004CD460 /* MenuCell.xib in Resources */,
 				42A74C1518ED9317002F24EE /* Service.plist in Resources */,
 				A27D4D0E1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib in Resources */,
@@ -1431,6 +1484,7 @@
 				A27D4D0C1C06D0A500EB3D18 /* EmergencyContactsInitialView.m in Sources */,
 				0B7209241A0AAE3F00162F8D /* UsersResponse.m in Sources */,
 				42F60C2218ED3F6100F2A00F /* LoginView.m in Sources */,
+				A20AAF811C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m in Sources */,
 				A2A6B9BB1C0589BA004CD460 /* MenuCell.m in Sources */,
 				42F60C1E18ED3F4500F2A00F /* LoginController.m in Sources */,
 				A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */,
@@ -1462,6 +1516,7 @@
 				A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */,
 				42A74C0C18ED86CB002F24EE /* BaseService.m in Sources */,
 				0B72092D1A0AB46100162F8D /* Label.m in Sources */,
+				A246394D1C1570A30090648B /* Contact.m in Sources */,
 				A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */,
 				42F60C7918ED688700F2A00F /* ParserUtils.m in Sources */,
 				0B7209211A0AAACD00162F8D /* CheckInService.m in Sources */,
@@ -1474,12 +1529,14 @@
 				0B72090C1A0AA24900162F8D /* BaseResponse.m in Sources */,
 				A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */,
 				4E2CAD4B1B1C20BA007143D8 /* DateUtils.m in Sources */,
+				A24639501C1573010090648B /* ContactsResponse.m in Sources */,
 				A2A6B9AB1C0581A5004CD460 /* MFSideMenuContainerViewController.m in Sources */,
 				A291B58B1C08709500286114 /* ContactController.m in Sources */,
 				A20AAF7D1C11638800E5E6E3 /* AboutController.m in Sources */,
 				A26061E61C072F9000597B4B /* Utils.m in Sources */,
 				A286CC931BFB663A0092FE63 /* InfoController.m in Sources */,
 				A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */,
+				A24639541C15743F0090648B /* ContactService.m in Sources */,
 				4EE29C001BECB1D2008EB1FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */,
 				A291B5811C086D1E00286114 /* ContactsManager.m in Sources */,
@@ -1500,6 +1557,7 @@
 				4EE29BF71BECB1D2008EB1FC /* AFHTTPSessionManager.m in Sources */,
 				A27D4D081C06D06D00EB3D18 /* EmergencyContactsInitialController.m in Sources */,
 				4EE29C041BECB1D2008EB1FC /* UIRefreshControl+AFNetworking.m in Sources */,
+				A246394A1C1554650090648B /* EmergencyContactsDisplayController.m in Sources */,
 				A204B4851BFDF582001F11D6 /* KAProgressLabel.m in Sources */,
 				A26061E31C072DA800597B4B /* SearchBar.m in Sources */,
 				42F60C3918ED669000F2A00F /* Service.m in Sources */,

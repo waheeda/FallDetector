@@ -9,7 +9,7 @@
 #import "Enum.h"
 
 //#define SERVICE_URL @"http://api.socialradar.com"
-#define SERVICE_URL         @"http://cricscore-api.appspot.com"
+#define SERVICE_URL         @"http://fallception.netne.net/rest/api.php"
 
 #define REGULAR_FONT        @"UniversLTPro-55Roman"
 #define BOLD_FONT           @"UniversLTPro-65Bold"

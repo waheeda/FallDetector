@@ -14,8 +14,9 @@
 
 -(void)awakeFromNib{
     _menuArray=@[@{@"name":@"Home", @"selector":@"openHomeController"},
-                 @{@"name":@"Emergency Contacts", @"selector":@"openEmergencyContactsController"},
-                 @{@"name":@"About", @"selector":@"openAboutController"}];
+                 @{@"name":@"Emergency Contacts", @"selector":@"openEmergencyContactsDisplayController"},
+                 @{@"name":@"About", @"selector":@"openAboutController"},
+                 @{@"name":@"Logout", @"selector":@"logout"}];
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
 }
 

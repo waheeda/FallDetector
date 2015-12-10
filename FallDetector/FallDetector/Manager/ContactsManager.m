@@ -65,7 +65,8 @@
 - (void)listPeopleInAddressBook:(ABAddressBookRef)addressBook
 {
     
-    
+    if([self.contactNames count]>0)
+        return;
     NSArray *allPeople = CFBridgingRelease(ABAddressBookCopyArrayOfAllPeople(addressBook));
     NSInteger numberOfPeople = [allPeople count];
     
@@ -89,7 +90,8 @@
         CFIndex emailCount = ABMultiValueGetCount(emails);
         for (CFIndex i = 0; i < numberCount ; i++) {
             phoneNumber = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneNumbers, i));
-            [allPhoneNumbers addObject:phoneNumber];
+            NSString *phoneNumberWithoutSpace = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+            [allPhoneNumbers addObject:phoneNumberWithoutSpace];
             NSLog(@"  phone:%@", phoneNumber);
             NSLog(@"  email:%@", email);
         }
@@ -145,6 +147,36 @@
         CFRelease(phoneNumbers);
         
         NSLog(@"=============================================");
+    }
+}
+
+-(void)addContacts{
+    ABAddressBookRef iPhoneAddressBook = ABAddressBookCreate();
+    
+    ABRecordRef newPerson = ABPersonCreate();
+    CFErrorRef error = NULL;
+    ABRecordSetValue(newPerson, kABPersonFirstNameProperty, @"E Honda", &error);
+    ABRecordSetValue(newPerson, kABPersonEmailProperty, @"gmail@giki.edu.pk",& error);
+    //ABRecordSetValue(newPerson, kABPersonLastNameProperty, people.lastname, &error);
+    
+    ABMutableMultiValueRef multiPhone =     ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(multiPhone, @"034455256952", kABPersonPhoneMainLabel, NULL);
+   // ABMultiValueAddValueAndLabel(multiPhone, people.other, kABOtherLabel, NULL);
+    ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone,&error);
+    CFRelease(multiPhone);
+    // ...
+    // Set other properties
+    // ...
+    ABAddressBookAddRecord(iPhoneAddressBook, newPerson, &error);
+    
+    ABAddressBookSave(iPhoneAddressBook, &error);
+    CFRelease(newPerson);
+    CFRelease(iPhoneAddressBook);
+    if (error != NULL)
+    {
+        //CFStringRef errorDesc = CFErrorCopyDescription(*error);
+        NSLog(@"Contact not saved");
+        //CFRelease(errorDesc);
     }
 }
 

@@ -14,7 +14,13 @@
 #import "Alert.h"
 #import "MonitoringController.h"
 #import "LoginController.h"
+#import "UserDefaults.h"
+#import "IntroController.h"
 
+#define TEXT_LOG_OUT                    @"Logout"
+#define MESSAGE_LOGOUT_CONFIRMATION     @"Are you sure you want to logout?"
+#define BUTTON_TITLE_OK         @"Ok"
+#define BUTTON_TITLE_CANCEL     @"Cancel"
 @interface BaseController ()
 
 @end
@@ -188,6 +194,26 @@
     BaseView *view  = (BaseView*)[array objectAtIndex:0];
     view.controller = self;
     self.view       = view;
+}
+
+-(void) openIntroScreen {
+    IntroController *controller = [IntroController new];
+    [self setRootViewController:controller];
+    
+}
+
+-(void) showLogoutAlert {
+    
+    [Alert show:TEXT_LOG_OUT andMessage:MESSAGE_LOGOUT_CONFIRMATION cancelButtonTitle:BUTTON_TITLE_CANCEL otherButtonTitles:TEXT_LOG_OUT tag:1 WithDelegate:self];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        if(alertView.tag == 1){
+            [UserDefaults clearUserDefaults];
+            [self openIntroScreen];
+        }
+    }
 }
 
 -(void) dealloc {

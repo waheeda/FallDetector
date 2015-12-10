@@ -12,9 +12,9 @@
 @implementation User
 
 -(void)set:(NSDictionary*)input{
-//    self.name   = [ParserUtils stringValue:input key:@"name"];
-//    self.userId = [[ParserUtils numberValue:input key:@"userId"] intValue];
-
+    self.email= [ParserUtils stringValue:input key:@"email"];
+    self.password   = [ParserUtils stringValue:input key:@"pwd"];
+    self.source   = [ParserUtils stringValue:input key:@"source"];
     NSLog(@"Response was : %@", input);
 }
 

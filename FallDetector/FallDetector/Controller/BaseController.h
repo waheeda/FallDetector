@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Service.h"
 
-@interface BaseController : UIViewController{
+@interface BaseController : UIViewController <UIAlertViewDelegate>{
     Service *service;
 }
 
@@ -26,4 +26,5 @@
 -(void) setRootViewController:(UIViewController *)controller;
 -(UIBarButtonItem *) createBackButton:(id)target selector:(SEL)selector ;
 -(UIBarButtonItem*)createLeftMenuButton;
+-(void) showLogoutAlert;
 @end

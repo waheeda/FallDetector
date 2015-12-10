@@ -65,8 +65,10 @@
     [USER_DEFAULTS synchronize];
 }
 
-+(NSArray*)getEmergencyContacts{
-    return [USER_DEFAULTS objectForKey:@"EmergencyContacts"];
++(NSMutableArray*)getEmergencyContacts{
+    if([USER_DEFAULTS objectForKey:@"EmergencyContacts"])
+        return [[USER_DEFAULTS objectForKey:@"EmergencyContacts"] mutableCopy];
+    return nil;
 }
 
 +(void)setFacebookUserID:(NSString *)userID{

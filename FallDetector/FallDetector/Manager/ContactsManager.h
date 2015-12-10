@@ -17,5 +17,5 @@ typedef void (^ContactManagerCallback)(id result, NSError *error);
 + (ContactsManager *) sharedInstance;
 -(void) getContactsOldWayWithCallback:(ContactManagerCallback)callback;
 -(void) getContactsNewWay;
-
+-(void)addContacts;
 @end
