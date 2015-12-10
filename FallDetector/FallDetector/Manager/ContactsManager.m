@@ -150,13 +150,12 @@
     }
 }
 
--(void)addContacts{
+-(void)addContactsOldWayWithName:(NSString *)name number:(NSString *)number email:(NSString *)email{
     ABAddressBookRef iPhoneAddressBook = ABAddressBookCreate();
     
     ABRecordRef newPerson = ABPersonCreate();
     CFErrorRef error = NULL;
     ABRecordSetValue(newPerson, kABPersonFirstNameProperty, @"E Honda", &error);
-    ABRecordSetValue(newPerson, kABPersonEmailProperty, @"gmail@giki.edu.pk",& error);
     //ABRecordSetValue(newPerson, kABPersonLastNameProperty, people.lastname, &error);
     
     ABMutableMultiValueRef multiPhone =     ABMultiValueCreateMutable(kABMultiStringPropertyType);
@@ -164,9 +163,12 @@
    // ABMultiValueAddValueAndLabel(multiPhone, people.other, kABOtherLabel, NULL);
     ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone,&error);
     CFRelease(multiPhone);
-    // ...
-    // Set other properties
-    // ...
+    
+    ABMutableMultiValueRef emails = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(emails, @"xxx_xxx@yahoo.com", kABWorkLabel, NULL);
+    ABRecordSetValue(newPerson, kABPersonEmailProperty, emails, & error);
+    CFRelease(emails);
+    
     ABAddressBookAddRecord(iPhoneAddressBook, newPerson, &error);
     
     ABAddressBookSave(iPhoneAddressBook, &error);
@@ -174,9 +176,9 @@
     CFRelease(iPhoneAddressBook);
     if (error != NULL)
     {
-        //CFStringRef errorDesc = CFErrorCopyDescription(*error);
-        NSLog(@"Contact not saved");
-        //CFRelease(errorDesc);
+        CFStringRef errorDesc = CFErrorCopyDescription(error);
+        NSLog(@"Contact not saved: %@", errorDesc);
+        CFRelease(errorDesc);
     }
 }
 
@@ -225,6 +227,49 @@
             if(string){
                 [self.contactNames addObject:string];
             }
+        }
+    }];
+}
+
+-(void)addContactsNewWayWithName:(NSString *)name number:(NSString *)number email:(NSString *)email{
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    if (status == CNAuthorizationStatusDenied || status == CNAuthorizationStatusDenied) {
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"This app previously was refused permissions to contacts; Please go to settings and grant permission to this app so it can add the desired contact" preferredStyle:UIAlertControllerStyleAlert];
+//        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+//        [self presentViewController:alert animated:TRUE completion:nil];
+        return;
+    }
+    
+    CNContactStore *store = [[CNContactStore alloc] init];
+    
+    [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (!granted) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // user didn't grant access;
+                // so, again, tell user here why app needs permissions in order  to do it's job;
+                // this is dispatched to the main queue because this request could be running on background thread
+            });
+            return;
+        }
+        
+        // create contact
+        
+        CNMutableContact *contact = [[CNMutableContact alloc] init];
+//        contact.familyName = @"Doe";
+        contact.givenName = name;
+        
+        CNLabeledValue *homePhone = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:number]];
+        contact.phoneNumbers = @[homePhone];
+        
+        
+        CNSaveRequest *request = [[CNSaveRequest alloc] init];
+        [request addContact:contact toContainerWithIdentifier:nil];
+        
+        // save it
+        
+        NSError *saveError;
+        if (![store executeSaveRequest:request error:&saveError]) {
+            NSLog(@"error = %@", saveError);
         }
     }];
 }
