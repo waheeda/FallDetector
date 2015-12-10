@@ -26,4 +26,5 @@
 +(NSMutableArray*)getEmergencyContacts;
 +(void)saveEmailInUserDefaults:(NSString*)email;
 +(BOOL)isLoggedIn;
++(NSString*)getEmail;
 @end

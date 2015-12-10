@@ -38,6 +38,8 @@
     [USER_DEFAULTS synchronize];
 }
 
+
+
 +(void)removePlaceMark{
     if ([USER_DEFAULTS objectForKey:KEY_USERDEFAULTS_PLACEMARK]){
         [USER_DEFAULTS removeObjectForKey:KEY_USERDEFAULTS_PLACEMARK];
@@ -63,6 +65,12 @@
 +(void)saveEmailInUserDefaults:(NSString*)email{
     [USER_DEFAULTS setObject:email forKey:@"userEmail"];
     [USER_DEFAULTS synchronize];
+}
+
++(NSString*)getEmail{
+    if([USER_DEFAULTS objectForKey:@"userEmail"])
+        return [USER_DEFAULTS objectForKey:@"userEmail"];
+    return nil;
 }
 
 +(NSMutableArray*)getEmergencyContacts{

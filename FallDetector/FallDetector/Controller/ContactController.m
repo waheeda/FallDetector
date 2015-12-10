@@ -13,6 +13,7 @@
 #import "MonitoringController.h"
 #import "AppDelegate.h"
 #import "Alert.h"
+#import "Contact.h"
 @interface ContactController ()
 
 @end
@@ -57,6 +58,18 @@
     [self openMonitoringController];
     
 }
+
+//-(void)saveContactsRemotely{
+//    for(int i=0;i<2;i++){
+//        Contact *contact = [Contact new];
+//        [contact set:[[(ContactView*)self.view selectedContacts] objectAtIndex:i]];
+//    }
+//    [service.contact addContactofEmail:[UserDefaults getEmail] andContact:<#(Contact *)#> withSuccess:^(id response) {
+//        
+//    } andfailure:^(NSError *error) {
+//        
+//    }];
+//}
 
 -(void)saveSelectedContactsInUserDefaults{
     if([[(ContactView*)self.view selectedContacts] count]>=1)
