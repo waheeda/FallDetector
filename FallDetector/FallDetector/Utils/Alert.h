@@ -11,4 +11,5 @@
 
 +(void)show:(NSString*)title andMessage:(NSString*)message;
 + (void) show : (NSString *) title andMessage : (NSString *) message cancelButtonTitle:(NSString *)cancelTitle otherButtonTitles:(NSString *)otherTitle tag:(NSInteger)tag WithDelegate:(id) delegate;
++ (void) show : (NSString *) title andMessage : (NSString *) message cancelButtonTitle:(NSString *)cancelTitle otherButtonTitle1:(NSString *)otherTitle andOtherButtonTitle2:(NSString*)otherTitle2 tag:(NSInteger)tag WithDelegate:(id) delegate;
 @end

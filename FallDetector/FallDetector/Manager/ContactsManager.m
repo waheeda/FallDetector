@@ -25,7 +25,7 @@
     return sharedInstance;
 }
 
--(void) getContactsOldWayWithCallback:(ContactManagerCallback)callback{
+-(void) getContactsOldWayWithSelectedContacts:(NSMutableArray*)selectedContacts andCallback:(ContactManagerCallback)callback{
     ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
     
     if (status == kABAuthorizationStatusDenied || status == kABAuthorizationStatusRestricted) {
@@ -44,29 +44,29 @@
     ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
         if (error) {
             NSLog(@"ABAddressBookRequestAccessWithCompletion error: %@", CFBridgingRelease(error));
-            callback(nil,(__bridge NSError *)(error));
+            callback(nil,false,(__bridge NSError *)(error));
         }
         
         if (granted) {
             // if they gave you permission, then just carry on
             
-            [self listPeopleInAddressBook:addressBook];
-            callback(self.contactNames,nil);
-            
+            [self listPeopleInAddressBook:addressBook withSelectedContacts:selectedContacts];
+            callback(self.contactNames,_contactExistCount,nil);
             
         } else {
-            callback(nil,(__bridge NSError *)(error));
+            callback(nil,false,(__bridge NSError *)(error));
         }
         
         CFRelease(addressBook);
     });
 }
 
-- (void)listPeopleInAddressBook:(ABAddressBookRef)addressBook
+- (void)listPeopleInAddressBook:(ABAddressBookRef)addressBook withSelectedContacts:(NSMutableArray*)selectedContacts
 {
-    
+    _contactExistCount=0;
+    _matchedContacts=[NSMutableArray new];
     if([self.contactNames count]>0)
-        return;
+        [self.contactNames removeAllObjects];
     NSArray *allPeople = CFBridgingRelease(ABAddressBookCopyArrayOfAllPeople(addressBook));
     NSInteger numberOfPeople = [allPeople count];
     
@@ -82,7 +82,9 @@
         NSDictionary *contactObject;
         NSLog(@"Name:%@ %@", firstName, lastName);
         
-        
+        if([firstName isEqualToString:@"Hank"]){
+            NSLog(@"Hank Zaleel");
+        }
         
         ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
         ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
@@ -92,6 +94,14 @@
             phoneNumber = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneNumbers, i));
             NSString *phoneNumberWithoutSpace = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
             [allPhoneNumbers addObject:phoneNumberWithoutSpace];
+            if(selectedContacts){
+                NSString *firstSelectedPhoneNumber = [[selectedContacts firstObject] objectForKey:@"number"];
+                NSString *SecondSelectedPhoneNumber = [[selectedContacts lastObject] objectForKey:@"number"];
+                if([firstSelectedPhoneNumber isEqualToString:phoneNumberWithoutSpace] || [SecondSelectedPhoneNumber isEqualToString:phoneNumberWithoutSpace]){
+                    _contactExistCount++;
+                    [_matchedContacts addObject:phoneNumberWithoutSpace];
+                }
+            }
             NSLog(@"  phone:%@", phoneNumber);
             NSLog(@"  email:%@", email);
         }
@@ -142,7 +152,7 @@
         else
             continue;
         
-        
+       
         [self.contactNames addObject:contactObject];
         CFRelease(phoneNumbers);
         
@@ -151,27 +161,42 @@
 }
 
 -(void)addContactsOldWayWithName:(NSString *)name number:(NSString *)number email:(NSString *)email{
+    NSLog(@"in contact added");
+    for(NSString* contact in _matchedContacts){
+        
+        if([contact isEqualToString:number]){
+            return;
+        }
+    }
+    
     ABAddressBookRef iPhoneAddressBook = ABAddressBookCreate();
     
     ABRecordRef newPerson = ABPersonCreate();
     CFErrorRef error = NULL;
-    ABRecordSetValue(newPerson, kABPersonFirstNameProperty, @"E Honda", &error);
+    ABRecordSetValue(newPerson, kABPersonFirstNameProperty, (__bridge CFTypeRef)(name) , &error);
     //ABRecordSetValue(newPerson, kABPersonLastNameProperty, people.lastname, &error);
     
     ABMutableMultiValueRef multiPhone =     ABMultiValueCreateMutable(kABMultiStringPropertyType);
-    ABMultiValueAddValueAndLabel(multiPhone, @"034455256952", kABPersonPhoneMainLabel, NULL);
+    ABMultiValueAddValueAndLabel(multiPhone, (__bridge CFTypeRef)(number), kABPersonPhoneMainLabel, NULL);
    // ABMultiValueAddValueAndLabel(multiPhone, people.other, kABOtherLabel, NULL);
     ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone,&error);
     CFRelease(multiPhone);
     
     ABMutableMultiValueRef emails = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-    ABMultiValueAddValueAndLabel(emails, @"xxx_xxx@yahoo.com", kABWorkLabel, NULL);
+    ABMultiValueAddValueAndLabel(emails, (__bridge CFTypeRef)(email), kABWorkLabel, NULL);
     ABRecordSetValue(newPerson, kABPersonEmailProperty, emails, & error);
     CFRelease(emails);
     
     ABAddressBookAddRecord(iPhoneAddressBook, newPerson, &error);
     
     ABAddressBookSave(iPhoneAddressBook, &error);
+    NSMutableArray* phoneNumbers= [NSMutableArray new];
+    [phoneNumbers addObject:number];
+    
+    NSDictionary *newContact =  @{@"Name":name,
+                                  @"Phone":phoneNumbers,
+                                  @"Email":email};
+    [self.contactNames addObject:newContact];
     CFRelease(newPerson);
     CFRelease(iPhoneAddressBook);
     if (error != NULL)

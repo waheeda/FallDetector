@@ -11,6 +11,7 @@
 #import "UserDefaults.h"
 #import "EmergencyContactsDisplayView.h"
 #import "ContactsManager.h"
+#import "Alert.h"
 @interface EmergencyContactsDisplayController ()
 
 @end
@@ -57,25 +58,54 @@
     
 }
 
+-(void) showNoSavedContactsAlert {
+    [Alert show:@"No Contacts Found" andMessage:@"Emergency Contacts are not found in your contacts directory. Do you want to add them?\nWarning: Selecting no will result in deletion of your contacts from the app." cancelButtonTitle:@"Cancel" otherButtonTitle1:@"Yes" andOtherButtonTitle2:@"No" tag:2 WithDelegate:self];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        if(alertView.tag == 2){
+            [self addContactsInMainDirectory];
+            [self openContactsController];
+        }
+    }
+    else if(buttonIndex==2){
+        if(alertView.tag == 2){
+            [UserDefaults clearEmergencyContacts];
+            [self openContactsController];
+        }
+    }
+    
+}
+
+-(void)addContactsInMainDirectory{
+    NSMutableArray *contactsToAdd = [UserDefaults getEmergencyContacts];
+    for(NSDictionary* contact in contactsToAdd){
+        [[ContactsManager sharedInstance] addContactsOldWayWithName:[contact objectForKey:@"contact_name"] number:[contact objectForKey:@"number"] email:[contact objectForKey:@"email"]];
+    }
+    
+}
+
 -(void)fetchContacts{
     [super showLoader];
-    if(!_contactsFetched){
-        [[ContactsManager sharedInstance] getContactsOldWayWithCallback:^(id result, NSError *error) {
-        
-            
-                _contactsFetched=true;
-                    [self performSelectorOnMainThread:@selector(openContactsController) withObject:nil waitUntilDone:YES];
-            //  [self openContactController];
-            
-//            else{
-//                [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];
-//            }
+    [[ContactsManager sharedInstance] getContactsOldWayWithSelectedContacts:[UserDefaults getEmergencyContacts] andCallback:^(id result, int contactExistCount, NSError *error) {
+        if(result){
+            //[self showNoSavedContactsAlert];
+            [self performSelectorOnMainThread:@selector(hideLoader) withObject:nil waitUntilDone:YES];
+            if(contactExistCount<2){
+                [self performSelectorOnMainThread:@selector(showNoSavedContactsAlert) withObject:nil waitUntilDone:YES];
+            }
+            else{
+                [self performSelectorOnMainThread:@selector(openContactsController) withObject:nil waitUntilDone:YES];
+            }
+        }
+        else{
+            [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];
+        }
         }];
-    }
 }
 
 -(void)openContactsController{
-    [self hideLoader];
     ContactController* contactController = [ContactController new];
     [self.navigationController pushViewController:contactController animated:YES];
 }

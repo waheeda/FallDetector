@@ -11,4 +11,5 @@
 @interface ContactService : BaseService
 -(void) getContactsofEmail:(NSDictionary*)email withSuccess:(successCallback)success andfailure:(failureCallback)failure;
 -(void)addContactofEmail:(NSString*)email andContact:(Contact*)contact withSuccess:(successCallback)success andfailure:(failureCallback)failure;
+-(void)deleteContactOfEmail:(NSString*)email withSuccess:(successCallback)success andfailure:(failureCallback)failure;
 @end

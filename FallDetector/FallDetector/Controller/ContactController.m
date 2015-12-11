@@ -23,10 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [(ContactView*)self.view setContacts:[[ContactsManager sharedInstance] contactNames]];
-    //[[ContactsManager sharedInstance] addContacts];
+    //[[ContactsManager sharedInstance] addContactsOldWayWithName:@"E honda" number:@"0354" email:@"g@gmail.com"];
     [self.navigationController setNavigationBarHidden:NO];
     [self setupWhiteNavBAr];
     self.title=@"All Contacts";
+    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeUser)]];
     // Do any additional setup after loading the view.
 }
 
@@ -55,21 +56,37 @@
         return;
     }
     [self saveSelectedContactsInUserDefaults];
-    [self openMonitoringController];
+    [self saveContactsInDB];
+    
     
 }
 
-//-(void)saveContactsRemotely{
-//    for(int i=0;i<2;i++){
-//        Contact *contact = [Contact new];
-//        [contact set:[[(ContactView*)self.view selectedContacts] objectAtIndex:i]];
-//    }
-//    [service.contact addContactofEmail:[UserDefaults getEmail] andContact:<#(Contact *)#> withSuccess:^(id response) {
-//        
-//    } andfailure:^(NSError *error) {
-//        
-//    }];
-//}
+-(void)saveContactsInDB{
+    
+    Contact *firstContact = [Contact new];
+    Contact *secondContact = [Contact new];
+    [firstContact set:[[(ContactView*)self.view selectedContacts] firstObject]];
+    [secondContact set:[[(ContactView*)self.view selectedContacts] lastObject]];
+    [self showLoader];
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(service) weakService = service;
+    [weakService.contact deleteContactOfEmail:[UserDefaults getEmail] withSuccess:^(id response) {
+        [weakService.contact addContactofEmail:[UserDefaults getEmail] andContact:firstContact withSuccess:^(id response) {
+            NSLog(@"First block Success");
+            [weakService.contact addContactofEmail:[UserDefaults getEmail] andContact:secondContact withSuccess:^(id response) {
+                [weakSelf hideLoader];
+                [weakSelf openMonitoringController];
+            } andfailure:^(NSError *error) {
+                [super onServiceResponseFailure:error];
+            }];
+        } andfailure:^(NSError *error) {
+            [super onServiceResponseFailure:error];
+        }];
+    } andfailure:^(NSError *error) {
+        [super onServiceResponseFailure:error];
+    }];
+    
+}
 
 -(void)saveSelectedContactsInUserDefaults{
     if([[(ContactView*)self.view selectedContacts] count]>=1)

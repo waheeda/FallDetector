@@ -79,6 +79,10 @@
     return nil;
 }
 
++(void)clearEmergencyContacts{
+    [USER_DEFAULTS removeObjectForKey:@"EmergencyContacts"];
+}
+
 +(void)setFacebookUserID:(NSString *)userID{
 
     [USER_DEFAULTS setObject:userID forKey:KEY_USERDEFAULTS_FB_USER_ID];
@@ -86,7 +90,7 @@
 }
 
 +(void)clearUserDefaults{
-    [USER_DEFAULTS removeObjectForKey:@"EmergencyContacts"];
+    [UserDefaults clearEmergencyContacts];
     [USER_DEFAULTS removeObjectForKey:@"userEmail"];
     [USER_DEFAULTS synchronize];
 }

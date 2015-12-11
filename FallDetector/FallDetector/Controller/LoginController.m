@@ -21,6 +21,7 @@
 #import "ContactsResponse.h"
 #import "Contact.h"
 #import "EmergencyContactsInitialController.h"
+
 @interface LoginController () 
 
 @property (nonatomic, weak) LoginController *weakSelf;
@@ -67,6 +68,7 @@
             NSLog(@"details need to be inserted");
             User *user = [self createUserEntitywithEmail:email Password:@"" andSource:source];
             [service.user insertUser:user withSuccess:^(id response) {
+                [UserDefaults saveEmailInUserDefaults:email];
                 [self showEmergencyContactsInitialController];
             } andfailure:^(NSError *error) {
                 NSLog(@"error:%@",error.localizedDescription);

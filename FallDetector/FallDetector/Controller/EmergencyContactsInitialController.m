@@ -29,15 +29,16 @@
 
 -(void)fetchContacts{
     [super showLoader];
-    [[ContactsManager sharedInstance] getContactsOldWayWithCallback:^(id result, NSError *error) {
-        
+    
+    [[ContactsManager sharedInstance] getContactsOldWayWithSelectedContacts:nil andCallback:^(id result, int contactExists, NSError *error) {
         if(result){
             [self performSelectorOnMainThread:@selector(openContactController) withObject:nil waitUntilDone:YES];
-          //  [self openContactController];
+            //  [self openContactController];
         }
         else{
             [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];
         }
+        
     }];
 }
 -(void)openContactController{

@@ -8,7 +8,7 @@
 
 #import "BaseController.h"
 
-@interface EmergencyContactsDisplayController : BaseController{
+@interface EmergencyContactsDisplayController : BaseController <UIAlertViewDelegate>{
     BOOL _contactsFetched;
 }
 
