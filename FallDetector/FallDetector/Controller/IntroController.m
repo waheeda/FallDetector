@@ -9,7 +9,7 @@
 #import "IntroController.h"
 #import "LoginController.h"
 #import "CreateAccountController.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 @interface IntroController ()
 
 @end
@@ -28,7 +28,7 @@
 }
 
 -(void)showMonitoringController{
-    MonitoringController *monitoringController = [MonitoringController new];
+    DashboardController *monitoringController = [DashboardController new];
     [super setRootViewController:monitoringController];
 }
 

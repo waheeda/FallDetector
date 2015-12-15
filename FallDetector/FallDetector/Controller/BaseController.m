@@ -12,7 +12,7 @@
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
 #import "Alert.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 #import "LoginController.h"
 #import "UserDefaults.h"
 #import "IntroController.h"

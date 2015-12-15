@@ -7,7 +7,7 @@
 //
 
 #import "LocationManager.h"
-
+#import "Location.h"
 @implementation LocationManager
 @synthesize location;
 
@@ -26,6 +26,7 @@
     if(_manager == nil){
         _manager = [[CLLocationManager alloc] init];
         _manager.delegate = self;
+        _manager.allowsBackgroundLocationUpdates=true;
     }
 #ifdef __IPHONE_8_0
     NSUInteger code = [CLLocationManager authorizationStatus];
@@ -48,7 +49,7 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    [_manager stopUpdatingLocation];
+    //[_manager stopUpdatingLocation];
     NSLog(@"----------- trigger -------------");
     
     if(![self isDue]){
@@ -57,21 +58,25 @@
     }
 
     if(locations.count == 0){
-        [self notifyCallback:nil];
+        [self notifyCallback:nil error:nil];
         return;
     }
 
+    Location *loc = [Location new];
+    [loc setWithCoreLocation:[locations lastObject]];
+    [self notifyCallback:loc error:nil];
     [self onLocationUpdate];
     
     self.location = [[locations lastObject] coordinate];
     NSLog(@"%f-%f",self.location.latitude,self.location.longitude);
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     [_manager stopUpdatingLocation];
     //NSLog(@"----------- fail ------------");
     [self onLocationUpdate];
-    [self notifyCallback:nil];
+    [self notifyCallback:nil error:error];
 }
 
 -(void)onLocationUpdate{
@@ -100,7 +105,7 @@
 }
 
 -(void)stop{
-    
+    [_manager stopUpdatingLocation];
 }
 
 -(BOOL)hasLocation{
@@ -116,16 +121,18 @@
     [self start];
 }
 
--(void)notifyCallback:(Location*)newLocation{
-    if(_onSuccessCallback == nil)
-        return;
+-(void)notifyCallback:(Location*)newLocation error:(NSError *) error{
     
-    if(newLocation == nil){
-        _onFailureCallback(nil);
+    if(_onFailureCallback && error){
+        _onFailureCallback(error);
+        _onFailureCallback = nil;
         return;
     }
     
+    if(_onSuccessCallback && newLocation){
         _onSuccessCallback(newLocation);
+        _onSuccessCallback = nil;
+    }
 }
 
 @end

@@ -9,16 +9,18 @@
 #import "AppDelegate.h"
 #import "LoginController.h"
 #import "CreateAccountController.h"
-#import "MatchListController.h"
+#import "EmergencyTimerController.h"
 #import "InfoController.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 #import "MenuController.h"
 #import "UserDefaults.h"
+#import "LocationManager.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   // [[LocationManager getInstance] start];
     NSString *kClientID = @"936951329577-6r2kvgjhsmf6tbvmu7e36ah59uv4ccuc.apps.googleusercontent.com";
     [GIDSignIn sharedInstance].clientID = kClientID;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -35,6 +37,7 @@
     [self.window makeKeyAndVisible];
     BOOL returnValue = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                 didFinishLaunchingWithOptions:launchOptions];
+   // [[LocationManager getInstance] start];
     return returnValue;
 }
 
@@ -51,7 +54,7 @@
 
 
 -(void)showMonitoringController{
-    MonitoringController *monitoringController = [[MonitoringController alloc] init];
+    DashboardController *monitoringController = [[DashboardController alloc] init];
     MenuController *menuController = [[MenuController alloc] init];
     
     self.homeNavigationController = [[UINavigationController alloc] initWithRootViewController:monitoringController];

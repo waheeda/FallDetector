@@ -90,9 +90,7 @@
     NSArray *numbers = [contact objectForKey:@"Phone"];
     for(NSDictionary *current in self.selectedContacts){
        NSString *currentNumber = [current objectForKey:@"number"];
-        //NSString *currentNumber = [[current objectForKey:@"number"] stringByReplacingOccurrencesOfString:@" " withString:@""];
         for(NSString *number in numbers){
-            //NSString *numberWithoutSpaces = [number stringByReplacingOccurrencesOfString:@" " withString:@""];
             if([number isEqualToString:currentNumber]){
                 return current;
             }

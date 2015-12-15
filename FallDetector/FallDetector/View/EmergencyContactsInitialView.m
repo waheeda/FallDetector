@@ -20,9 +20,6 @@
 }
 */
 - (IBAction)onAddCOntactCLick:(id)sender {
-//    MultiContactSelector *controller = [MultiContactSelector new
-//                                        ];
-//    [(EmergencyContactsInitialController*)self.controller pushViewController:controller];
     [(EmergencyContactsInitialController*)self.controller fetchContacts];
     
 }

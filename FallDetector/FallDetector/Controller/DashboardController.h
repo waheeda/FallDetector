@@ -8,7 +8,7 @@
 
 #import "BaseController.h"
 #import <CoreMotion/CoreMotion.h>
-@interface MonitoringController : BaseController{
+@interface DashboardController : BaseController{
     //NSMutableArray *_array;
     int _count;
     BOOL _fallDetected;
@@ -24,6 +24,7 @@
 }
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (atomic, strong) NSMutableArray *array;
+-(void)startFetchingLocation;
 -(void)startMonitoring;
--(void)fetchFBData;
+//-(void)fetchFBData;
 @end

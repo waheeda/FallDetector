@@ -8,6 +8,7 @@
 
 #import "IntroView.h"
 #import "IntroController.h"
+#import "Color.h"
 @implementation IntroView
 
 /*
@@ -36,12 +37,12 @@
     NSMutableAttributedString *attributedText =
     [[NSMutableAttributedString alloc] initWithString:text
                                            attributes:nil];
-    UIColor *redColor = [UIColor colorWithRed:249/255.0f green:146/255.0f blue:10/255.0f alpha:1.0f];
-    NSRange redTextRange = [text rangeOfString:@"CEPTION"];
-    [attributedText setAttributes:@{NSForegroundColorAttributeName:redColor,
+    //UIColor *redColor = [UIColor colorWithRed:249/255.0f green:146/255.0f blue:10/255.0f alpha:1.0f];
+    NSRange orangeTextRange = [text rangeOfString:@"CEPTION"];
+    [attributedText setAttributes:@{NSForegroundColorAttributeName:[Color orangeThemeColor],
                                     NSFontAttributeName:[UIFont 
                                                          fontWithName:@"Helvetica-Bold" size:25]}
-                            range:redTextRange];
+                            range:orangeTextRange];
     [self.fallCeptionLabel setAttributedText:attributedText];
     
 }

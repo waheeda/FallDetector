@@ -32,8 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(void)
-
 -(void)setEmergencyContacts{
     [(EmergencyContactsDisplayView*)self.view setEmergencyContacts:[UserDefaults getEmergencyContacts]];
 }
@@ -48,14 +46,12 @@
 }
 
 -(UIBarButtonItem*)createRightModifyButton {
-//    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonSystemItemAdd target:self action:@selector(onDoneBtnTap)];
     UIBarButtonItem *anotherButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onDoneBtnTap)];
     return anotherButton;
 }
 
 -(void)onDoneBtnTap{
     [self fetchContacts];
-    
 }
 
 -(void) showNoSavedContactsAlert {

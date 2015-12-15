@@ -33,7 +33,6 @@
     [[ContactsManager sharedInstance] getContactsOldWayWithSelectedContacts:nil andCallback:^(id result, int contactExists, NSError *error) {
         if(result){
             [self performSelectorOnMainThread:@selector(openContactController) withObject:nil waitUntilDone:YES];
-            //  [self openContactController];
         }
         else{
             [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];

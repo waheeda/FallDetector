@@ -119,15 +119,16 @@
 		A24E85471C0325E200FD30DC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E85461C0325E200FD30DC /* FBSDKShareKit.framework */; };
 		A24E854A1C0337D500FD30DC /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E85491C0337D500FD30DC /* FacebookManager.m */; };
 		A24E854D1C033C4000FD30DC /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E854C1C033C4000FD30DC /* UserDefaults.m */; };
+		A25C9F6E1C1EB26C001D62F2 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A25C9F6D1C1EB26C001D62F2 /* Location.m */; };
 		A26061D71C0725A000597B4B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26061D61C0725A000597B4B /* AddressBookUI.framework */; };
 		A26061E01C0729FD00597B4B /* MultiContactSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061DF1C0729FD00597B4B /* MultiContactSelector.m */; };
 		A26061E31C072DA800597B4B /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E21C072DA800597B4B /* SearchBar.m */; };
 		A26061E61C072F9000597B4B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A26061E51C072F9000597B4B /* Utils.m */; };
 		A2639F901C0DC98D00DBB875 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2639F8F1C0DC98D00DBB875 /* ContactCell.m */; };
 		A2639F921C0DC9A500DBB875 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2639F911C0DC9A500DBB875 /* ContactCell.xib */; };
-		A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C76E1BEB5E84007E7A93 /* MatchListView.m */; };
-		A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A277C7711BEB5EC3007E7A93 /* MatchListView.xib */; };
-		A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7751BEB5EE7007E7A93 /* MatchListController.m */; };
+		A277C76F1BEB5E84007E7A93 /* EmergencyTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C76E1BEB5E84007E7A93 /* EmergencyTimerView.m */; };
+		A277C7721BEB5EC3007E7A93 /* EmergencyTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A277C7711BEB5EC3007E7A93 /* EmergencyTimerView.xib */; };
+		A277C7761BEB5EE7007E7A93 /* EmergencyTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7751BEB5EE7007E7A93 /* EmergencyTimerController.m */; };
 		A277C77A1BEB60D3007E7A93 /* MatchService.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7791BEB60D3007E7A93 /* MatchService.m */; };
 		A277C77E1BEB61AD007E7A93 /* MatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C77D1BEB61AD007E7A93 /* MatchResponse.m */; };
 		A277C7811BEB61E7007E7A93 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C7801BEB61E7007E7A93 /* Match.m */; };
@@ -141,9 +142,9 @@
 		A291B5851C086E9500286114 /* ContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B5841C086E9500286114 /* ContactView.m */; };
 		A291B5871C086EAB00286114 /* ContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A291B5861C086EAB00286114 /* ContactView.xib */; };
 		A291B58B1C08709500286114 /* ContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B58A1C08709500286114 /* ContactController.m */; };
-		A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68401C02E65A0070F695 /* MonitoringView.m */; };
-		A29B68431C02E6930070F695 /* MonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29B68421C02E6930070F695 /* MonitoringView.xib */; };
-		A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68461C02E6BE0070F695 /* MonitoringController.m */; };
+		A29B68411C02E65A0070F695 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68401C02E65A0070F695 /* DashboardView.m */; };
+		A29B68431C02E6930070F695 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29B68421C02E6930070F695 /* DashboardView.xib */; };
+		A29B68471C02E6BE0070F695 /* DashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29B68461C02E6BE0070F695 /* DashboardController.m */; };
 		A29F2D5D1C04315A00ABB4C6 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A29F2D5B1C04315A00ABB4C6 /* GoogleSignIn.bundle */; };
 		A29F2D5E1C04315A00ABB4C6 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F2D5C1C04315A00ABB4C6 /* GoogleSignIn.framework */; };
 		A29F2D601C0431B600ABB4C6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F2D5F1C0431B600ABB4C6 /* AddressBook.framework */; };
@@ -386,6 +387,8 @@
 		A24E85491C0337D500FD30DC /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
 		A24E854B1C033C4000FD30DC /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		A24E854C1C033C4000FD30DC /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		A25C9F6C1C1EB26C001D62F2 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		A25C9F6D1C1EB26C001D62F2 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		A26061D61C0725A000597B4B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		A26061DE1C0729FD00597B4B /* MultiContactSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiContactSelector.h; sourceTree = "<group>"; };
 		A26061DF1C0729FD00597B4B /* MultiContactSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiContactSelector.m; sourceTree = "<group>"; };
@@ -396,11 +399,11 @@
 		A2639F8E1C0DC98D00DBB875 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
 		A2639F8F1C0DC98D00DBB875 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
 		A2639F911C0DC9A500DBB875 /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
-		A277C76D1BEB5E84007E7A93 /* MatchListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchListView.h; sourceTree = "<group>"; };
-		A277C76E1BEB5E84007E7A93 /* MatchListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchListView.m; sourceTree = "<group>"; };
-		A277C7711BEB5EC3007E7A93 /* MatchListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchListView.xib; sourceTree = "<group>"; };
-		A277C7741BEB5EE7007E7A93 /* MatchListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchListController.h; sourceTree = "<group>"; };
-		A277C7751BEB5EE7007E7A93 /* MatchListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchListController.m; sourceTree = "<group>"; };
+		A277C76D1BEB5E84007E7A93 /* EmergencyTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTimerView.h; sourceTree = "<group>"; };
+		A277C76E1BEB5E84007E7A93 /* EmergencyTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTimerView.m; sourceTree = "<group>"; };
+		A277C7711BEB5EC3007E7A93 /* EmergencyTimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyTimerView.xib; sourceTree = "<group>"; };
+		A277C7741BEB5EE7007E7A93 /* EmergencyTimerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTimerController.h; sourceTree = "<group>"; };
+		A277C7751BEB5EE7007E7A93 /* EmergencyTimerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTimerController.m; sourceTree = "<group>"; };
 		A277C7781BEB60D3007E7A93 /* MatchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchService.h; sourceTree = "<group>"; };
 		A277C7791BEB60D3007E7A93 /* MatchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchService.m; sourceTree = "<group>"; };
 		A277C77C1BEB61AD007E7A93 /* MatchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResponse.h; sourceTree = "<group>"; };
@@ -424,11 +427,11 @@
 		A291B5861C086EAB00286114 /* ContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactView.xib; sourceTree = "<group>"; };
 		A291B5891C08709500286114 /* ContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactController.h; sourceTree = "<group>"; };
 		A291B58A1C08709500286114 /* ContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactController.m; sourceTree = "<group>"; };
-		A29B683F1C02E65A0070F695 /* MonitoringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringView.h; sourceTree = "<group>"; };
-		A29B68401C02E65A0070F695 /* MonitoringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringView.m; sourceTree = "<group>"; };
-		A29B68421C02E6930070F695 /* MonitoringView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringView.xib; sourceTree = "<group>"; };
-		A29B68451C02E6BE0070F695 /* MonitoringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringController.h; sourceTree = "<group>"; };
-		A29B68461C02E6BE0070F695 /* MonitoringController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringController.m; sourceTree = "<group>"; };
+		A29B683F1C02E65A0070F695 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
+		A29B68401C02E65A0070F695 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
+		A29B68421C02E6930070F695 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
+		A29B68451C02E6BE0070F695 /* DashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardController.h; sourceTree = "<group>"; };
+		A29B68461C02E6BE0070F695 /* DashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardController.m; sourceTree = "<group>"; };
 		A29F2D5B1C04315A00ABB4C6 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Google/GoogleSignIn.bundle; sourceTree = "<group>"; };
 		A29F2D5C1C04315A00ABB4C6 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Google/GoogleSignIn.framework; sourceTree = "<group>"; };
 		A29F2D5F1C0431B600ABB4C6 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -651,6 +654,8 @@
 				0B7209121A0AA34700162F8D /* Country.m */,
 				A277C77F1BEB61E7007E7A93 /* Match.h */,
 				A277C7801BEB61E7007E7A93 /* Match.m */,
+				A25C9F6C1C1EB26C001D62F2 /* Location.h */,
+				A25C9F6D1C1EB26C001D62F2 /* Location.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -765,10 +770,10 @@
 				A291B5881C08708200286114 /* Contact */,
 				A27D4D051C06D01E00EB3D18 /* EmergencyContactsInitial */,
 				A2A6B9AE1C05865E004CD460 /* Menu */,
-				A29B68441C02E6A00070F695 /* Monitoring */,
+				A29B68441C02E6A00070F695 /* Dashboard */,
 				A2A523F71BFC457200EB9C49 /* Intro */,
 				A286CC901BFB66260092FE63 /* Info */,
-				A277C7731BEB5ED2007E7A93 /* MatchList */,
+				A277C7731BEB5ED2007E7A93 /* EmergencyTimer */,
 				0B7209141A0AA66700162F8D /* CreateAccount */,
 				42F60C1F18ED3F4900F2A00F /* Login */,
 				42F60C1318ED3EDB00F2A00F /* Base */,
@@ -798,11 +803,10 @@
 				A291B5821C086E6D00286114 /* Contact */,
 				A27D4D091C06D07E00EB3D18 /* EmergencyContactsInitial */,
 				A2A6B9B21C0586A9004CD460 /* Menu */,
-				A29B683E1C02E62E0070F695 /* Monitoring */,
+				A29B683E1C02E62E0070F695 /* Dashboard */,
 				A2A523F61BFC446200EB9C49 /* Intro */,
 				A286CC8C1BFB65550092FE63 /* Info */,
-				A286CC8B1BFAEE590092FE63 /* Pool */,
-				A277C7701BEB5EAC007E7A93 /* MatchList */,
+				A277C7701BEB5EAC007E7A93 /* EmergencyTimer */,
 				0B7209181A0AA74C00162F8D /* CreateAccount */,
 				42F60C2318ED3F6F00F2A00F /* Login */,
 				42F60C1518ED3EEC00F2A00F /* Base */,
@@ -1114,23 +1118,23 @@
 			name = ContactCell;
 			sourceTree = "<group>";
 		};
-		A277C7701BEB5EAC007E7A93 /* MatchList */ = {
+		A277C7701BEB5EAC007E7A93 /* EmergencyTimer */ = {
 			isa = PBXGroup;
 			children = (
-				A277C76D1BEB5E84007E7A93 /* MatchListView.h */,
-				A277C76E1BEB5E84007E7A93 /* MatchListView.m */,
-				A277C7711BEB5EC3007E7A93 /* MatchListView.xib */,
+				A277C76D1BEB5E84007E7A93 /* EmergencyTimerView.h */,
+				A277C76E1BEB5E84007E7A93 /* EmergencyTimerView.m */,
+				A277C7711BEB5EC3007E7A93 /* EmergencyTimerView.xib */,
 			);
-			name = MatchList;
+			name = EmergencyTimer;
 			sourceTree = "<group>";
 		};
-		A277C7731BEB5ED2007E7A93 /* MatchList */ = {
+		A277C7731BEB5ED2007E7A93 /* EmergencyTimer */ = {
 			isa = PBXGroup;
 			children = (
-				A277C7741BEB5EE7007E7A93 /* MatchListController.h */,
-				A277C7751BEB5EE7007E7A93 /* MatchListController.m */,
+				A277C7741BEB5EE7007E7A93 /* EmergencyTimerController.h */,
+				A277C7751BEB5EE7007E7A93 /* EmergencyTimerController.m */,
 			);
-			name = MatchList;
+			name = EmergencyTimer;
 			sourceTree = "<group>";
 		};
 		A277C7771BEB60A9007E7A93 /* Match */ = {
@@ -1159,13 +1163,6 @@
 				A27D4D0D1C06D0BA00EB3D18 /* EmergencyContactsInitialView.xib */,
 			);
 			name = EmergencyContactsInitial;
-			sourceTree = "<group>";
-		};
-		A286CC8B1BFAEE590092FE63 /* Pool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Pool;
 			sourceTree = "<group>";
 		};
 		A286CC8C1BFB65550092FE63 /* Info */ = {
@@ -1206,23 +1203,23 @@
 			name = Contact;
 			sourceTree = "<group>";
 		};
-		A29B683E1C02E62E0070F695 /* Monitoring */ = {
+		A29B683E1C02E62E0070F695 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A29B683F1C02E65A0070F695 /* MonitoringView.h */,
-				A29B68401C02E65A0070F695 /* MonitoringView.m */,
-				A29B68421C02E6930070F695 /* MonitoringView.xib */,
+				A29B683F1C02E65A0070F695 /* DashboardView.h */,
+				A29B68401C02E65A0070F695 /* DashboardView.m */,
+				A29B68421C02E6930070F695 /* DashboardView.xib */,
 			);
-			name = Monitoring;
+			name = Dashboard;
 			sourceTree = "<group>";
 		};
-		A29B68441C02E6A00070F695 /* Monitoring */ = {
+		A29B68441C02E6A00070F695 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A29B68451C02E6BE0070F695 /* MonitoringController.h */,
-				A29B68461C02E6BE0070F695 /* MonitoringController.m */,
+				A29B68451C02E6BE0070F695 /* DashboardController.h */,
+				A29B68461C02E6BE0070F695 /* DashboardController.m */,
 			);
-			name = Monitoring;
+			name = Dashboard;
 			sourceTree = "<group>";
 		};
 		A29F2D5A1C04313600ABB4C6 /* Google */ = {
@@ -1436,10 +1433,10 @@
 				0B72091A1A0AA76200162F8D /* CreateAccountView.xib in Resources */,
 				42F60BE218ED3DE600F2A00F /* InfoPlist.strings in Resources */,
 				A2A523FF1BFC45C800EB9C49 /* IntroView.xib in Resources */,
-				A29B68431C02E6930070F695 /* MonitoringView.xib in Resources */,
+				A29B68431C02E6930070F695 /* DashboardView.xib in Resources */,
 				A286CC951BFB66490092FE63 /* InfoView.xib in Resources */,
 				42F60C2518ED40FE00F2A00F /* LoginView.xib in Resources */,
-				A277C7721BEB5EC3007E7A93 /* MatchListView.xib in Resources */,
+				A277C7721BEB5EC3007E7A93 /* EmergencyTimerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1477,6 +1474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42035D8118EE7C2B00237D90 /* LocationManager.m in Sources */,
+				A25C9F6E1C1EB26C001D62F2 /* Location.m in Sources */,
 				4EE29BF91BECB1D2008EB1FC /* AFSecurityPolicy.m in Sources */,
 				A2A6B9AC1C0581A5004CD460 /* MFSideMenuShadow.m in Sources */,
 				0B15827A19B05DF9004F0D8F /* CoreDataModel.xcdatamodeld in Sources */,
@@ -1490,7 +1488,7 @@
 				A2A523FD1BFC45A900EB9C49 /* IntroController.m in Sources */,
 				0B7209351A0AB8C600162F8D /* StringResponse.m in Sources */,
 				4EE29BFE1BECB1D2008EB1FC /* AFImageDownloader.m in Sources */,
-				A277C76F1BEB5E84007E7A93 /* MatchListView.m in Sources */,
+				A277C76F1BEB5E84007E7A93 /* EmergencyTimerView.m in Sources */,
 				0B72091D1A0AA77900162F8D /* CreateAccountView.m in Sources */,
 				A2A6B9AD1C0581A5004CD460 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				A2639F901C0DC98D00DBB875 /* ContactCell.m in Sources */,
@@ -1517,7 +1515,7 @@
 				42A74C0C18ED86CB002F24EE /* BaseService.m in Sources */,
 				0B72092D1A0AB46100162F8D /* Label.m in Sources */,
 				A246394D1C1570A30090648B /* Contact.m in Sources */,
-				A29B68471C02E6BE0070F695 /* MonitoringController.m in Sources */,
+				A29B68471C02E6BE0070F695 /* DashboardController.m in Sources */,
 				42F60C7918ED688700F2A00F /* ParserUtils.m in Sources */,
 				0B7209211A0AAACD00162F8D /* CheckInService.m in Sources */,
 				0B72093A1A0AB9AD00162F8D /* Alert.m in Sources */,
@@ -1535,10 +1533,10 @@
 				A20AAF7D1C11638800E5E6E3 /* AboutController.m in Sources */,
 				A26061E61C072F9000597B4B /* Utils.m in Sources */,
 				A286CC931BFB663A0092FE63 /* InfoController.m in Sources */,
-				A277C7761BEB5EE7007E7A93 /* MatchListController.m in Sources */,
+				A277C7761BEB5EE7007E7A93 /* EmergencyTimerController.m in Sources */,
 				A24639541C15743F0090648B /* ContactService.m in Sources */,
 				4EE29C001BECB1D2008EB1FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				A29B68411C02E65A0070F695 /* MonitoringView.m in Sources */,
+				A29B68411C02E65A0070F695 /* DashboardView.m in Sources */,
 				A291B5811C086D1E00286114 /* ContactsManager.m in Sources */,
 				0B72092C1A0AB46100162F8D /* Button.m in Sources */,
 				42F60C1B18ED3F2500F2A00F /* BaseView.m in Sources */,

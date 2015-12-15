@@ -6,10 +6,10 @@
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
-#import "MatchListView.h"
+#import "EmergencyTimerView.h"
 #import "Color.h"
-#import "MatchListController.h"
-@implementation MatchListView
+#import "EmergencyTimerController.h"
+@implementation EmergencyTimerView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -21,26 +21,32 @@
 
 -(void)awakeFromNib{
     [self createCircularTimerLabel];
-    [self createTimer];
+    
 
 }
 - (IBAction)okButtonClick:(id)sender {
-    [(MatchListController*)self.controller popViewController];
+    [(EmergencyTimerController*)self.controller popViewController];
+}
+
+-(void)setOkButtonCornerRadius{
+    self.okButton.layer.cornerRadius = self.okButton.frame.size.width/2; // this value vary as per your desire
+    self.okButton.clipsToBounds = YES;
 }
 
 -(void)createCircularTimerLabel{
-    self.pLabel.backgroundColor = [UIColor clearColor];
-    self.okButton.layer.cornerRadius = self.okButton.frame.size.width/2; // this value vary as per your desire
-    self.okButton.clipsToBounds = YES;
-    __unsafe_unretained MatchListView * weakSelf = self;
+    [self setCircularTimerProperties];
+    [self setOkButtonCornerRadius];
+    __unsafe_unretained EmergencyTimerView * weakSelf = self;
     self.pLabel.labelVCBlock = ^(KAProgressLabel *label) {
         weakSelf.pLabel.startLabel.text = [NSString stringWithFormat:@"%.f",weakSelf.pLabel.startDegree];
         weakSelf.pLabel.endLabel.text = [NSString stringWithFormat:@"%.f",weakSelf.pLabel.endDegree];
-
     };
-    
-    [self.pLabel setTrackWidth: 28];
+}
+
+- (void)setCircularTimerProperties {
+    self.pLabel.backgroundColor = [UIColor clearColor];
     [self.pLabel setProgressWidth: 28.2];
+    [self.pLabel setTrackWidth: 28];
     self.pLabel.fillColor = [Color greyBackgroundColor];
     self.pLabel.trackColor = [Color orangeThemeColor];
     self.pLabel.progressColor = [Color greyThemeColor];
@@ -48,26 +54,12 @@
     self.pLabel.isEndDegreeUserInteractive = YES;
 }
 
--(void)onTick:(NSTimer*)t{
-    CGFloat degree = 360.0-(_startTime/30.0)*360.0;
-    [self.pLabel setText:[NSString stringWithFormat:@"%d",_startTime]];
-    [self.pLabel setEndDegree:degree];
-    if(_startTime==0){
-        [_timer invalidate];
-        return;
-    }
-    _startTime--;
-    
+-(void)setPLabelText:(int)text{
+    [self.pLabel setText:[NSString stringWithFormat:@"%d",text]];
 }
 
--(void)createTimer{
-    _startTime=30;
-    [self onTick:nil];
-    _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
-                                                  target: self
-                                                selector:@selector(onTick:)
-                                                userInfo: nil repeats:YES];
-
+-(void)setPlabelEndDegree:(CGFloat)degree{
+    [self.pLabel setEndDegree:degree];
 }
 
 @end

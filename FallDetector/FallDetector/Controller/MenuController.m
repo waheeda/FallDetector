@@ -8,7 +8,7 @@
 
 #import "MenuController.h"
 #import "AppDelegate.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 #import "AboutController.h"
 #import "EmergencyContactsDisplayController.h"
 @interface MenuController ()
@@ -33,7 +33,7 @@
     
     UINavigationController *navigationController = [[AppDelegate getInstance] getMenuContainer].centerViewController;
     
-    if([navigationController.topViewController isKindOfClass:[MonitoringController class]]){
+    if([navigationController.topViewController isKindOfClass:[DashboardController class]]){
         [[[AppDelegate getInstance] getMenuContainer] setMenuState:MFSideMenuStateClosed];
         return;
     }

@@ -8,7 +8,7 @@
 
 #import "LoginView.h"
 #import "LoginController.h"
-#import "MatchListController.h"
+#import "EmergencyTimerController.h"
 #import "EmergencyContactsInitialController.h"
 
 @interface LoginView()

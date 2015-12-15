@@ -8,13 +8,12 @@
 
 #import "BaseView.h"
 #import "KAProgressLabel.h"
-@interface MatchListView : BaseView{
-    NSTimer *_timer;
-    int _startTime;
-}
+@interface EmergencyTimerView : BaseView
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *fallDetectionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *avgOrientation;
 @property (weak,nonatomic) IBOutlet KAProgressLabel * pLabel;
 @property (strong, nonatomic) IBOutlet UIButton *okButton;
+-(void)setPLabelText:(int)text;
+-(void)setPlabelEndDegree:(CGFloat)degree;
 @end

@@ -8,7 +8,7 @@
 
 #import "InfoController.h"
 #import "IntroController.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 
 #import "MenuController.h"
 @interface InfoController ()

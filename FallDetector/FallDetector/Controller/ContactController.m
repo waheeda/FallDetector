@@ -10,7 +10,7 @@
 #import "ContactsManager.h"
 #import "ContactView.h"
 #import "UserDefaults.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 #import "AppDelegate.h"
 #import "Alert.h"
 #import "Contact.h"

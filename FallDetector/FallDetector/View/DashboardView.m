@@ -6,9 +6,9 @@
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
-#import "MonitoringView.h"
-#import "MonitoringController.h"
-@implementation MonitoringView
+#import "DashboardView.h"
+#import "DashboardController.h"
+@implementation DashboardView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -18,7 +18,7 @@
 }
 */
 - (IBAction)startMonitoringClick:(id)sender {
-    [(MonitoringController*)self.controller startMonitoring];
+    [(DashboardController*)self.controller startFetchingLocation];
 }
 
 

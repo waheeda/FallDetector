@@ -108,5 +108,7 @@
 	<array>
 		<string>location</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Reason to always use location</string>
 </dict>
 </plist>

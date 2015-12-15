@@ -14,7 +14,7 @@
 #import "UsersResponse.h"
 #import "CreateAccountController.h"
 #import "UserDefaults.h"
-#import "MonitoringController.h"
+#import "DashboardController.h"
 #import "InfoController.h"
 #import "MenuController.h"
 #import "AppDelegate.h"

@@ -6,15 +6,17 @@
 //  Copyright © 2015 mohsin. All rights reserved.
 //
 
-#import "MonitoringController.h"
-#import "MatchListController.h"
-#import "MonitoringView.h"
+#import "DashboardController.h"
+#import "EmergencyTimerController.h"
+#import "DashboardView.h"
 #import "FacebookManager.h"
-@interface MonitoringController ()
+#import "LocationManager.h"
+#import "Alert.h"
+@interface DashboardController ()
 
 @end
 
-@implementation MonitoringController
+@implementation DashboardController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,12 +25,12 @@
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
 }
 
--(void)fetchFBData{
-    //service call
-    [FacebookManager fetchUserInfo:^(id result, NSError *error) {
-      NSLog(@"%@",[result valueForKey:@"name"]);
-    }];
-}
+//-(void)fetchFBData{
+//    //service call
+//    [FacebookManager fetchUserInfo:^(id result, NSError *error) {
+//      NSLog(@"%@",[result valueForKey:@"name"]);
+//    }];
+//}
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:false];
@@ -61,7 +63,7 @@
         [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
          
          {
-             NSLog(@"Accelraor updating");
+             //NSLog(@"Accelraor updating");
              [queue setMaxConcurrentOperationCount:1];
              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                  _totalAcceleration =sqrt((accelerometerData.acceleration.x*accelerometerData.acceleration.x)+
@@ -126,7 +128,7 @@
                          if(_positionNotUprightCount>2)
                              dispatch_async(dispatch_get_main_queue(), ^{
                                 // [[(MatchListView*)self.view fallDetectionLabel] setText:[NSString stringWithFormat:@"Fall occured in x with angle:%f",mesauredAngle] ]; //fall occured final
-                                 [self openMatchListController];
+                                 [self openEmergencyTimerController];
                                  [self.motionManager stopAccelerometerUpdates];
                                  
                              });
@@ -241,15 +243,15 @@
         NSLog(@"Avg orientation set");
         NSLog(@"Avg angle: %f",_avgOrientation);
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[(MonitoringView*)self.view nameLabel] setText:[NSString stringWithFormat:@"Avg orientation set with value: %f",_avgOrientation]];
+            [[(DashboardView*)self.view nameLabel] setText:[NSString stringWithFormat:@"Avg orientation set with value: %f",_avgOrientation]];
         });
     }
     
     
 }
 
--(void)openMatchListController{
-    MatchListController *controller = [[MatchListController alloc] init];
+-(void)openEmergencyTimerController{
+    EmergencyTimerController *controller = [[EmergencyTimerController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -259,6 +261,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)startFetchingLocation {
+    [[LocationManager getInstance] getCurrentLocation:^(id location) {
+        [self startMonitoring];
+    } andFailure:^(NSError *error) {
+        switch([error code])
+        {
+            case kCLErrorNetwork: // general, network-related error
+            {
+                [Alert show:@"Error" andMessage:@"We are unable to get your location, please check your network connection or that you are not in airplane mode."];
+            }
+                break;
+            case kCLErrorDenied: {
+                [Alert show:@"Location Service Disabled" andMessage:@"To re-enable, please go to Settings and turn on Location Service for this app."];
+            }
+                break;
+            default:
+            {
+                [Alert show:@"Error" andMessage:@"We are unable to get your location."];
+            }
+                break;
+        }
+    }];
+}
 /*
 #pragma mark - Navigation
 
