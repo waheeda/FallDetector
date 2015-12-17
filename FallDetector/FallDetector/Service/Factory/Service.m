@@ -39,6 +39,13 @@
     self.contact= [[ContactService alloc] init];
 }
 
+-(void)loadLocationService{
+    if(self.location != nil)
+        return;
+    
+    self.location = [[LocationService alloc] init];
+}
+
 #pragma mark setup
 
 - (void)load:(NSArray*)services{

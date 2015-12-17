@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *logoYConstraint;
 - (void)setData:(NSArray*)data;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *yCOnstraint;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *passField;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *emailCentreConstraint;
 @property (strong, nonatomic) IBOutlet UIButton *googleSignIn;
 

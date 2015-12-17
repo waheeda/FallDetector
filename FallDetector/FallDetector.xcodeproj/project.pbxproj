@@ -110,6 +110,7 @@
 		A20AAF811C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A20AAF801C11B6A100E5E6E3 /* EmergencyContactsDisplayView.m */; };
 		A20AAF831C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */; };
 		A2241AE81C048E39007DFC70 /* GoogleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2241AE71C048E39007DFC70 /* GoogleManager.m */; };
+		A22CF0F81C2020E50043587F /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A22CF0F71C2020E50043587F /* LocationService.m */; };
 		A246394A1C1554650090648B /* EmergencyContactsDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24639491C1554650090648B /* EmergencyContactsDisplayController.m */; };
 		A246394D1C1570A30090648B /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = A246394C1C1570A30090648B /* Contact.m */; };
 		A24639501C1573010090648B /* ContactsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A246394F1C1573010090648B /* ContactsResponse.m */; };
@@ -372,6 +373,8 @@
 		A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyContactsDisplayView.xib; sourceTree = "<group>"; };
 		A2241AE61C048E39007DFC70 /* GoogleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleManager.h; sourceTree = "<group>"; };
 		A2241AE71C048E39007DFC70 /* GoogleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleManager.m; sourceTree = "<group>"; };
+		A22CF0F61C2020E50043587F /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		A22CF0F71C2020E50043587F /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 		A24639481C1554650090648B /* EmergencyContactsDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactsDisplayController.h; sourceTree = "<group>"; };
 		A24639491C1554650090648B /* EmergencyContactsDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactsDisplayController.m; sourceTree = "<group>"; };
 		A246394B1C1570A30090648B /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -784,6 +787,7 @@
 		42F60C1118ED3ED100F2A00F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A22CF0F51C2020C00043587F /* Location */,
 				A24639511C1573D10090648B /* Contact */,
 				42035D6918EE72DB00237D90 /* Auth */,
 				42A74C0818ED86CB002F24EE /* Base */,
@@ -1059,6 +1063,15 @@
 				A20AAF821C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib */,
 			);
 			name = EmergencyContactsDisplay;
+			sourceTree = "<group>";
+		};
+		A22CF0F51C2020C00043587F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A22CF0F61C2020E50043587F /* LocationService.h */,
+				A22CF0F71C2020E50043587F /* LocationService.m */,
+			);
+			name = Location;
 			sourceTree = "<group>";
 		};
 		A24639471C1554420090648B /* EmergencyContactsDisplay */ = {
@@ -1523,6 +1536,7 @@
 				0B72093B1A0AB9AD00162F8D /* StringUtils.m in Sources */,
 				A24E854A1C0337D500FD30DC /* FacebookManager.m in Sources */,
 				0B7209071A0AA1D400162F8D /* BaseEntity.m in Sources */,
+				A22CF0F81C2020E50043587F /* LocationService.m in Sources */,
 				4EE29BFD1BECB1D2008EB1FC /* AFAutoPurgingImageCache.m in Sources */,
 				0B72090C1A0AA24900162F8D /* BaseResponse.m in Sources */,
 				A286CC8F1BFB661D0092FE63 /* InfoView.m in Sources */,

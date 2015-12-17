@@ -20,6 +20,7 @@
 #import "AppDelegate.h"
 #import "ContactsResponse.h"
 #import "Contact.h"
+#import "Alert.h"
 #import "EmergencyContactsInitialController.h"
 
 @interface LoginController () 
@@ -35,7 +36,11 @@
     [self setupNavBar];
     self.title=@"Sign In";
     [[GoogleManager instance] setDelegate:self];
-    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeUser)]];
+    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeUser),@(ServiceTypeAuth)]];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+   
 }
 
 -(void)fetchContactsOfEmail:(NSString*)email{
@@ -47,6 +52,23 @@
         [self showMonitoringController];
     } andfailure:^(NSError *error) {
         [self onServiceResponseFailure:error];
+    }];
+}
+
+-(void)authenticateUser:(NSString*)email andPassword:(NSString*)pass{
+    [self showLoader];
+    [service.auth authenticateWithEmail:email andPassword:pass withSuccess:^(id response){
+        NSString *status = [response objectForKey:@"status"];
+        if([status isEqualToString:@"true"]){
+            NSLog(@"Login Successful");
+            [self fetchContactsOfEmail:email];
+        }
+        else{
+            [Alert show:@"Login Failed" andMessage:@"Invalid Email or Password"];
+        }
+    } andfailure:^(NSError *error) {
+        NSLog(@"Failure");
+        [super onServiceResponseFailure:error];
     }];
 }
 
@@ -64,7 +86,6 @@
             [self fetchContactsOfEmail:email];
         }
         else{
-            //insert in to db
             NSLog(@"details need to be inserted");
             User *user = [self createUserEntitywithEmail:email Password:@"" andSource:source];
             [service.user insertUser:user withSuccess:^(id response) {
@@ -80,14 +101,21 @@
     }];
 }
 
+
+
 //changes
 -(void)loginFromFacebook{
     [self showLoaderOnUIView:self.view];
     [FacebookManager loginWithViewController:self andCallback:^(id result, NSError *error) {
-        [self hideLoader];
-        if(!error){
-            [self performLoginOperationWithEmail:[result valueForKey:@"email"] andSource:@"Facebook"];
+        if([result valueForKey:@"isCancelled"]){
+            [self hideLoaderOnUIView:self.view];
+            [Alert show:@"Login Failed" andMessage:@"Login operation cancelled"];
         }
+        
+        else if([result valueForKey:@"email"]){
+             [self performLoginOperationWithEmail:[result valueForKey:@"email"] andSource:@"Facebook"];
+        }
+        
         else{
             [self onServiceResponseFailure:error];
         }
@@ -108,7 +136,7 @@
 }
 
 -(void)loginFromGoogle{
-    [self showLoaderOnUIView:self.view];
+    [self showLoader];
     [GoogleManager signIn];
 }
 
@@ -116,6 +144,11 @@
 -(void)onGoogleSignInWithEmail:(NSString *)email{
    [self performLoginOperationWithEmail:email andSource:@"Google"];
     //[self showEmergencyContactsInitialController];
+}
+
+-(void)onSignInError:(NSError*)error{
+    [self hideLoader];
+    [Alert show:@"Login Failed" andMessage:@"Login operation cancelled"];
 }
 
 -(void)showMonitoringController{
@@ -130,10 +163,12 @@
 }
 
 -(void)presentGoogleViewController:(UIViewController*) controller{
+    [self hideLoader];
     [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)dismissGoogleViewController:(UIViewController*) controller{
+    [self showLoader];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

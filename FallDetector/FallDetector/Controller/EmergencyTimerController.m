@@ -13,6 +13,7 @@
 #import "Alert.h"
 #import "LocationManager.h"
 #import "UserService.h"
+#import "UserDefaults.h"
 typedef enum {
     orientationAxisX,
     orientationAxisY,
@@ -32,7 +33,7 @@ orientationAxis refAXIS;
     // Do any additional setup after loading the view.
     //This is a test
     //This is another test
-    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeUser)]];
+    [super loadServices:@[@(ServiceTypeContacts),@(ServiceTypeLocation)]];
     if(WCSession.isSupported){
         WCSession* session = WCSession.defaultSession;
         session.delegate = self;
@@ -51,7 +52,7 @@ orientationAxis refAXIS;
     if(_startTime==0){
         [_timer invalidate];
         [self showLoader];
-        [service.user userExistInDBofEmail:@"hamizahmed93@gmail.com" withSuccess:^(id response) {
+        [service.location sendEmail:[UserDefaults getEmail] withLocation:[[LocationManager getInstance] location] withSuccess:^(id response) {
             [self hideLoader];
             [[LocationManager getInstance] stop];
             [Alert show:@"Alert" andMessage:@"Your Contacts have been notified"];
@@ -69,7 +70,7 @@ orientationAxis refAXIS;
 }
 
 -(void)createTimer{
-    _startTime=30;
+    _startTime=5;
     [self onTick:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
                                               target: self

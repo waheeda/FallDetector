@@ -14,16 +14,17 @@
 typedef void (^FBMCallback)(id result, NSError *error);
 
 @protocol FacebookManagerDelegate <NSObject>
-
+@optional
 -(void) onFacebookLogin:(id) result;
 -(void) onFacebookLogout;
+-(void) onLoginCancelled;
 
 @end
 
 
 @interface FacebookManager : NSObject
 
-@property(nonatomic, weak) id<FacebookManagerDelegate> loginDelegate;
+@property(nonatomic, weak) id <FacebookManagerDelegate> loginDelegate;
 
 + (FacebookManager *)instance;
 +(void)logoutFromFacebook;

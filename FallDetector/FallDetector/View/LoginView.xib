@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -18,7 +18,6 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1Hp-fp-MBA">
                             <rect key="frame" x="15" y="5" width="30" height="30"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="1Hp-fp-MBA" secondAttribute="height" multiplier="1:1" id="RD9-rC-BSI"/>
                                 <constraint firstAttribute="width" constant="30" id="ePA-g2-d74"/>
@@ -26,7 +25,6 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCa-FB-saC">
                             <rect key="frame" x="20" y="0.0" width="246" height="40"/>
-                            <animations/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                             <state key="normal" title="Sign in with Facebook">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +34,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="jCa-FB-saC" firstAttribute="width" secondItem="Brx-Fm-oqv" secondAttribute="width" id="1tE-xy-n4K"/>
@@ -70,7 +67,6 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="googlePlusLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5bV-vG-N3i">
                             <rect key="frame" x="15" y="5" width="30" height="30"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5bV-vG-N3i" secondAttribute="height" multiplier="1:1" id="RNf-a0-Jhz"/>
                                 <constraint firstAttribute="width" constant="30" id="zPz-gh-ILk"/>
@@ -78,7 +74,6 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dio-SO-kij">
                             <rect key="frame" x="15" y="0.0" width="246" height="40"/>
-                            <animations/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                             <state key="normal" title="Sign in with Google+">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,7 +83,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="dio-SO-kij" firstAttribute="height" secondItem="Vkk-lg-FyZ" secondAttribute="height" id="0LS-EW-E7a"/>
@@ -119,13 +113,12 @@
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-nN-K0E">
                     <rect key="frame" x="66" y="252" width="208" height="35"/>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="8dS-mB-6yD"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -138,7 +131,6 @@
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email-icon copy" translatesAutoresizingMaskIntoConstraints="NO" id="N02-FJ-35n">
                     <rect key="frame" x="36" y="258" width="25" height="25"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="LMf-Qv-l22"/>
                         <constraint firstAttribute="width" constant="25" id="qXt-H9-suZ"/>
@@ -146,18 +138,16 @@
                 </imageView>
                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-qJ-ptG" userLabel="DividerLine">
                     <rect key="frame" x="36" y="287" width="246" height="1"/>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="cXM-zb-AKD"/>
                     </constraints>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUG-ld-yLd">
-                    <rect key="frame" x="66" y="307" width="208" height="17"/>
-                    <animations/>
+                    <rect key="frame" x="66" y="307" width="208" height="19"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,24 +158,21 @@
                     </connections>
                 </textField>
                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvF-zO-OFB" userLabel="DividerLine">
-                    <rect key="frame" x="36" y="335" width="246" height="1"/>
-                    <animations/>
+                    <rect key="frame" x="36" y="337" width="246" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="hQF-Ee-DZ8"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-512 copy" translatesAutoresizingMaskIntoConstraints="NO" id="z6B-Be-hwO">
-                    <rect key="frame" x="36" y="305" width="25" height="22"/>
-                    <animations/>
+                    <rect key="frame" x="36" y="306" width="25" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="M4u-Yf-rQd"/>
                         <constraint firstAttribute="width" constant="25" id="Pb6-xh-BCW"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiQ-sk-kOK">
-                    <rect key="frame" x="37" y="364" width="246" height="40"/>
-                    <animations/>
+                    <rect key="frame" x="37" y="366" width="246" height="40"/>
                     <color key="backgroundColor" red="0.97647058823529409" green="0.5725490196078431" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="G6B-Dq-IXf"/>
@@ -199,8 +186,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWB-hb-1E1">
-                    <rect key="frame" x="85" y="412" width="150" height="30"/>
-                    <animations/>
+                    <rect key="frame" x="85" y="414" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="toR-tS-X98"/>
                     </constraints>
@@ -211,10 +197,8 @@
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MRV-4z-PgQ">
                     <rect key="frame" x="10" y="462" width="144" height="96"/>
-                    <animations/>
                 </imageView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="CiQ-sk-kOK" firstAttribute="width" secondItem="FvF-zO-OFB" secondAttribute="width" id="29N-E3-Y5t"/>
@@ -251,7 +235,9 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="emailCentreConstraint" destination="VMg-VR-Lil" id="fX1-PR-DOB"/>
+                <outlet property="emailField" destination="eRo-nN-K0E" id="zrf-h0-eL6"/>
                 <outlet property="googleSignIn" destination="dio-SO-kij" id="YOn-zq-jF9"/>
+                <outlet property="passField" destination="SUG-ld-yLd" id="heX-3j-rLP"/>
             </connections>
             <point key="canvasLocation" x="128" y="199"/>
         </view>

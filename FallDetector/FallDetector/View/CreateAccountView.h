@@ -9,6 +9,9 @@
 #import "BaseView.h"
 #import "User.h"
 
-@interface CreateAccountView : BaseView
-
+@interface CreateAccountView : BaseView <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *emailCentreConstraint;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *passField;
+-(void)clearFields;
 @end

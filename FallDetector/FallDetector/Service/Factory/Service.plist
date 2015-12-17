@@ -10,5 +10,7 @@
 	<string>loadCheckInService</string>
 	<key>3</key>
 	<string>loadContactService</string>
+	<key>4</key>
+	<string>loadLocationService</string>
 </dict>
 </plist>

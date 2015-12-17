@@ -12,9 +12,11 @@
 -(void) presentGoogleViewController:(UIViewController*) controller;
 -(void) dismissGoogleViewController:(UIViewController*) controller;
 -(void) onGoogleSignInWithEmail:(NSString*)email;
+-(void) onSignInError:(NSError*)error;
 @end
 @interface GoogleManager : NSObject <GIDSignInDelegate, GIDSignInUIDelegate>
 @property(nonatomic, weak) id<GoogleManagerDelegate> delegate;
 +(GoogleManager*)instance ;
 +(void)signIn;
+-(void)signOut;
 @end

@@ -113,7 +113,21 @@ typedef enum {
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+//    
+//    if(!self.viewHasAppeared) {
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//        [self setupMenuContainerView];
+//        [self setLeftSideMenuFrameToClosedPosition];
+//        [self setRightSideMenuFrameToClosedPosition];
+//        [self addGestureRecognizers];
+//        [self.shadow draw];
+//        
+//        self.viewHasAppeared = YES;
+//    }
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     if(!self.viewHasAppeared) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         [self setupMenuContainerView];

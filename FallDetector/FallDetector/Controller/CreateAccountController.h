@@ -7,7 +7,12 @@
 //
 
 #import "BaseController.h"
+#import "GoogleManager.h"
 
-@interface CreateAccountController : BaseController
-
+@interface CreateAccountController : BaseController <GoogleManagerDelegate>{
+    NSMutableArray *_fetchedContacts;
+}
+-(void)performSignUpOperationWithEmail:(NSString*)email password:(NSString*)pass andSource:(NSString*)source;
+-(void)signUpFromFacebook;
+-(void)signUpFromGoogle;
 @end

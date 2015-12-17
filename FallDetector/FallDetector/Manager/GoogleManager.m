@@ -39,11 +39,16 @@
     [[GIDSignIn sharedInstance] signIn];
 }
 
+-(void)signOut{
+    [[GIDSignIn sharedInstance] signOut];
+}
+
 - (void)signIn:(GIDSignIn *)signIn
 didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
     if (error) {
         NSLog(@"%@",[NSString stringWithFormat:@"Status: Authentication error: %@", error]);
+        [self.delegate onSignInError:(NSError*)error];
         return;
     }
     NSLog(@"Signed In");

@@ -59,8 +59,9 @@
 
 - (IBAction)onSignInClick:(id)sender {
   //  MatchListController *controller = [[MatchListController alloc] init];
-    EmergencyContactsInitialController *controller = [[EmergencyContactsInitialController alloc] init];
-    [[self.controller navigationController] pushViewController:controller animated:YES];
+//    EmergencyContactsInitialController *controller = [[EmergencyContactsInitialController alloc] init];
+    [self.controller authenticateUser:self.emailField.text andPassword:self.passField.text];
+    //[[self.controller navigationController] pushViewController:controller animated:YES];
 }
 
 

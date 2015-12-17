@@ -23,6 +23,7 @@
     //[self setupImageNavBAr];
     [self setupImageNavBAr];
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
+    
 }
 
 //-(void)fetchFBData{
@@ -34,6 +35,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:false];
+    _createSetupOrientation = YES;
+    _anglesCount=0;
 }
 
 -(void)setupImageNavBAr{
@@ -47,7 +50,7 @@
 }
 
 -(void)startMonitoring{
-    _createSetupOrientation = YES;
+    
     _totalAngles=0;
     _count=0;
     _array=[[NSMutableArray alloc] init];
@@ -89,7 +92,7 @@
                  int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
                  int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
                  _count=0;
-                 if((max-min)>=7 && maxIndex>minIndex){
+                 if((max-min)>=2 && maxIndex>minIndex){ //(max-min)>=7
                      NSLog(@"Max:%f, Min:%f",max,min);
                     // [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Max-Min:%f",max-min]];
                      //fall occured by acceleration

@@ -27,4 +27,5 @@
 -(UIBarButtonItem *) createBackButton:(id)target selector:(SEL)selector ;
 -(UIBarButtonItem*)createLeftMenuButton;
 -(void) showLogoutAlert;
+-(void)hideLoaderOnUIView:(UIView*)view;
 @end

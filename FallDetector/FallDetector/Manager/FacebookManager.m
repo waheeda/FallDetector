@@ -57,7 +57,7 @@
 
 
 + (void)loginWithViewController:(UIViewController*)controller andCallback:(FBMCallback)callback
-{
+{   //__weak __typeof__(self) weakSelf = self.loginDelegate;
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     login.loginBehavior = FBSDKLoginBehaviorSystemAccount;
     [login logInWithReadPermissions:@[@"public_profile", @"email", @"user_friends"] fromViewController:controller handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
@@ -66,7 +66,13 @@
             return;
         }
         
-        [self fetchUserInfo:^(id result, NSError *error) {
+        else if([result isCancelled]){
+            NSDictionary *cancelled = @{@"isCancelled":@"true"};
+            callback(cancelled, nil);
+            return;
+        }
+        
+        [FacebookManager fetchUserInfo:^(id result, NSError *error) {
             if(!error){
                // [UserDefaults saveEmailInUserDefaults:[result valueForKey:@"email"]];
                 callback(result,nil);

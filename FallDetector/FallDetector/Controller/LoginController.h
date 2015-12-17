@@ -16,6 +16,7 @@
 }
 -(void)loginFromFacebook;
 -(void)loginFromGoogle;
+-(void)authenticateUser:(NSString*)email andPassword:(NSString*)pass;
 @property (strong, nonatomic) UINavigationController *homeNavigationController;
 @property (strong, nonatomic) MFSideMenuContainerViewController *sideMenuContainer;
 @end

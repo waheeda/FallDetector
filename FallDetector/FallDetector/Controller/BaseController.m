@@ -16,7 +16,8 @@
 #import "LoginController.h"
 #import "UserDefaults.h"
 #import "IntroController.h"
-
+#import "GoogleManager.h"
+#import "FacebookManager.h"
 #define TEXT_LOG_OUT                    @"Logout"
 #define MESSAGE_LOGOUT_CONFIRMATION     @"Are you sure you want to logout?"
 #define BUTTON_TITLE_OK         @"Ok"
@@ -70,6 +71,9 @@
     [MBProgressHUD showHUDAddedTo:view animated:YES];
 }
 
+-(void)hideLoaderOnUIView:(UIView*)view{
+    [MBProgressHUD hideHUDForView:view animated:YES];
+}
 -(UIBarButtonItem*)createLeftMenuButton {
     UIButton *btn =  [[UIButton alloc] initWithFrame:CGRectMake(0.0,0.0, 20.0, 15.0)];
     [btn setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
@@ -210,6 +214,8 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1){
         if(alertView.tag == 1){
+            [[GoogleManager instance] signOut];
+            [FacebookManager logoutFromFacebook];
             [UserDefaults clearUserDefaults];
             [self openIntroScreen];
         }

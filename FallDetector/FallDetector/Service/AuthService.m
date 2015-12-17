@@ -15,6 +15,14 @@
 
 @implementation AuthService
 
+-(void)authenticateWithEmail:(NSString*)email andPassword:(NSString*)password withSuccess:(successCallback)success andfailure:(failureCallback)failure{
+    NSDictionary *parameters =   @{
+                                   @"email" : email,
+                                   @"pwd": password
+                                   };
+    
+    [http post:@"?rquest=auth" parameters:parameters success:success failure:failure entity:nil];
+}
 
 -(void) getUser:(successCallback)success andfailure:(failureCallback)failure {
 
@@ -23,9 +31,7 @@
 }
 
 -(void) getPhotos:(successCallback)success andfailure:(failureCallback)failure {
-
-
-
+    
     [http get:@"100002534470397/photos" success:success failure:failure entity:[User new]];
     
 }
