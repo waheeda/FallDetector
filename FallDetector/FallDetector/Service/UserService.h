@@ -17,4 +17,5 @@
 -(void)getUser:(successCallback)success andfailure:(failureCallback)failure;
 -(void)userExistInDBofEmail:(NSString*)email withSuccess:(successCallback)success andfailure:(failureCallback)failure;
 -(void)insertUser:(User*)user withSuccess:(successCallback)success andfailure:(failureCallback)failure;
+-(void)forgotPasswordOfEmail:(NSString*)email withSuccess:(successCallback)success andfailure:(failureCallback)failure;
 @end

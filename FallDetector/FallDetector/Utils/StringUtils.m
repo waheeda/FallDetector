@@ -24,6 +24,26 @@
     return value;
 }
 
++(NSMutableString*)getFirstLetterFromEachWord:(NSString*)sentence{
+    int count=0;
+    NSString *sentenceWithoutNumbers = [[sentence componentsSeparatedByCharactersInSet:
+                            [[NSCharacterSet letterCharacterSet] invertedSet]] componentsJoinedByString:@" "];
+    
+    NSMutableString * firstCharacters = [NSMutableString string];
+    NSArray * words = [sentenceWithoutNumbers componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    for (NSString * word in words) {
+        if(count==2){
+            return firstCharacters;
+        }
+        if ([word length] > 0) {
+            NSString * firstLetter = [word substringToIndex:1];
+            [firstCharacters appendString:[firstLetter uppercaseString]];
+            count++;
+        }
+    }
+    return firstCharacters;
+}
+
 + (BOOL) validateEmail: (NSString *) candidate {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];

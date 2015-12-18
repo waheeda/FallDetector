@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  iOSTemplate
 //
-//  Created by mohsin on 4/3/14.
-//  Copyright (c) 2014 mohsin. All rights reserved.
+//  Created by Muhammad Hamiz Ahmed on 4/3/14.
+//  Copyright (c) 2014 Muhammad Hamiz Ahmed. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

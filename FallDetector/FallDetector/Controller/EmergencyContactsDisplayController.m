@@ -22,14 +22,17 @@
     [super viewDidLoad];
     [self setEmergencyContacts];
     self.navigationController.navigationBarHidden=false;
-    [self setupRightButtonNavBar];
-    self.title=@"Emergency Contacts";
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setupRightButtonNavBar];
+    self.title=@"Emergency Contacts";
 }
 
 -(void)setEmergencyContacts{
@@ -88,7 +91,7 @@
         if(result){
             //[self showNoSavedContactsAlert];
             [self performSelectorOnMainThread:@selector(hideLoader) withObject:nil waitUntilDone:YES];
-            if(contactExistCount<2){
+            if(contactExistCount<2 && [UserDefaults getEmergencyContacts]){
                 [self performSelectorOnMainThread:@selector(showNoSavedContactsAlert) withObject:nil waitUntilDone:YES];
             }
             else{
@@ -103,7 +106,7 @@
 
 -(void)openContactsController{
     ContactController* contactController = [ContactController new];
-    [self.navigationController pushViewController:contactController animated:YES];
+    [self pushViewController:contactController];
 }
 
 /*

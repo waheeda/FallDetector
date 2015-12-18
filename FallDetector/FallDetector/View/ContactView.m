@@ -12,6 +12,7 @@
 #import "Alert.h"
 #import "UserDefaults.h"
 #import "Contact.h"
+#import "StringUtils.h"
 @implementation ContactView
 
 
@@ -61,6 +62,7 @@
         [cell showUnselected];
     }
     [cell setNameLabelText:[[_filteredContacts objectAtIndex:indexPath.row] objectForKey:@"Name"]];
+    [cell setNameInitials:[StringUtils getFirstLetterFromEachWord:[[_filteredContacts objectAtIndex:indexPath.row] objectForKey:@"Name"]]];
     return cell;
 }
 

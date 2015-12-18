@@ -164,6 +164,9 @@
 		A2A6B9B71C0586F3004CD460 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B9B61C0586F3004CD460 /* MenuView.xib */; };
 		A2A6B9BB1C0589BA004CD460 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B9BA1C0589BA004CD460 /* MenuCell.m */; };
 		A2A6B9BD1C0589CC004CD460 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B9BC1C0589CC004CD460 /* MenuCell.xib */; };
+		A2FD515C1C22F60A00268BB2 /* ForgotPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD515B1C22F60A00268BB2 /* ForgotPasswordController.m */; };
+		A2FD51601C22F62B00268BB2 /* ForgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD515F1C22F62B00268BB2 /* ForgotPasswordView.m */; };
+		A2FD51621C22F64100268BB2 /* ForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FD51611C22F64100268BB2 /* ForgotPasswordView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -460,6 +463,11 @@
 		A2A6B9B91C0589BA004CD460 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		A2A6B9BA1C0589BA004CD460 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		A2A6B9BC1C0589CC004CD460 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		A2FD515A1C22F60A00268BB2 /* ForgotPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordController.h; sourceTree = "<group>"; };
+		A2FD515B1C22F60A00268BB2 /* ForgotPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordController.m; sourceTree = "<group>"; };
+		A2FD515E1C22F62B00268BB2 /* ForgotPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordView.h; sourceTree = "<group>"; };
+		A2FD515F1C22F62B00268BB2 /* ForgotPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordView.m; sourceTree = "<group>"; };
+		A2FD51611C22F64100268BB2 /* ForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,6 +776,7 @@
 		42F60C1018ED3ED100F2A00F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A2FD51591C22F5F300268BB2 /* ForgotPassword */,
 				A24639471C1554420090648B /* EmergencyContactsDisplay */,
 				A20AAF7A1C11637600E5E6E3 /* About */,
 				A291B5881C08708200286114 /* Contact */,
@@ -802,6 +811,7 @@
 		42F60C1218ED3ED100F2A00F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2FD515D1C22F61500268BB2 /* ForgotPassword */,
 				A20AAF7E1C11B67600E5E6E3 /* EmergencyContactsDisplay */,
 				A20AAF741C11630200E5E6E3 /* About */,
 				A291B5821C086E6D00286114 /* Contact */,
@@ -1306,6 +1316,25 @@
 			name = Controls;
 			sourceTree = "<group>";
 		};
+		A2FD51591C22F5F300268BB2 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A2FD515A1C22F60A00268BB2 /* ForgotPasswordController.h */,
+				A2FD515B1C22F60A00268BB2 /* ForgotPasswordController.m */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		A2FD515D1C22F61500268BB2 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A2FD515E1C22F62B00268BB2 /* ForgotPasswordView.h */,
+				A2FD515F1C22F62B00268BB2 /* ForgotPasswordView.m */,
+				A2FD51611C22F64100268BB2 /* ForgotPasswordView.xib */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1433,6 +1462,7 @@
 			files = (
 				A29F2D671C04338B00ABB4C6 /* GoogleService-Info.plist in Resources */,
 				A2639F921C0DC9A500DBB875 /* ContactCell.xib in Resources */,
+				A2FD51621C22F64100268BB2 /* ForgotPasswordView.xib in Resources */,
 				A20AAF791C11633100E5E6E3 /* AboutView.xib in Resources */,
 				4E20D3911BB162AD00229C7D /* Launch Screen.storyboard in Resources */,
 				A20AAF831C11B6B300E5E6E3 /* EmergencyContactsDisplayView.xib in Resources */,
@@ -1575,8 +1605,10 @@
 				42F60C3918ED669000F2A00F /* Service.m in Sources */,
 				4EE29BFA1BECB1D2008EB1FC /* AFURLRequestSerialization.m in Sources */,
 				4EE29C051BECB1D2008EB1FC /* UIWebView+AFNetworking.m in Sources */,
+				A2FD515C1C22F60A00268BB2 /* ForgotPasswordController.m in Sources */,
 				4EE29BF81BECB1D2008EB1FC /* AFNetworkReachabilityManager.m in Sources */,
 				4EE29BFB1BECB1D2008EB1FC /* AFURLResponseSerialization.m in Sources */,
+				A2FD51601C22F62B00268BB2 /* ForgotPasswordView.m in Sources */,
 				4E7448031B4BDE49007F342F /* UIView+UIViewRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

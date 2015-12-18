@@ -27,6 +27,10 @@
     [self setCircleViewCornerRadius];
 }
 
+-(void)setNameInitials:(NSString*)initials{
+    [self.nameInitialsLabel setText:initials];
+}
+
 -(void)setNameLabelText:(NSString*)name{
     [self.nameLabel setText:name];
 }

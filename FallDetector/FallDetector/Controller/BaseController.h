@@ -28,4 +28,6 @@
 -(UIBarButtonItem*)createLeftMenuButton;
 -(void) showLogoutAlert;
 -(void)hideLoaderOnUIView:(UIView*)view;
+-(void)showContactsNotFoundAlert;
+-(void)fetchContacts;
 @end

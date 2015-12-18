@@ -9,6 +9,7 @@
 #import "CreateAccountView.h"
 #import "CreateAccountController.h"
 #import "Alert.h"
+#import "StringUtils.h"
 @implementation CreateAccountView
 
 /*
@@ -25,11 +26,23 @@
 }
 
 - (IBAction)onSignUpButtonClick:(id)sender {
-    if(![self textFieldIsEmpty:self.emailField] && ![self textFieldIsEmpty:self.passField]){
-        [(CreateAccountController*)self.controller performSignUpOperationWithEmail:self.emailField.text password:self.passField.text andSource:@"Default"];
-        return;
+//    if([StringUtils validateEmail:self.emailField.text] && ![StringUtils validateForNull:self.passField.text]){
+//        [(CreateAccountController*)self.controller performSignUpOperationWithEmail:self.emailField.text password:self.passField.text andSource:@"Default"];
+//        return;
+//    }
+//    [self validateFields];
+    if(![StringUtils validateEmail:self.emailField.text]){
+        [Alert show:@"Error" andMessage:@"Invalid Email Address"];
+        self.emailField.text=@"";
     }
-    [self validateFields];
+    
+    else if([StringUtils validateForNull:self.passField.text])
+        [Alert show:@"Error" andMessage:@"Please Enter your Password"];
+    
+    else
+        [(CreateAccountController*)self.controller performSignUpOperationWithEmail:self.emailField.text password:self.passField.text andSource:@"Default"];
+    
+    
 }
 
 - (IBAction)onGoogleSignUpButtonClick:(id)sender {
@@ -49,10 +62,13 @@
 }
 
 -(void)validateFields{
-    if([self textFieldIsEmpty:self.emailField]){
+    if([StringUtils validateEmail:self.emailField.text])
+        [Alert show:@"Error" andMessage:@"Please Enter a vaid email address"];
+    
+    else if(![StringUtils validateForNull:self.emailField.text]){
         [Alert show:@"Error" andMessage:@"Please Enter Email"];
     }
-    else if([self textFieldIsEmpty:self.passField]){
+    else if(![StringUtils validateForNull:self.passField.text]){
         [Alert show:@"Error" andMessage:@"Password cannot be blank"];
     }
 }

@@ -7,6 +7,7 @@
 //
 
 #import "EmergencyContactsDisplayView.h"
+#import "StringUtils.h"
 
 @implementation EmergencyContactsDisplayView
 
@@ -21,7 +22,9 @@
     if(contacts){
         _emergencyContacts=contacts;
         [self getContactsDictionary];
+        return;
     }
+    
 }
 
 -(void)setAllOutlets{
@@ -32,7 +35,13 @@
         [self.namelabel2 setText:[_secondContact objectForKey:@"contact_name"]];
         [self.numberLabel2 setText:[_secondContact objectForKey:@"number"]];
         [self.email2 setText:[_secondContact objectForKey:@"email"]];
+        [self setNameInitialsText];
     }
+}
+
+-(void)setNameInitialsText{
+    [self.nameInitials1 setText:[StringUtils getFirstLetterFromEachWord:[_firstContact objectForKey:@"contact_name"]]];
+    [self.nameInitials2 setText:[StringUtils getFirstLetterFromEachWord:[_secondContact objectForKey:@"contact_name"]]];
 }
 
 -(void)getContactsDictionary{

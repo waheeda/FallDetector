@@ -8,7 +8,7 @@
 
 #import "EmergencyContactsInitialController.h"
 #import "ContactsManager.h"
-#import "ContactController.h"
+//#import "ContactController.h"
 
 @interface EmergencyContactsInitialController ()
 
@@ -18,8 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,23 +31,13 @@
 }
 
 -(void)fetchContacts{
-    [super showLoader];
-    
-    [[ContactsManager sharedInstance] getContactsOldWayWithSelectedContacts:nil andCallback:^(id result, int contactExists, NSError *error) {
-        if(result){
-            [self performSelectorOnMainThread:@selector(openContactController) withObject:nil waitUntilDone:YES];
-        }
-        else{
-            [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];
-        }
-        
-    }];
+    [super fetchContacts];
 }
--(void)openContactController{
-    [self hideLoader];
-    ContactController *contactsController = [ContactController new];
-    [self.navigationController pushViewController:contactsController animated:YES];
-}
+//-(void)openContactController{
+//    [self hideLoader];
+//    ContactController *contactsController = [ContactController new];
+//    [self.navigationController pushViewController:contactsController animated:YES];
+//}
 
 /*
 #pragma mark - Navigation

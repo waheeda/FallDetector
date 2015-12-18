@@ -194,6 +194,9 @@
                     <state key="normal" title="Forgot Password?">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="onForgotPasswordClick:" destination="wLB-Ri-bWN" eventType="touchUpInside" id="db9-wc-NDP"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MRV-4z-PgQ">
                     <rect key="frame" x="10" y="462" width="144" height="96"/>

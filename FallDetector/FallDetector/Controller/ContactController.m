@@ -42,7 +42,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.rightBarButtonItem = [self createRightDoneButton];
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
 }
 
 -(UIBarButtonItem*)createRightDoneButton {
@@ -57,8 +57,6 @@
     }
     [self saveSelectedContactsInUserDefaults];
     [self saveContactsInDB];
-    
-    
 }
 
 -(void)saveContactsInDB{

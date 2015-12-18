@@ -18,4 +18,5 @@
 
 +(NSString *) getStringFromInt:(int) integer;
 + (NSString *) stringByTrimmingWhiteSpaces : (NSString *) string;
++(NSMutableString*)getFirstLetterFromEachWord:(NSString*)sentence;
 @end

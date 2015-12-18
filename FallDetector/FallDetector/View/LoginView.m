@@ -10,7 +10,8 @@
 #import "LoginController.h"
 #import "EmergencyTimerController.h"
 #import "EmergencyContactsInitialController.h"
-
+#import "StringUtils.h"
+#import "Alert.h"
 @interface LoginView()
 
 @property (nonatomic, weak) LoginController *controller;
@@ -23,6 +24,9 @@
 
 -(void)awakeFromNib{
     
+}
+- (IBAction)onForgotPasswordClick:(id)sender {
+    [self.controller showForgotPasswordController];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -58,10 +62,17 @@
 }
 
 - (IBAction)onSignInClick:(id)sender {
-  //  MatchListController *controller = [[MatchListController alloc] init];
-//    EmergencyContactsInitialController *controller = [[EmergencyContactsInitialController alloc] init];
-    [self.controller authenticateUser:self.emailField.text andPassword:self.passField.text];
-    //[[self.controller navigationController] pushViewController:controller animated:YES];
+    if(![StringUtils validateEmail:self.emailField.text]){
+        [Alert show:@"Error" andMessage:@"Invalid Email Address"];
+        self.emailField.text=@"";
+    }
+    
+    else if([StringUtils validateForNull:self.passField.text])
+        [Alert show:@"Error" andMessage:@"Please Enter your Password"];
+    
+    else
+        [self.controller authenticateUser:self.emailField.text andPassword:self.passField.text];
+    
 }
 
 

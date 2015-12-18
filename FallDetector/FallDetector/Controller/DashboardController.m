@@ -12,6 +12,7 @@
 #import "FacebookManager.h"
 #import "LocationManager.h"
 #import "Alert.h"
+#import "UserDefaults.h"
 @interface DashboardController ()
 
 @end
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     //[self setupImageNavBAr];
     [self setupImageNavBAr];
+    [super showContactsNotFoundAlert];
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
     
 }

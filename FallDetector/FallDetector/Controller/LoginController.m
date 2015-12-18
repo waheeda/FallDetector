@@ -2,7 +2,7 @@
 //  LoginController.m
 //  iOSTemplate
 //
-//  Created by mohsin on 4/3/14.
+//  Created by Muhammad Hamiz Ahmed on 4/3/14.
 //  Copyright (c) 2014 mohsin. All rights reserved.
 //
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -22,6 +22,7 @@
 #import "Contact.h"
 #import "Alert.h"
 #import "EmergencyContactsInitialController.h"
+#import "ForgotPasswordController.h"
 
 @interface LoginController () 
 
@@ -64,6 +65,7 @@
             [self fetchContactsOfEmail:email];
         }
         else{
+            [self hideLoader];
             [Alert show:@"Login Failed" andMessage:@"Invalid Email or Password"];
         }
     } andfailure:^(NSError *error) {
@@ -154,6 +156,11 @@
 -(void)showMonitoringController{
     [self hideLoader];
     [[AppDelegate getInstance] showMonitoringController];
+}
+
+-(void)showForgotPasswordController{
+    ForgotPasswordController* controller = [ForgotPasswordController new];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)showEmergencyContactsInitialController{

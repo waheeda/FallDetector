@@ -18,6 +18,8 @@
 #import "IntroController.h"
 #import "GoogleManager.h"
 #import "FacebookManager.h"
+#import "ContactController.h"
+#import "ContactsManager.h"
 #define TEXT_LOG_OUT                    @"Logout"
 #define MESSAGE_LOGOUT_CONFIRMATION     @"Are you sure you want to logout?"
 #define BUTTON_TITLE_OK         @"Ok"
@@ -40,6 +42,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar.backItem setTitle:@""];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -206,6 +209,31 @@
     
 }
 
+-(void)showContactsNotFoundAlert{
+    if(![UserDefaults getEmergencyContacts]){
+        [Alert show:@"Emergency Contacts Not Found" andMessage:@"You have not specified your emergency contacts. Would you like to specify now?" cancelButtonTitle:@"No" otherButtonTitles:@"Yes" tag:3 WithDelegate:self];
+    }
+}
+
+-(void)fetchContacts{
+    [self showLoader];
+    
+    [[ContactsManager sharedInstance] getContactsOldWayWithSelectedContacts:nil andCallback:^(id result, int contactExists, NSError *error) {
+        if(result){
+            [self performSelectorOnMainThread:@selector(openContactController) withObject:nil waitUntilDone:YES];
+        }
+        else{
+            [self performSelectorOnMainThread:@selector(onServiceResponseFailure:) withObject:error waitUntilDone:YES];
+        }
+        
+    }];
+}
+-(void)openContactController{
+    [self hideLoader];
+    ContactController *contactsController = [ContactController new];
+    [self.navigationController pushViewController:contactsController animated:YES];
+}
+
 -(void) showLogoutAlert {
     
     [Alert show:TEXT_LOG_OUT andMessage:MESSAGE_LOGOUT_CONFIRMATION cancelButtonTitle:BUTTON_TITLE_CANCEL otherButtonTitles:TEXT_LOG_OUT tag:1 WithDelegate:self];
@@ -219,6 +247,11 @@
             [UserDefaults clearUserDefaults];
             [self openIntroScreen];
         }
+        
+        else if(alertView.tag == 3){
+            [self fetchContacts];
+        }
+        
     }
 }
 
