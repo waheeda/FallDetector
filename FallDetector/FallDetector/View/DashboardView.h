@@ -10,5 +10,6 @@
 
 @interface DashboardView : BaseView
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+-(void)setUsernameLabelText:(NSString*)username;
 @end

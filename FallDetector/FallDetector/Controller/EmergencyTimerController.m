@@ -70,7 +70,7 @@ orientationAxis refAXIS;
 }
 
 -(void)createTimer{
-    _startTime=5;
+    _startTime=30;
     [self onTick:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
                                               target: self

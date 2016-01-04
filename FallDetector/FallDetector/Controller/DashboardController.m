@@ -12,6 +12,7 @@
 #import "FacebookManager.h"
 #import "LocationManager.h"
 #import "Alert.h"
+#import "StringUtils.h"
 #import "UserDefaults.h"
 @interface DashboardController ()
 
@@ -24,6 +25,7 @@
     //[self setupImageNavBAr];
     [self setupImageNavBAr];
     [super showContactsNotFoundAlert];
+    [(DashboardView*)self.view setUsernameLabelText:[StringUtils getUserNameFromEmail:[UserDefaults getEmail]]];
     self.navigationItem.leftBarButtonItem = [super createLeftMenuButton];
     
 }
@@ -51,10 +53,21 @@
     [self.navigationItem setTitleView:imgView];
 }
 
--(void)startMonitoring{
-    
+
+-(void)resetVariables{
     _totalAngles=0;
     _count=0;
+}
+
+-(void)calculateAcceleration:(CMAccelerometerData *)accelerometerData{
+    _totalAcceleration =sqrt((accelerometerData.acceleration.x*accelerometerData.acceleration.x)+
+                             (accelerometerData.acceleration.y*accelerometerData.acceleration.y)+
+                             (accelerometerData.acceleration.z*accelerometerData.acceleration.z));
+}
+
+-(void)startMonitoring{
+    
+    [self resetVariables];
     _array=[[NSMutableArray alloc] init];
     
     self.motionManager = [[CMMotionManager alloc] init];
@@ -71,16 +84,14 @@
              //NSLog(@"Accelraor updating");
              [queue setMaxConcurrentOperationCount:1];
              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                 _totalAcceleration =sqrt((accelerometerData.acceleration.x*accelerometerData.acceleration.x)+
-                                          (accelerometerData.acceleration.y*accelerometerData.acceleration.y)+
-                                          (accelerometerData.acceleration.z*accelerometerData.acceleration.z));
+                 [self calculateAcceleration:accelerometerData];
                  
              });
              
              [_array addObject:[NSNumber numberWithDouble:_totalAcceleration]];
              
              if(_count==100){
-                 
+                 _count=0;
                  dispatch_async(dispatch_get_main_queue(), ^{
                      //[[(MatchListView*)self.view fallDetectionLabel] setText:@"dssdfdsfdsf"];
                  });
@@ -93,7 +104,7 @@
                  double min =[[_array valueForKeyPath:@"@min.doubleValue"] doubleValue];
                  int maxIndex=[_array indexOfObject:[NSNumber numberWithDouble:max]];
                  int minIndex = [_array indexOfObject:[NSNumber numberWithDouble:min]];
-                 _count=0;
+                 
                  if((max-min)>=2 && maxIndex>minIndex){ //(max-min)>=7
                      NSLog(@"Max:%f, Min:%f",max,min);
                     // [[(MatchListView*)self.view avgOrientation] setText:[NSString stringWithFormat:@"Max-Min:%f",max-min]];

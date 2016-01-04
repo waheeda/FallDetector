@@ -67,7 +67,7 @@
         self.emailField.text=@"";
     }
     
-    else if([StringUtils validateForNull:self.passField.text])
+    else if(![StringUtils validateForNull:self.passField.text])
         [Alert show:@"Error" andMessage:@"Please Enter your Password"];
     
     else

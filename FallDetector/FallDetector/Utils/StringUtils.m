@@ -51,6 +51,13 @@
     return [emailTest evaluateWithObject:candidate];
 }
 
++(NSString *) getUserNameFromEmail:(NSString*)email{
+    NSArray *dividedEmail = [email componentsSeparatedByString:@"@"];
+    NSString *usernameWithoutNumbers = [[[dividedEmail firstObject] componentsSeparatedByCharactersInSet:
+                             [[NSCharacterSet letterCharacterSet] invertedSet]]
+                           componentsJoinedByString:@""];
+    return usernameWithoutNumbers;
+}
 
 +(NSString *) getStringFromInt:(int) integer{
 

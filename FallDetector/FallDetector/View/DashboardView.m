@@ -8,6 +8,7 @@
 
 #import "DashboardView.h"
 #import "DashboardController.h"
+#import "StringUtils.h"
 @implementation DashboardView
 
 /*
@@ -21,5 +22,9 @@
     [(DashboardController*)self.controller startFetchingLocation];
 }
 
+
+-(void)setUsernameLabelText:(NSString*)username{
+    self.usernameLabel.text=username;
+}
 
 @end
